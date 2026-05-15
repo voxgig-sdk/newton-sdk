@@ -1,0 +1,32 @@
+# BasicTangentFlow
+
+main: kit: flow: BasicTangentFlow:
+{
+  entity: "tangent",
+  kind: "basic",
+  name: "BasicTangentFlow",
+  step: [
+    {
+      input: {
+        ref: "tangent_ref01",
+        srcdatavar: "tangent_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "tangent01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tangent_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTangentFlow"
+}

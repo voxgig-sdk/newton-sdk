@@ -1,0 +1,32 @@
+# BasicCosFlow
+
+main: kit: flow: BasicCosFlow:
+{
+  entity: "cos",
+  kind: "basic",
+  name: "BasicCosFlow",
+  step: [
+    {
+      input: {
+        ref: "cos_ref01",
+        srcdatavar: "cos_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "cos01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cos_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCosFlow"
+}

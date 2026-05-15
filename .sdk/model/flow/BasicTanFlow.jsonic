@@ -1,0 +1,32 @@
+# BasicTanFlow
+
+main: kit: flow: BasicTanFlow:
+{
+  entity: "tan",
+  kind: "basic",
+  name: "BasicTanFlow",
+  step: [
+    {
+      input: {
+        ref: "tan_ref01",
+        srcdatavar: "tan_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "tan01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tan_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTanFlow"
+}

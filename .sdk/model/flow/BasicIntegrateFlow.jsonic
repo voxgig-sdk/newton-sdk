@@ -1,0 +1,32 @@
+# BasicIntegrateFlow
+
+main: kit: flow: BasicIntegrateFlow:
+{
+  entity: "integrate",
+  kind: "basic",
+  name: "BasicIntegrateFlow",
+  step: [
+    {
+      input: {
+        ref: "integrate_ref01",
+        srcdatavar: "integrate_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "integrate01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-integrate_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIntegrateFlow"
+}

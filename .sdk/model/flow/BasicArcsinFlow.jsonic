@@ -1,0 +1,32 @@
+# BasicArcsinFlow
+
+main: kit: flow: BasicArcsinFlow:
+{
+  entity: "arcsin",
+  kind: "basic",
+  name: "BasicArcsinFlow",
+  step: [
+    {
+      input: {
+        ref: "arcsin_ref01",
+        srcdatavar: "arcsin_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "arcsin01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-arcsin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicArcsinFlow"
+}

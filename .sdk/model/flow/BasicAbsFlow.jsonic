@@ -1,0 +1,32 @@
+# BasicAbsFlow
+
+main: kit: flow: BasicAbsFlow:
+{
+  entity: "abs",
+  kind: "basic",
+  name: "BasicAbsFlow",
+  step: [
+    {
+      input: {
+        ref: "abs_ref01",
+        srcdatavar: "abs_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "abs01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-abs_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAbsFlow"
+}

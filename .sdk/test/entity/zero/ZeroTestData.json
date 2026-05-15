@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "zero": {
+      "ZERO00": {
+        "expression": "s1e",
+        "operation": "s1f",
+        "result": "s20"
+      },
+      "ZERO01": {
+        "expression": "s3c",
+        "operation": "s3d",
+        "result": "s3e"
+      },
+      "ZERO02": {
+        "expression": "s5a",
+        "operation": "s5b",
+        "result": "s5c"
+      }
+    }
+  },
+  "new": {
+    "zero": {
+      "zero_ref01": {
+        "expression": "s78",
+        "operation": "s79",
+        "result": "s7a"
+      }
+    }
+  }
+}

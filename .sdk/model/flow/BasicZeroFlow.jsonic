@@ -1,0 +1,32 @@
+# BasicZeroFlow
+
+main: kit: flow: BasicZeroFlow:
+{
+  entity: "zero",
+  kind: "basic",
+  name: "BasicZeroFlow",
+  step: [
+    {
+      input: {
+        ref: "zero_ref01",
+        srcdatavar: "zero_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "zero01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-zero_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicZeroFlow"
+}

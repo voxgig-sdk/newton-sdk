@@ -1,0 +1,32 @@
+# BasicSimplifyFlow
+
+main: kit: flow: BasicSimplifyFlow:
+{
+  entity: "simplify",
+  kind: "basic",
+  name: "BasicSimplifyFlow",
+  step: [
+    {
+      input: {
+        ref: "simplify_ref01",
+        srcdatavar: "simplify_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "simplify01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-simplify_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSimplifyFlow"
+}

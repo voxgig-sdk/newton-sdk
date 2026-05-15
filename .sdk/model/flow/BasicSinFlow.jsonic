@@ -1,0 +1,32 @@
+# BasicSinFlow
+
+main: kit: flow: BasicSinFlow:
+{
+  entity: "sin",
+  kind: "basic",
+  name: "BasicSinFlow",
+  step: [
+    {
+      input: {
+        ref: "sin_ref01",
+        srcdatavar: "sin_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "sin01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-sin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSinFlow"
+}

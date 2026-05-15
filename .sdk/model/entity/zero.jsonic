@@ -1,0 +1,70 @@
+# Entity: zero
+
+main: kit: entity: zero: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "expression"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "operation"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "result"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "zero"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "x^2+2x"
+                kind: "param"
+                name: "id"
+                orig: "expression"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/zeroes/{expression}"
+          parts: [
+            "zeroes"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              expression: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

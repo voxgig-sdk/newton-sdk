@@ -1,0 +1,70 @@
+# Entity: integrate
+
+main: kit: entity: integrate: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "expression"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "operation"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "result"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "integrate"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "x^2+2x"
+                kind: "param"
+                name: "id"
+                orig: "expression"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/integrate/{expression}"
+          parts: [
+            "integrate"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              expression: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

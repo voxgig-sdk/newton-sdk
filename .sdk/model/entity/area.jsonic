@@ -1,0 +1,70 @@
+# Entity: area
+
+main: kit: entity: area: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "expression"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "operation"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "result"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "area"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "2:4|x^3"
+                kind: "param"
+                name: "id"
+                orig: "expression"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/area/{expression}"
+          parts: [
+            "area"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              expression: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

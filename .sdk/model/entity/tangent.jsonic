@@ -1,0 +1,70 @@
+# Entity: tangent
+
+main: kit: entity: tangent: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "expression"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "operation"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "result"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "tangent"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "2|x^3"
+                kind: "param"
+                name: "id"
+                orig: "expression"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/tangent/{expression}"
+          parts: [
+            "tangent"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              expression: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,32 @@
+# BasicArccoFlow
+
+main: kit: flow: BasicArccoFlow:
+{
+  entity: "arcco",
+  kind: "basic",
+  name: "BasicArccoFlow",
+  step: [
+    {
+      input: {
+        ref: "arcco_ref01",
+        srcdatavar: "arcco_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "arcco01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-arcco_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicArccoFlow"
+}

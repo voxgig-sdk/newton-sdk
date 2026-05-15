@@ -1,0 +1,113 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 15
+  metrics: count: path: 15
+  metrics: count: method: 15
+
+  entity: abs: {
+    path: "/abs/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: arcco: {
+    path: "/arccos/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: arcsin: {
+    path: "/arcsin/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: arctan: {
+    path: "/arctan/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: area: {
+    path: "/area/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: cos: {
+    path: "/cos/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: derive: {
+    path: "/derive/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: factor: {
+    path: "/factor/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: integrate: {
+    path: "/integrate/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: log: {
+    path: "/log/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: simplify: {
+    path: "/simplify/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: sin: {
+    path: "/sin/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: tan: {
+    path: "/tan/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: tangent: {
+    path: "/tangent/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: zero: {
+    path: "/zeroes/{expression}": {
+      rename: param: "expression": *"id"
+      op: load: method: *GET
+    }
+  }
+
+}

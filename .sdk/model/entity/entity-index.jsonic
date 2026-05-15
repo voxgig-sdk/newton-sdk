@@ -1,0 +1,17 @@
+# Entity Models
+
+@"abs.jsonic"
+@"arcco.jsonic"
+@"arcsin.jsonic"
+@"arctan.jsonic"
+@"area.jsonic"
+@"cos.jsonic"
+@"derive.jsonic"
+@"factor.jsonic"
+@"integrate.jsonic"
+@"log.jsonic"
+@"simplify.jsonic"
+@"sin.jsonic"
+@"tan.jsonic"
+@"tangent.jsonic"
+@"zero.jsonic"

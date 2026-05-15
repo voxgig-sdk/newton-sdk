@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "abs": {
+      "ABS00": {
+        "expression": "s1e",
+        "operation": "s1f",
+        "result": "s20"
+      },
+      "ABS01": {
+        "expression": "s3c",
+        "operation": "s3d",
+        "result": "s3e"
+      },
+      "ABS02": {
+        "expression": "s5a",
+        "operation": "s5b",
+        "result": "s5c"
+      }
+    }
+  },
+  "new": {
+    "abs": {
+      "abs_ref01": {
+        "expression": "s78",
+        "operation": "s79",
+        "result": "s7a"
+      }
+    }
+  }
+}

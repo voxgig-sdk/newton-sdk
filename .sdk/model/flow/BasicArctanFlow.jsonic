@@ -1,0 +1,32 @@
+# BasicArctanFlow
+
+main: kit: flow: BasicArctanFlow:
+{
+  entity: "arctan",
+  kind: "basic",
+  name: "BasicArctanFlow",
+  step: [
+    {
+      input: {
+        ref: "arctan_ref01",
+        srcdatavar: "arctan_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "arctan01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-arctan_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicArctanFlow"
+}

@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "area": {
+      "AREA00": {
+        "expression": "s1e",
+        "operation": "s1f",
+        "result": "s20"
+      },
+      "AREA01": {
+        "expression": "s3c",
+        "operation": "s3d",
+        "result": "s3e"
+      },
+      "AREA02": {
+        "expression": "s5a",
+        "operation": "s5b",
+        "result": "s5c"
+      }
+    }
+  },
+  "new": {
+    "area": {
+      "area_ref01": {
+        "expression": "s78",
+        "operation": "s79",
+        "result": "s7a"
+      }
+    }
+  }
+}

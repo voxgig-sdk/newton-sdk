@@ -1,0 +1,652 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Newton API",
+    "description": "The Newton API is a micro-service that provides advanced math functionalities such as derivatives, integrals, simplifications, and more. Users can send requests with math expressions and receive results in JSON format, making it a powerful tool for mathematical computations.",
+    "version": "2.0.0",
+    "contact": {
+      "name": "Newton API",
+      "url": "https://github.com/aunyks/newton-api"
+    },
+    "license": {
+      "name": "GNU GPLv3",
+      "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://newton.now.sh/api/v2",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/simplify/{expression}": {
+      "get": {
+        "summary": "Simplify a mathematical expression",
+        "description": "Simplifies the provided mathematical expression to its simplest form.",
+        "operationId": "simplify",
+        "tags": [
+          "Algebra"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression to simplify (e.g., 2^2+2(2))",
+            "schema": {
+              "type": "string"
+            },
+            "example": "2^2+2(2)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "simplify",
+                  "expression": "2^2+2(2)",
+                  "result": "8"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/factor/{expression}": {
+      "get": {
+        "summary": "Factor a mathematical expression",
+        "description": "Factors the provided mathematical expression into its component factors.",
+        "operationId": "factor",
+        "tags": [
+          "Algebra"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression to factor (e.g., x^2+2x)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "x^2+2x"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "factor",
+                  "expression": "x^2+2x",
+                  "result": "x (x + 2)"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/derive/{expression}": {
+      "get": {
+        "summary": "Find the derivative of a function",
+        "description": "Calculates the derivative of the provided mathematical expression.",
+        "operationId": "derive",
+        "tags": [
+          "Calculus"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression to derive (e.g., x^2+2x)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "x^2+2x"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "derive",
+                  "expression": "x^2+2x",
+                  "result": "2 x + 2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integrate/{expression}": {
+      "get": {
+        "summary": "Find the integral of a function",
+        "description": "Calculates the indefinite integral of the provided mathematical expression.",
+        "operationId": "integrate",
+        "tags": [
+          "Calculus"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression to integrate (e.g., x^2+2x)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "x^2+2x"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "integrate",
+                  "expression": "x^2+2x",
+                  "result": "1/3 x^3 + x^2 + C"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/zeroes/{expression}": {
+      "get": {
+        "summary": "Find the zeros of a function",
+        "description": "Finds the x-values where the function equals zero (roots of the equation).",
+        "operationId": "zeroes",
+        "tags": [
+          "Algebra"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression to find zeros (e.g., x^2+2x)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "x^2+2x"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "zeroes",
+                  "expression": "x^2+2x",
+                  "result": "[-2, 0]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tangent/{expression}": {
+      "get": {
+        "summary": "Find the tangent line of a function at a point",
+        "description": "Calculates the tangent line equation at a given x value. Format: c|f(x) where c is the x value and f(x) is the function, separated by a vertical bar '|'.",
+        "operationId": "tangent",
+        "tags": [
+          "Calculus"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded expression in format c|f(x) where c is the x value and f(x) is the function (e.g., 2|x^3)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "2|x^3"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "tangent",
+                  "expression": "2|x^3",
+                  "result": "12 x + -16"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/area/{expression}": {
+      "get": {
+        "summary": "Calculate area under a curve",
+        "description": "Calculates the definite integral (area under the curve) between two x values. Format: c:d|f(x) where c is the starting x value, d is the ending x value, and f(x) is the function.",
+        "operationId": "area",
+        "tags": [
+          "Calculus"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded expression in format c:d|f(x) where c and d are x bounds and f(x) is the function (e.g., 2:4|x^3)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "2:4|x^3"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "area",
+                  "expression": "2:4|x^3",
+                  "result": "60"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cos/{expression}": {
+      "get": {
+        "summary": "Calculate cosine",
+        "description": "Calculates the cosine of the provided expression.",
+        "operationId": "cosine",
+        "tags": [
+          "Trigonometry"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for cosine calculation (e.g., pi)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "pi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "cos",
+                  "expression": "pi",
+                  "result": "-1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sin/{expression}": {
+      "get": {
+        "summary": "Calculate sine",
+        "description": "Calculates the sine of the provided expression.",
+        "operationId": "sine",
+        "tags": [
+          "Trigonometry"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for sine calculation (e.g., 0)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "sin",
+                  "expression": "0",
+                  "result": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tan/{expression}": {
+      "get": {
+        "summary": "Calculate tangent",
+        "description": "Calculates the tangent of the provided expression.",
+        "operationId": "tangentTrig",
+        "tags": [
+          "Trigonometry"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for tangent calculation (e.g., 0)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "tan",
+                  "expression": "0",
+                  "result": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/arccos/{expression}": {
+      "get": {
+        "summary": "Calculate inverse cosine (arccos)",
+        "description": "Calculates the inverse cosine (arccosine) of the provided expression.",
+        "operationId": "arccos",
+        "tags": [
+          "Trigonometry"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for arccos calculation (e.g., 1)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "arccos",
+                  "expression": "1",
+                  "result": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/arcsin/{expression}": {
+      "get": {
+        "summary": "Calculate inverse sine (arcsin)",
+        "description": "Calculates the inverse sine (arcsine) of the provided expression.",
+        "operationId": "arcsin",
+        "tags": [
+          "Trigonometry"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for arcsin calculation (e.g., 0)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "arcsin",
+                  "expression": "0",
+                  "result": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/arctan/{expression}": {
+      "get": {
+        "summary": "Calculate inverse tangent (arctan)",
+        "description": "Calculates the inverse tangent (arctangent) of the provided expression.",
+        "operationId": "arctan",
+        "tags": [
+          "Trigonometry"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for arctan calculation (e.g., 0)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "arctan",
+                  "expression": "0",
+                  "result": "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/abs/{expression}": {
+      "get": {
+        "summary": "Calculate absolute value",
+        "description": "Calculates the absolute value of the provided expression.",
+        "operationId": "absoluteValue",
+        "tags": [
+          "Algebra"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded mathematical expression for absolute value calculation (e.g., -1)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "-1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "abs",
+                  "expression": "-1",
+                  "result": "1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/log/{expression}": {
+      "get": {
+        "summary": "Calculate logarithm",
+        "description": "Calculates the logarithm of the provided expression. Format: base|value where base is the logarithm base and value is the number (e.g., 2|8 for log base 2 of 8).",
+        "operationId": "logarithm",
+        "tags": [
+          "Algebra"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "required": true,
+            "description": "URL-encoded expression in format base|value (e.g., 2|8 for log base 2 of 8)",
+            "schema": {
+              "type": "string"
+            },
+            "example": "2|8"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MathOperationResponse"
+                },
+                "example": {
+                  "operation": "log",
+                  "expression": "2|8",
+                  "result": "3"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MathOperationResponse": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "string",
+            "description": "The mathematical operation that was performed",
+            "example": "derive"
+          },
+          "expression": {
+            "type": "string",
+            "description": "The mathematical expression that was processed",
+            "example": "x^2"
+          },
+          "result": {
+            "type": "string",
+            "description": "The result of the mathematical operation",
+            "example": "2 x"
+          }
+        },
+        "required": [
+          "operation",
+          "expression",
+          "result"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Algebra",
+      "description": "Algebraic operations including simplification, factoring, and finding zeros"
+    },
+    {
+      "name": "Calculus",
+      "description": "Calculus operations including derivatives, integrals, tangent lines, and area under curves"
+    },
+    {
+      "name": "Trigonometry",
+      "description": "Trigonometric functions and their inverses"
+    }
+  ]
+}

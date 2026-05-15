@@ -1,0 +1,32 @@
+# BasicDeriveFlow
+
+main: kit: flow: BasicDeriveFlow:
+{
+  entity: "derive",
+  kind: "basic",
+  name: "BasicDeriveFlow",
+  step: [
+    {
+      input: {
+        ref: "derive_ref01",
+        srcdatavar: "derive_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "derive01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-derive_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDeriveFlow"
+}

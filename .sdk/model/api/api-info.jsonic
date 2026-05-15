@@ -1,0 +1,28 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Newton API"
+        url: "https://github.com/aunyks/newton-api"
+      }
+      description: "The Newton API is a micro-service that provides advanced math functionalities such as derivatives, integrals, simplifications, and more. Users can send requests with math expressions and receive results in JSON format, making it a powerful tool for mathematical computations."
+      license: {
+        name: "GNU GPLv3"
+        url: "https://www.gnu.org/licenses/gpl-3.0.html"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://newton.now.sh/api/v2"
+        }
+      ]
+      title: "Newton API"
+      version: "2.0.0"
+    }
+  }
+}
+
+}

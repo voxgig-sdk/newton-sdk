@@ -1,0 +1,32 @@
+# BasicFactorFlow
+
+main: kit: flow: BasicFactorFlow:
+{
+  entity: "factor",
+  kind: "basic",
+  name: "BasicFactorFlow",
+  step: [
+    {
+      input: {
+        ref: "factor_ref01",
+        srcdatavar: "factor_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "factor01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-factor_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFactorFlow"
+}

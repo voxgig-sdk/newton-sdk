@@ -1,0 +1,1860 @@
+{
+  "name": "newton",
+  "origin": "voxgig-sdk",
+  "def": "newton_0.1.0.json",
+  "main": {
+    "kit": {
+      "info": {
+        "contact": {
+          "name": "Newton API",
+          "url": "https://github.com/aunyks/newton-api"
+        },
+        "description": "The Newton API is a micro-service that provides advanced math functionalities such as derivatives, integrals, simplifications, and more. Users can send requests with math expressions and receive results in JSON format, making it a powerful tool for mathematical computations.",
+        "license": {
+          "name": "GNU GPLv3",
+          "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+        },
+        "servers": [
+          {
+            "description": "Production server",
+            "url": "https://newton.now.sh/api/v2"
+          }
+        ],
+        "title": "Newton API",
+        "version": "2.0.0"
+      },
+      "config": {
+        "auth": {
+          "prefix": "Bearer"
+        },
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "entity": {
+        "abs": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "abs",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "-1",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/abs/{expression}",
+                  "parts": [
+                    "abs",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "arcco": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "arcco",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "1",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/arccos/{expression}",
+                  "parts": [
+                    "arccos",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "arcsin": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "arcsin",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "0",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/arcsin/{expression}",
+                  "parts": [
+                    "arcsin",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "arctan": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "arctan",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "0",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/arctan/{expression}",
+                  "parts": [
+                    "arctan",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "area": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "area",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "2:4|x^3",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/area/{expression}",
+                  "parts": [
+                    "area",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "cos": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "cos",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "pi",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/cos/{expression}",
+                  "parts": [
+                    "cos",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "derive": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "derive",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "x^2+2x",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/derive/{expression}",
+                  "parts": [
+                    "derive",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "factor": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "factor",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "x^2+2x",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/factor/{expression}",
+                  "parts": [
+                    "factor",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "integrate": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "integrate",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "x^2+2x",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/integrate/{expression}",
+                  "parts": [
+                    "integrate",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "log": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "log",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "2|8",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/log/{expression}",
+                  "parts": [
+                    "log",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "simplify": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "simplify",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "2^2+2(2)",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/simplify/{expression}",
+                  "parts": [
+                    "simplify",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "sin": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "sin",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "0",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/sin/{expression}",
+                  "parts": [
+                    "sin",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "tan": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "tan",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "0",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/tan/{expression}",
+                  "parts": [
+                    "tan",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "tangent": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "tangent",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "2|x^3",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/tangent/{expression}",
+                  "parts": [
+                    "tangent",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "zero": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "expression",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "operation",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "result",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "zero",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "params": [
+                      {
+                        "example": "x^2+2x",
+                        "kind": "param",
+                        "name": "id",
+                        "orig": "expression",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/zeroes/{expression}",
+                  "parts": [
+                    "zeroes",
+                    "{id}"
+                  ],
+                  "rename": {
+                    "param": {
+                      "expression": "id"
+                    }
+                  },
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "name": "test",
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1",
+          "active": true,
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            }
+          },
+          "target": {
+            "ts": {
+              "deps": {}
+            },
+            "go": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            }
+          }
+        }
+      },
+      "flow": {
+        "BasicAbsFlow": {
+          "entity": "abs",
+          "kind": "basic",
+          "name": "BasicAbsFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "abs_ref01",
+                "srcdatavar": "abs_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "abs01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-abs_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicAbsFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicArccoFlow": {
+          "entity": "arcco",
+          "kind": "basic",
+          "name": "BasicArccoFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "arcco_ref01",
+                "srcdatavar": "arcco_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "arcco01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-arcco_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicArccoFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicArcsinFlow": {
+          "entity": "arcsin",
+          "kind": "basic",
+          "name": "BasicArcsinFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "arcsin_ref01",
+                "srcdatavar": "arcsin_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "arcsin01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-arcsin_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicArcsinFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicArctanFlow": {
+          "entity": "arctan",
+          "kind": "basic",
+          "name": "BasicArctanFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "arctan_ref01",
+                "srcdatavar": "arctan_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "arctan01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-arctan_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicArctanFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicAreaFlow": {
+          "entity": "area",
+          "kind": "basic",
+          "name": "BasicAreaFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "area_ref01",
+                "srcdatavar": "area_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "area01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-area_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicAreaFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicCosFlow": {
+          "entity": "cos",
+          "kind": "basic",
+          "name": "BasicCosFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "cos_ref01",
+                "srcdatavar": "cos_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "cos01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-cos_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicCosFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicDeriveFlow": {
+          "entity": "derive",
+          "kind": "basic",
+          "name": "BasicDeriveFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "derive_ref01",
+                "srcdatavar": "derive_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "derive01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-derive_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicDeriveFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicFactorFlow": {
+          "entity": "factor",
+          "kind": "basic",
+          "name": "BasicFactorFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "factor_ref01",
+                "srcdatavar": "factor_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "factor01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-factor_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicFactorFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicIntegrateFlow": {
+          "entity": "integrate",
+          "kind": "basic",
+          "name": "BasicIntegrateFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "integrate_ref01",
+                "srcdatavar": "integrate_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "integrate01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-integrate_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicIntegrateFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicLogFlow": {
+          "entity": "log",
+          "kind": "basic",
+          "name": "BasicLogFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "log_ref01",
+                "srcdatavar": "log_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "log01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-log_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicLogFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicSimplifyFlow": {
+          "entity": "simplify",
+          "kind": "basic",
+          "name": "BasicSimplifyFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "simplify_ref01",
+                "srcdatavar": "simplify_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "simplify01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-simplify_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicSimplifyFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicSinFlow": {
+          "entity": "sin",
+          "kind": "basic",
+          "name": "BasicSinFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "sin_ref01",
+                "srcdatavar": "sin_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "sin01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-sin_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicSinFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicTanFlow": {
+          "entity": "tan",
+          "kind": "basic",
+          "name": "BasicTanFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "tan_ref01",
+                "srcdatavar": "tan_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "tan01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-tan_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicTanFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicTangentFlow": {
+          "entity": "tangent",
+          "kind": "basic",
+          "name": "BasicTangentFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "tangent_ref01",
+                "srcdatavar": "tangent_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "tangent01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-tangent_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicTangentFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicZeroFlow": {
+          "entity": "zero",
+          "kind": "basic",
+          "name": "BasicZeroFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "zero_ref01",
+                "srcdatavar": "zero_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {
+                "id": "zero01"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-zero_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicZeroFlow",
+          "active": true,
+          "param": {}
+        }
+      },
+      "target": {
+        "ts": {
+          "title": "TypeScript",
+          "ext": "ts",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "newton"
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "deps": {
+            "dotenv": {
+              "active": true,
+              "version": "^17.4.2",
+              "kind": "dev"
+            },
+            "typescript": {
+              "active": true,
+              "version": "^5.9.3",
+              "kind": "dev"
+            },
+            "@types/node": {
+              "active": true,
+              "version": "^25.6.0",
+              "kind": "dev"
+            }
+          },
+          "name": "ts",
+          "active": true
+        },
+        "go": {
+          "title": "Golang",
+          "ext": "go",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "newton"
+          },
+          "srcfeature": false,
+          "deps": {
+            "github.com/voxgig/struct": {
+              "active": true,
+              "version": "v0.0.0",
+              "replace": "./utility/struct",
+              "kind": "prod"
+            }
+          },
+          "name": "go",
+          "active": true
+        },
+        "lua": {
+          "title": "Lua",
+          "ext": "lua",
+          "comment": {
+            "line": "--"
+          },
+          "module": {
+            "name": "newton"
+          },
+          "srcfeature": false,
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "version": "2.5",
+              "kind": "prod"
+            }
+          },
+          "name": "lua",
+          "active": true
+        },
+        "php": {
+          "title": "PHP",
+          "ext": "php",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "newton"
+          },
+          "srcfeature": false,
+          "deps": {},
+          "name": "php",
+          "active": true
+        },
+        "py": {
+          "title": "Python",
+          "ext": "py",
+          "comment": {
+            "line": "#"
+          },
+          "module": {
+            "name": "newton"
+          },
+          "srcfeature": false,
+          "deps": {
+            "requests": {
+              "active": true,
+              "version": "2.33",
+              "kind": "prod"
+            }
+          },
+          "name": "py",
+          "active": true
+        },
+        "rb": {
+          "title": "Ruby",
+          "ext": "rb",
+          "comment": {
+            "line": "#"
+          },
+          "module": {
+            "name": "newton"
+          },
+          "srcfeature": false,
+          "deps": {
+            "voxgig-struct": {
+              "active": true,
+              "version": "0.0.10",
+              "kind": "prod"
+            },
+            "json": {
+              "active": true,
+              "version": "0",
+              "kind": "prod"
+            }
+          },
+          "name": "rb",
+          "active": true
+        }
+      },
+      "option": {}
+    },
+    "def": {
+      "desc": ""
+    },
+    "api": {
+      "guide": {},
+      "entity": {}
+    }
+  },
+  "name__orig": "newton",
+  "Name": "Newton",
+  "name_": "newton",
+  "name-": "newton",
+  "NAME": "NEWTON"
+}

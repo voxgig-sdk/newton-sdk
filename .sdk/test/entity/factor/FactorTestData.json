@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "factor": {
+      "FACTOR00": {
+        "expression": "s1e",
+        "operation": "s1f",
+        "result": "s20"
+      },
+      "FACTOR01": {
+        "expression": "s3c",
+        "operation": "s3d",
+        "result": "s3e"
+      },
+      "FACTOR02": {
+        "expression": "s5a",
+        "operation": "s5b",
+        "result": "s5c"
+      }
+    }
+  },
+  "new": {
+    "factor": {
+      "factor_ref01": {
+        "expression": "s78",
+        "operation": "s79",
+        "result": "s7a"
+      }
+    }
+  }
+}

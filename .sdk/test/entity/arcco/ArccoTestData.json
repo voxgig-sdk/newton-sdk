@@ -4,17 +4,20 @@
       "ARCCO00": {
         "expression": "s1e",
         "operation": "s1f",
-        "result": "s20"
+        "result": "s20",
+        "id": "ARCCO00"
       },
       "ARCCO01": {
         "expression": "s3c",
         "operation": "s3d",
-        "result": "s3e"
+        "result": "s3e",
+        "id": "ARCCO01"
       },
       "ARCCO02": {
         "expression": "s5a",
         "operation": "s5b",
-        "result": "s5c"
+        "result": "s5c",
+        "id": "ARCCO02"
       }
     }
   },

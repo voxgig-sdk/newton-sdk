@@ -4,17 +4,20 @@
       "DERIVE00": {
         "expression": "s1e",
         "operation": "s1f",
-        "result": "s20"
+        "result": "s20",
+        "id": "DERIVE00"
       },
       "DERIVE01": {
         "expression": "s3c",
         "operation": "s3d",
-        "result": "s3e"
+        "result": "s3e",
+        "id": "DERIVE01"
       },
       "DERIVE02": {
         "expression": "s5a",
         "operation": "s5b",
-        "result": "s5c"
+        "result": "s5c",
+        "id": "DERIVE02"
       }
     }
   },

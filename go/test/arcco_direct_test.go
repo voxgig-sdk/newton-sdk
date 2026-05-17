@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/newton-sdk"
-	"github.com/voxgig-sdk/newton-sdk/core"
+	sdk "github.com/voxgig-sdk/newton-sdk/go"
+	"github.com/voxgig-sdk/newton-sdk/go/core"
 )
 
 func TestArccoDirect(t *testing.T) {

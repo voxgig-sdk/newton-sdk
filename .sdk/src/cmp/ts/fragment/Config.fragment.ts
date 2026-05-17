@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: 'https://newton.now.sh/api/v2',
+    base: '$$main.kit.info.servers.0.url$$',
 
     'AUTHBLOCK'headers: 'HEADERS',
 

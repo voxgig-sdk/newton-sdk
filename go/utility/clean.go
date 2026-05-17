@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/newton-sdk/core"
+import "github.com/voxgig-sdk/newton-sdk/go/core"
 
 func cleanUtil(ctx *core.Context, val any) any {
 	return val

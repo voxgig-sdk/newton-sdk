@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/newton-sdk/core"
+	"github.com/voxgig-sdk/newton-sdk/go/core"
 )
 
 type BaseFeature struct {

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/newton-sdk"
-	"github.com/voxgig-sdk/newton-sdk/core"
+	sdk "github.com/voxgig-sdk/newton-sdk/go"
+	"github.com/voxgig-sdk/newton-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/newton-sdk/go/utility/struct"
 )
 
 func TestArcsinEntity(t *testing.T) {

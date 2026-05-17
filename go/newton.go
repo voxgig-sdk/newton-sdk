@@ -1,10 +1,10 @@
 package voxgignewtonsdk
 
 import (
-	"github.com/voxgig-sdk/newton-sdk/core"
-	"github.com/voxgig-sdk/newton-sdk/entity"
-	"github.com/voxgig-sdk/newton-sdk/feature"
-	_ "github.com/voxgig-sdk/newton-sdk/utility"
+	"github.com/voxgig-sdk/newton-sdk/go/core"
+	"github.com/voxgig-sdk/newton-sdk/go/entity"
+	"github.com/voxgig-sdk/newton-sdk/go/feature"
+	_ "github.com/voxgig-sdk/newton-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

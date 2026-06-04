@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://newton.now.sh/api/v2",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },

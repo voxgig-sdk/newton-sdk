@@ -75,14 +75,12 @@ function area_direct_setup($mockres)
     $env = Runner::env_override([
         "NEWTON_TEST_AREA_ENTID" => [],
         "NEWTON_TEST_LIVE" => "FALSE",
-        "NEWTON_APIKEY" => "NONE",
     ]);
 
     $live = $env["NEWTON_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["NEWTON_APIKEY"],
         ];
         $client = new NewtonSDK($merged_opts);
         return [

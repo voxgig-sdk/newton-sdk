@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'NEWTON_TEST_DERIVE_ENTID': {},
     'NEWTON_TEST_LIVE': 'FALSE',
-    'NEWTON_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.NEWTON_TEST_LIVE
 
   if (live) {
     const client = new NewtonSDK({
-      apikey: env.NEWTON_APIKEY,
     })
 
     let idmap: any = env['NEWTON_TEST_DERIVE_ENTID']

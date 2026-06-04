@@ -21,7 +21,31 @@
           }
         ],
         "title": "Newton API",
-        "version": "2.0.0"
+        "version": "2.0.0",
+        "tagline": "Tiny HTTP service for symbolic math: derivatives, integrals, simplification, factoring, trig and more",
+        "homepage": "https://newton.now.sh/api/v2",
+        "docs_url": "https://github.com/aunyks/newton-api",
+        "license_short": "GNU GPLv3",
+        "license_md": "- Licensed under the **GNU General Public License v3.0** (2016-2020).\n- Source is published on GitHub by the author, [Gerald Nash (aunyks)](https://github.com/aunyks/newton-api).\n- Derivative works that redistribute the service must remain under a GPL-compatible licence.\n- This SDK only wraps the public HTTP endpoints and does not relicense the upstream code.",
+        "about_md": "[Newton](https://newton.now.sh/api/v2) is a small HTTP micro-service for advanced math, written and hosted by [Gerald Nash (aunyks)](https://github.com/aunyks/newton-api). It exposes a single URL pattern that takes an operation name and a URL-encoded expression and returns a JSON result.\n\nWhat you get from the API:\n- Algebra: `simplify`, `factor`, `zeroes`\n- Calculus: `derive`, `integrate`, `tangent`, `area`\n- Trigonometry: `cos`, `sin`, `tan`, `arccos`, `arcsin`, `arctan`\n- Misc: `abs`, `log`\n\nAll operations share the same shape: `GET /api/v2/:operation/:expression`, where `:expression` is URL-encoded (for example `x%5E2` for `x^2`). Tangent calls take `c|f(x)` and area calls take `c:d|f(x)`. Responses are JSON objects of the form `{\"operation\": ..., \"expression\": ..., \"result\": ...}`.\n\nThe service is open and unauthenticated, has CORS enabled, and is built on top of the metadelta library. There is no published rate-limit policy, so treat it as best-effort and cache results where you can.",
+        "entity_desc": {
+          "abs": "Absolute value of an expression via `GET /api/v2/abs/:expression`.",
+          "arcco": "Inverse cosine (arccos) of an expression via `GET /api/v2/arccos/:expression`.",
+          "arcsin": "Inverse sine (arcsin) of an expression via `GET /api/v2/arcsin/:expression`.",
+          "arctan": "Inverse tangent (arctan) of an expression via `GET /api/v2/arctan/:expression`.",
+          "area": "Definite integral / area under a curve via `GET /api/v2/area/:c:d|f(x)`.",
+          "cos": "Cosine of an expression via `GET /api/v2/cos/:expression`.",
+          "derive": "Symbolic derivative of an expression via `GET /api/v2/derive/:expression`.",
+          "factor": "Factored form of an expression via `GET /api/v2/factor/:expression`.",
+          "integrate": "Symbolic indefinite integral via `GET /api/v2/integrate/:expression`.",
+          "log": "Logarithm of an expression via `GET /api/v2/log/:expression`.",
+          "simplify": "Algebraic simplification of an expression via `GET /api/v2/simplify/:expression`.",
+          "sin": "Sine of an expression via `GET /api/v2/sin/:expression`.",
+          "tan": "Tangent of an expression via `GET /api/v2/tan/:expression`.",
+          "tangent": "Tangent line to f(x) at point c via `GET /api/v2/tangent/:c|f(x)`.",
+          "zero": "Real zeroes (roots) of an expression via `GET /api/v2/zeroes/:expression`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -29,7 +53,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "abs": {

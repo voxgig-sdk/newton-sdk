@@ -70,14 +70,12 @@ function factor_direct_setup(mockres)
   local env = runner.env_override({
     ["NEWTON_TEST_FACTOR_ENTID"] = {},
     ["NEWTON_TEST_LIVE"] = "FALSE",
-    ["NEWTON_APIKEY"] = "NONE",
   })
 
   local live = env["NEWTON_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["NEWTON_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

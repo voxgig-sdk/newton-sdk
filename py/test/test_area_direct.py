@@ -66,14 +66,12 @@ def _area_direct_setup(mockres):
     env = runner.env_override({
         "NEWTON_TEST_AREA_ENTID": {},
         "NEWTON_TEST_LIVE": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     live = env.get("NEWTON_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("NEWTON_APIKEY"),
         }
         client = NewtonSDK(merged_opts)
         return {

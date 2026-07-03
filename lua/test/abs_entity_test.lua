@@ -91,6 +91,7 @@ function abs_basic_setup(extra)
     ["NEWTON_TEST_ABS_ENTID"] = idmap,
     ["NEWTON_TEST_LIVE"] = "FALSE",
     ["NEWTON_TEST_EXPLAIN"] = "FALSE",
+    ["NEWTON_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function abs_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["NEWTON_APIKEY"],
       },
       extra or {},
     })

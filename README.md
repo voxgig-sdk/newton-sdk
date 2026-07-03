@@ -1,22 +1,8 @@
 # Newton SDK
 
-Tiny HTTP service for symbolic math: derivatives, integrals, simplification, factoring, trig and more
+Newton API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Newton API
-
-[Newton](https://newton.now.sh/api/v2) is a small HTTP micro-service for advanced math, written and hosted by [Gerald Nash (aunyks)](https://github.com/aunyks/newton-api). It exposes a single URL pattern that takes an operation name and a URL-encoded expression and returns a JSON result.
-
-What you get from the API:
-- Algebra: `simplify`, `factor`, `zeroes`
-- Calculus: `derive`, `integrate`, `tangent`, `area`
-- Trigonometry: `cos`, `sin`, `tan`, `arccos`, `arcsin`, `arctan`
-- Misc: `abs`, `log`
-
-All operations share the same shape: `GET /api/v2/:operation/:expression`, where `:expression` is URL-encoded (for example `x%5E2` for `x^2`). Tangent calls take `c|f(x)` and area calls take `c:d|f(x)`. Responses are JSON objects of the form `{"operation": ..., "expression": ..., "result": ...}`.
-
-The service is open and unauthenticated, has CORS enabled, and is built on top of the metadelta library. There is no published rate-limit policy, so treat it as best-effort and cache results where you can.
 
 ## Try it
 
@@ -50,27 +36,31 @@ gem install newton-sdk
 luarocks install newton-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { NewtonSDK } from 'newton'
 
-const client = new NewtonSDK({})
+const client = new NewtonSDK({
+  apikey: process.env.NEWTON_APIKEY,
+})
 
+// Load abs data
+const abs = await client.Abs().load({})
+console.log(abs.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,21 +90,21 @@ The API exposes 15 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Abs** | Absolute value of an expression via `GET /api/v2/abs/:expression`. | `/abs/{expression}` |
-| **Arcco** | Inverse cosine (arccos) of an expression via `GET /api/v2/arccos/:expression`. | `/arccos/{expression}` |
-| **Arcsin** | Inverse sine (arcsin) of an expression via `GET /api/v2/arcsin/:expression`. | `/arcsin/{expression}` |
-| **Arctan** | Inverse tangent (arctan) of an expression via `GET /api/v2/arctan/:expression`. | `/arctan/{expression}` |
-| **Area** | Definite integral / area under a curve via `GET /api/v2/area/:c:d|f(x)`. | `/area/{expression}` |
-| **Cos** | Cosine of an expression via `GET /api/v2/cos/:expression`. | `/cos/{expression}` |
-| **Derive** | Symbolic derivative of an expression via `GET /api/v2/derive/:expression`. | `/derive/{expression}` |
-| **Factor** | Factored form of an expression via `GET /api/v2/factor/:expression`. | `/factor/{expression}` |
-| **Integrate** | Symbolic indefinite integral via `GET /api/v2/integrate/:expression`. | `/integrate/{expression}` |
-| **Log** | Logarithm of an expression via `GET /api/v2/log/:expression`. | `/log/{expression}` |
-| **Simplify** | Algebraic simplification of an expression via `GET /api/v2/simplify/:expression`. | `/simplify/{expression}` |
-| **Sin** | Sine of an expression via `GET /api/v2/sin/:expression`. | `/sin/{expression}` |
-| **Tan** | Tangent of an expression via `GET /api/v2/tan/:expression`. | `/tan/{expression}` |
-| **Tangent** | Tangent line to f(x) at point c via `GET /api/v2/tangent/:c|f(x)`. | `/tangent/{expression}` |
-| **Zero** | Real zeroes (roots) of an expression via `GET /api/v2/zeroes/:expression`. | `/zeroes/{expression}` |
+| **Abs** |  | `/abs/{expression}` |
+| **Arcco** |  | `/arccos/{expression}` |
+| **Arcsin** |  | `/arcsin/{expression}` |
+| **Arctan** |  | `/arctan/{expression}` |
+| **Area** |  | `/area/{expression}` |
+| **Cos** |  | `/cos/{expression}` |
+| **Derive** |  | `/derive/{expression}` |
+| **Factor** |  | `/factor/{expression}` |
+| **Integrate** |  | `/integrate/{expression}` |
+| **Log** |  | `/log/{expression}` |
+| **Simplify** |  | `/simplify/{expression}` |
+| **Sin** |  | `/sin/{expression}` |
+| **Tan** |  | `/tan/{expression}` |
+| **Tangent** |  | `/tangent/{expression}` |
+| **Zero** |  | `/zeroes/{expression}` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -124,15 +114,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from newton_sdk import NewtonSDK
 
-client = NewtonSDK({})
+client = NewtonSDK({
+    "apikey": os.environ.get("NEWTON_APIKEY"),
+})
 
 
 # Load a specific abs
-abs, err = client.Abs(None).load(
-    {"id": "example_id"}, None
-)
+abs, err = client.Abs().load({"id": "example_id"})
+print(abs)
 ```
 
 ### PHP
@@ -141,13 +133,14 @@ abs, err = client.Abs(None).load(
 <?php
 require_once 'newton_sdk.php';
 
-$client = new NewtonSDK([]);
+$client = new NewtonSDK([
+    "apikey" => getenv("NEWTON_APIKEY"),
+]);
 
 
 // Load a specific abs
-[$abs, $err] = $client->Abs(null)->load(
-    ["id" => "example_id"], null
-);
+[$abs, $err] = $client->Abs()->load(["id" => "example_id"]);
+print_r($abs);
 ```
 
 ### Golang
@@ -155,8 +148,13 @@ $client = new NewtonSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/newton-sdk/go"
 
-client := sdk.NewNewtonSDK(map[string]any{})
+client := sdk.NewNewtonSDK(map[string]any{
+    "apikey": os.Getenv("NEWTON_APIKEY"),
+})
 
+// Load abs data
+abs, err := client.Abs(nil).Load(map[string]any{}, nil)
+fmt.Println(abs)
 ```
 
 ### Ruby
@@ -164,13 +162,14 @@ client := sdk.NewNewtonSDK(map[string]any{})
 ```ruby
 require_relative "Newton_sdk"
 
-client = NewtonSDK.new({})
+client = NewtonSDK.new({
+  "apikey" => ENV["NEWTON_APIKEY"],
+})
 
 
 # Load a specific abs
-abs, err = client.Abs(nil).load(
-  { "id" => "example_id" }, nil
-)
+abs, err = client.Abs().load({ "id" => "example_id" })
+puts abs
 ```
 
 ### Lua
@@ -178,13 +177,14 @@ abs, err = client.Abs(nil).load(
 ```lua
 local sdk = require("newton_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("NEWTON_APIKEY"),
+})
 
 
 -- Load a specific abs
-local abs, err = client:Abs(nil):load(
-  { id = "example_id" }, nil
-)
+local abs, err = client:Abs():load({ id = "example_id" })
+print(abs)
 ```
 
 ## Unit testing in offline mode
@@ -203,25 +203,21 @@ const result = await client.Abs().load({ id: 'test01' })
 ### Python
 
 ```python
-client = NewtonSDK.test(None, None)
-result, err = client.Abs(None).load(
-    {"id": "test01"}, None
-)
+client = NewtonSDK.test()
+result, err = client.Abs().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = NewtonSDK::test(null, null);
-[$result, $err] = $client->Abs(null)->load(
-    ["id" => "test01"], null
-);
+$client = NewtonSDK::test();
+[$result, $err] = $client->Abs()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Abs(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -230,19 +226,15 @@ result, err := client.Abs(nil).Load(
 ### Ruby
 
 ```ruby
-client = NewtonSDK.test(nil, nil)
-result, err = client.Abs(nil).load(
-  { "id" => "test01" }, nil
-)
+client = NewtonSDK.test
+result, err = client.Abs().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Abs(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Abs():load({ id = "test01" })
 ```
 
 ## How it works
@@ -346,16 +338,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Newton API
-
-- Upstream: [https://newton.now.sh/api/v2](https://newton.now.sh/api/v2)
-- API docs: [https://github.com/aunyks/newton-api](https://github.com/aunyks/newton-api)
-
-- Licensed under the **GNU General Public License v3.0** (2016-2020).
-- Source is published on GitHub by the author, [Gerald Nash (aunyks)](https://github.com/aunyks/newton-api).
-- Derivative works that redistribute the service must remain under a GPL-compatible licence.
-- This SDK only wraps the public HTTP endpoints and does not relicense the upstream code.
 
 ---
 

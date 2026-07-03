@@ -111,6 +111,7 @@ function basicSetup(extra?: any) {
     'NEWTON_TEST_INTEGRATE_ENTID': idmap,
     'NEWTON_TEST_LIVE': 'FALSE',
     'NEWTON_TEST_EXPLAIN': 'FALSE',
+    'NEWTON_APIKEY': 'NONE',
   })
 
   idmap = env['NEWTON_TEST_INTEGRATE_ENTID']
@@ -120,6 +121,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new NewtonSDK(merge([
       {
+        apikey: env.NEWTON_APIKEY,
       },
       extra
     ]))

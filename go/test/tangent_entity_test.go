@@ -117,6 +117,7 @@ func tangentBasicSetup(extra map[string]any) *entityTestSetup {
 		"NEWTON_TEST_TANGENT_ENTID": idmap,
 		"NEWTON_TEST_LIVE":      "FALSE",
 		"NEWTON_TEST_EXPLAIN":   "FALSE",
+		"NEWTON_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["NEWTON_TEST_TANGENT_ENTID"])
@@ -127,6 +128,7 @@ func tangentBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["NEWTON_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["NEWTON_APIKEY"],
 			},
 			extra,
 		})

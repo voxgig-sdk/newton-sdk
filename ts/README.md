@@ -10,7 +10,7 @@ The TypeScript SDK for the Newton API — a type-safe, entity-oriented client wi
 
 ## Install
 ```bash
-npm install newton
+npm install @voxgig-sdk/newton
 ```
 ## Tutorial: your first API call
 

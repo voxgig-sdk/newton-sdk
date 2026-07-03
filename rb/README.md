@@ -10,13 +10,13 @@ The Ruby SDK for the Newton API — an entity-oriented client using idiomatic Ru
 
 ## Install
 ```bash
-gem install newton-sdk
+gem install voxgig-sdk-newton
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "newton-sdk"
+gem "voxgig-sdk-newton"
 ```
 
 Then run:

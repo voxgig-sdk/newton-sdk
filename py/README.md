@@ -10,7 +10,7 @@ The Python SDK for the Newton API — an entity-oriented client following Python
 
 ## Install
 ```bash
-pip install newton-sdk
+pip install voxgig-sdk-newton
 ```
 
 Or install from source:

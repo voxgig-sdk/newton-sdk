@@ -26,9 +26,9 @@ import { NewtonSDK } from '@voxgig-sdk/newton'
 
 const client = new NewtonSDK()
 
-// Load abs data
-const abs = await client.abs.load({})
-console.log(abs.data)
+// Load abs data (returns a Abs)
+const abs = await client.Abs().load()
+console.log(abs)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -98,8 +98,8 @@ from newton_sdk import NewtonSDK
 client = NewtonSDK()
 
 
-# Load a specific abs
-abs = client.abs.load({"id": "example_id"})
+# Load a specific abs (returns the record, raises on error)
+abs = client.Abs().load({"id": "example_id"})
 print(abs)
 ```
 
@@ -112,8 +112,8 @@ require_once 'newton_sdk.php';
 $client = new NewtonSDK();
 
 
-// Load a specific abs
-$abs = $client->abs()->load(["id" => "example_id"]);
+// Load a specific abs (returns the bare record; throws on error)
+$abs = $client->Abs()->load(["id" => "example_id"]);
 print_r($abs);
 ```
 
@@ -137,8 +137,8 @@ require_relative "Newton_sdk"
 client = NewtonSDK.new
 
 
-# Load a specific abs
-abs = client.abs.load({ "id" => "example_id" })
+# Load a specific abs (returns the bare record; raises on error)
+abs = client.Abs.load({ "id" => "example_id" })
 puts abs
 ```
 
@@ -151,7 +151,7 @@ local client = sdk.new()
 
 
 -- Load a specific abs
-local abs, err = client:abs():load({ id = "example_id" })
+local abs, err = client:Abs():load({ id = "example_id" })
 print(abs)
 ```
 
@@ -164,22 +164,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = NewtonSDK.test()
-const result = await client.abs.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const abs = await client.Abs().load({ id: 'test01' })
+// abs is a bare Abs populated with mock data
+console.log(abs)
 ```
 
 ### Python
 
 ```python
 client = NewtonSDK.test()
-result = client.abs.load({"id": "test01"})
+abs = client.Abs().load({"id": "test01"})
+print(abs)
 ```
 
 ### PHP
 
 ```php
-$client = NewtonSDK::test();
-$result = $client->abs()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = NewtonSDK::test([
+    "entity" => ["abs" => ["test01" => ["id" => "test01"]]],
+]);
+$abs = $client->Abs()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -194,15 +199,18 @@ result, err := client.Abs(nil).Load(
 ### Ruby
 
 ```ruby
-client = NewtonSDK.test
-result = client.abs.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = NewtonSDK.test({
+  "entity" => { "abs" => { "test01" => { "id" => "test01" } } },
+})
+abs = client.Abs.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:abs():load({ id = "test01" })
+local result, err = client:Abs():load({ id = "test01" })
 ```
 
 ## How it works
@@ -250,6 +258,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

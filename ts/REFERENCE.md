@@ -277,7 +277,7 @@ Alias for `NewtonSDK.test()`.
 ## AbsEntity
 
 ```ts
-const abs = client.abs
+const abs = client.Abs()
 ```
 
 ### Fields
@@ -295,7 +295,7 @@ const abs = client.abs
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.abs.load({ id: 'abs_id' })
+const result = await client.Abs().load({ id: 'abs_id' })
 ```
 
 ### Common Methods
@@ -329,7 +329,7 @@ Return a copy of the entity options.
 ## ArccoEntity
 
 ```ts
-const arcco = client.arcco
+const arcco = client.Arcco()
 ```
 
 ### Fields
@@ -347,7 +347,7 @@ const arcco = client.arcco
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.arcco.load({ id: 'arcco_id' })
+const result = await client.Arcco().load({ id: 'arcco_id' })
 ```
 
 ### Common Methods
@@ -381,7 +381,7 @@ Return a copy of the entity options.
 ## ArcsinEntity
 
 ```ts
-const arcsin = client.arcsin
+const arcsin = client.Arcsin()
 ```
 
 ### Fields
@@ -399,7 +399,7 @@ const arcsin = client.arcsin
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.arcsin.load({ id: 'arcsin_id' })
+const result = await client.Arcsin().load({ id: 'arcsin_id' })
 ```
 
 ### Common Methods
@@ -433,7 +433,7 @@ Return a copy of the entity options.
 ## ArctanEntity
 
 ```ts
-const arctan = client.arctan
+const arctan = client.Arctan()
 ```
 
 ### Fields
@@ -451,7 +451,7 @@ const arctan = client.arctan
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.arctan.load({ id: 'arctan_id' })
+const result = await client.Arctan().load({ id: 'arctan_id' })
 ```
 
 ### Common Methods
@@ -485,7 +485,7 @@ Return a copy of the entity options.
 ## AreaEntity
 
 ```ts
-const area = client.area
+const area = client.Area()
 ```
 
 ### Fields
@@ -503,7 +503,7 @@ const area = client.area
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.area.load({ id: 'area_id' })
+const result = await client.Area().load({ id: 'area_id' })
 ```
 
 ### Common Methods
@@ -537,7 +537,7 @@ Return a copy of the entity options.
 ## CosEntity
 
 ```ts
-const cos = client.cos
+const cos = client.Cos()
 ```
 
 ### Fields
@@ -555,7 +555,7 @@ const cos = client.cos
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.cos.load({ id: 'cos_id' })
+const result = await client.Cos().load({ id: 'cos_id' })
 ```
 
 ### Common Methods
@@ -589,7 +589,7 @@ Return a copy of the entity options.
 ## DeriveEntity
 
 ```ts
-const derive = client.derive
+const derive = client.Derive()
 ```
 
 ### Fields
@@ -607,7 +607,7 @@ const derive = client.derive
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.derive.load({ id: 'derive_id' })
+const result = await client.Derive().load({ id: 'derive_id' })
 ```
 
 ### Common Methods
@@ -641,7 +641,7 @@ Return a copy of the entity options.
 ## FactorEntity
 
 ```ts
-const factor = client.factor
+const factor = client.Factor()
 ```
 
 ### Fields
@@ -659,7 +659,7 @@ const factor = client.factor
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.factor.load({ id: 'factor_id' })
+const result = await client.Factor().load({ id: 'factor_id' })
 ```
 
 ### Common Methods
@@ -693,7 +693,7 @@ Return a copy of the entity options.
 ## IntegrateEntity
 
 ```ts
-const integrate = client.integrate
+const integrate = client.Integrate()
 ```
 
 ### Fields
@@ -711,7 +711,7 @@ const integrate = client.integrate
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.integrate.load({ id: 'integrate_id' })
+const result = await client.Integrate().load({ id: 'integrate_id' })
 ```
 
 ### Common Methods
@@ -745,7 +745,7 @@ Return a copy of the entity options.
 ## LogEntity
 
 ```ts
-const log = client.log
+const log = client.Log()
 ```
 
 ### Fields
@@ -763,7 +763,7 @@ const log = client.log
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.log.load({ id: 'log_id' })
+const result = await client.Log().load({ id: 'log_id' })
 ```
 
 ### Common Methods
@@ -797,7 +797,7 @@ Return a copy of the entity options.
 ## SimplifyEntity
 
 ```ts
-const simplify = client.simplify
+const simplify = client.Simplify()
 ```
 
 ### Fields
@@ -815,7 +815,7 @@ const simplify = client.simplify
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.simplify.load({ id: 'simplify_id' })
+const result = await client.Simplify().load({ id: 'simplify_id' })
 ```
 
 ### Common Methods
@@ -849,7 +849,7 @@ Return a copy of the entity options.
 ## SinEntity
 
 ```ts
-const sin = client.sin
+const sin = client.Sin()
 ```
 
 ### Fields
@@ -867,7 +867,7 @@ const sin = client.sin
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.sin.load({ id: 'sin_id' })
+const result = await client.Sin().load({ id: 'sin_id' })
 ```
 
 ### Common Methods
@@ -901,7 +901,7 @@ Return a copy of the entity options.
 ## TanEntity
 
 ```ts
-const tan = client.tan
+const tan = client.Tan()
 ```
 
 ### Fields
@@ -919,7 +919,7 @@ const tan = client.tan
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.tan.load({ id: 'tan_id' })
+const result = await client.Tan().load({ id: 'tan_id' })
 ```
 
 ### Common Methods
@@ -953,7 +953,7 @@ Return a copy of the entity options.
 ## TangentEntity
 
 ```ts
-const tangent = client.tangent
+const tangent = client.Tangent()
 ```
 
 ### Fields
@@ -971,7 +971,7 @@ const tangent = client.tangent
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.tangent.load({ id: 'tangent_id' })
+const result = await client.Tangent().load({ id: 'tangent_id' })
 ```
 
 ### Common Methods
@@ -1005,7 +1005,7 @@ Return a copy of the entity options.
 ## ZeroEntity
 
 ```ts
-const zero = client.zero
+const zero = client.Zero()
 ```
 
 ### Fields
@@ -1023,7 +1023,7 @@ const zero = client.zero
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.zero.load({ id: 'zero_id' })
+const result = await client.Zero().load({ id: 'zero_id' })
 ```
 
 ### Common Methods

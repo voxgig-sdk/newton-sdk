@@ -30,36 +30,30 @@ go mod edit -replace github.com/voxgig-sdk/newton-sdk/go=../newton-sdk/go
 This tutorial walks through creating a client, listing entities, and
 loading a specific record.
 
-### 1. Create a client
+### Quickstart
+
+A complete program: create a client, then call the entity operations.
+Each operation returns `(value, error)` — the value is the data itself
+(there is no `{ok, data}` wrapper), so check `err` and use the value
+directly.
 
 ```go
 package main
 
 import (
     "fmt"
-
     sdk "github.com/voxgig-sdk/newton-sdk/go"
-    "github.com/voxgig-sdk/newton-sdk/go/core"
 )
 
 func main() {
     client := sdk.New()
-```
 
-### 3. Load an abs
-
-```go
-    result, err = client.Abs(nil).Load(
-        map[string]any{"id": "example_id"}, nil,
-    )
+    // Load a single abs — the value is the loaded record.
+    abs, err := client.Abs(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil {
         panic(err)
     }
-
-    rm = core.ToMapAny(result)
-    if rm["ok"] == true {
-        fmt.Println(rm["data"])
-    }
+    fmt.Println(abs)
 }
 ```
 
@@ -110,10 +104,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-result, err := client.Abs(nil).Load(
+abs, err := client.Abs(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
-// result contains mock response data
+if err != nil {
+    panic(err)
+}
+fmt.Println(abs) // the loaded mock data
 ```
 
 ### Use a custom fetch function
@@ -190,15 +187,15 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `GetUtility` | `() *Utility` | Copy of the SDK utility object. |
 | `Prepare` | `(fetchargs map[string]any) (map[string]any, error)` | Build an HTTP request definition without sending. |
 | `Direct` | `(fetchargs map[string]any) (map[string]any, error)` | Build and send an HTTP request. |
-| `Abs` | `(data map[string]any) NewtonEntity` | Create a Abs entity instance. |
-| `Arcco` | `(data map[string]any) NewtonEntity` | Create a Arcco entity instance. |
-| `Arcsin` | `(data map[string]any) NewtonEntity` | Create a Arcsin entity instance. |
-| `Arctan` | `(data map[string]any) NewtonEntity` | Create a Arctan entity instance. |
-| `Area` | `(data map[string]any) NewtonEntity` | Create a Area entity instance. |
+| `Abs` | `(data map[string]any) NewtonEntity` | Create an Abs entity instance. |
+| `Arcco` | `(data map[string]any) NewtonEntity` | Create an Arcco entity instance. |
+| `Arcsin` | `(data map[string]any) NewtonEntity` | Create an Arcsin entity instance. |
+| `Arctan` | `(data map[string]any) NewtonEntity` | Create an Arctan entity instance. |
+| `Area` | `(data map[string]any) NewtonEntity` | Create an Area entity instance. |
 | `Cos` | `(data map[string]any) NewtonEntity` | Create a Cos entity instance. |
 | `Derive` | `(data map[string]any) NewtonEntity` | Create a Derive entity instance. |
 | `Factor` | `(data map[string]any) NewtonEntity` | Create a Factor entity instance. |
-| `Integrate` | `(data map[string]any) NewtonEntity` | Create a Integrate entity instance. |
+| `Integrate` | `(data map[string]any) NewtonEntity` | Create an Integrate entity instance. |
 | `Log` | `(data map[string]any) NewtonEntity` | Create a Log entity instance. |
 | `Simplify` | `(data map[string]any) NewtonEntity` | Create a Simplify entity instance. |
 | `Sin` | `(data map[string]any) NewtonEntity` | Create a Sin entity instance. |
@@ -224,17 +221,24 @@ All entities implement the `NewtonEntity` interface.
 
 ### Result shape
 
-Entity operations return `(any, error)`. The `any` value is a
-`map[string]any` with these keys:
+Entity operations return `(value, error)`. The `value` is the
+operation's data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `"ok"` | `bool` | `true` if the HTTP status is 2xx. |
-| `"status"` | `int` | HTTP status code. |
-| `"headers"` | `map[string]any` | Response headers. |
-| `"data"` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
+| `List` | a `[]any` of entity records |
 
-On error, `"ok"` is `false` and `"err"` contains the error value.
+Check `err` first, then use the value directly (or the typed
+`...Typed` variants, which return the entity's model struct and a typed
+slice):
+
+    abs, err := client.Abs(nil).Load(map[string]any{"id": "example_id"}, nil)
+    if err != nil { /* handle */ }
+    // abs is the loaded record
+
+Only `Direct()` returns a response envelope — a `map[string]any` with
+`"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
 
@@ -444,7 +448,11 @@ Create an instance: `abs := client.Abs(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Abs(nil).Load(map[string]any{"id": "abs_id"}, nil)
+abs, err := client.Abs(nil).Load(map[string]any{"id": "abs_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(abs) // the loaded record
 ```
 
 
@@ -469,7 +477,11 @@ Create an instance: `arcco := client.Arcco(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Arcco(nil).Load(map[string]any{"id": "arcco_id"}, nil)
+arcco, err := client.Arcco(nil).Load(map[string]any{"id": "arcco_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(arcco) // the loaded record
 ```
 
 
@@ -494,7 +506,11 @@ Create an instance: `arcsin := client.Arcsin(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Arcsin(nil).Load(map[string]any{"id": "arcsin_id"}, nil)
+arcsin, err := client.Arcsin(nil).Load(map[string]any{"id": "arcsin_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(arcsin) // the loaded record
 ```
 
 
@@ -519,7 +535,11 @@ Create an instance: `arctan := client.Arctan(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Arctan(nil).Load(map[string]any{"id": "arctan_id"}, nil)
+arctan, err := client.Arctan(nil).Load(map[string]any{"id": "arctan_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(arctan) // the loaded record
 ```
 
 
@@ -544,7 +564,11 @@ Create an instance: `area := client.Area(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Area(nil).Load(map[string]any{"id": "area_id"}, nil)
+area, err := client.Area(nil).Load(map[string]any{"id": "area_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(area) // the loaded record
 ```
 
 
@@ -569,7 +593,11 @@ Create an instance: `cos := client.Cos(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Cos(nil).Load(map[string]any{"id": "cos_id"}, nil)
+cos, err := client.Cos(nil).Load(map[string]any{"id": "cos_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(cos) // the loaded record
 ```
 
 
@@ -594,7 +622,11 @@ Create an instance: `derive := client.Derive(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Derive(nil).Load(map[string]any{"id": "derive_id"}, nil)
+derive, err := client.Derive(nil).Load(map[string]any{"id": "derive_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(derive) // the loaded record
 ```
 
 
@@ -619,7 +651,11 @@ Create an instance: `factor := client.Factor(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Factor(nil).Load(map[string]any{"id": "factor_id"}, nil)
+factor, err := client.Factor(nil).Load(map[string]any{"id": "factor_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(factor) // the loaded record
 ```
 
 
@@ -644,7 +680,11 @@ Create an instance: `integrate := client.Integrate(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Integrate(nil).Load(map[string]any{"id": "integrate_id"}, nil)
+integrate, err := client.Integrate(nil).Load(map[string]any{"id": "integrate_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(integrate) // the loaded record
 ```
 
 
@@ -669,7 +709,11 @@ Create an instance: `log := client.Log(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Log(nil).Load(map[string]any{"id": "log_id"}, nil)
+log, err := client.Log(nil).Load(map[string]any{"id": "log_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(log) // the loaded record
 ```
 
 
@@ -694,7 +738,11 @@ Create an instance: `simplify := client.Simplify(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Simplify(nil).Load(map[string]any{"id": "simplify_id"}, nil)
+simplify, err := client.Simplify(nil).Load(map[string]any{"id": "simplify_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(simplify) // the loaded record
 ```
 
 
@@ -719,7 +767,11 @@ Create an instance: `sin := client.Sin(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Sin(nil).Load(map[string]any{"id": "sin_id"}, nil)
+sin, err := client.Sin(nil).Load(map[string]any{"id": "sin_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(sin) // the loaded record
 ```
 
 
@@ -744,7 +796,11 @@ Create an instance: `tan := client.Tan(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Tan(nil).Load(map[string]any{"id": "tan_id"}, nil)
+tan, err := client.Tan(nil).Load(map[string]any{"id": "tan_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(tan) // the loaded record
 ```
 
 
@@ -769,7 +825,11 @@ Create an instance: `tangent := client.Tangent(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Tangent(nil).Load(map[string]any{"id": "tangent_id"}, nil)
+tangent, err := client.Tangent(nil).Load(map[string]any{"id": "tangent_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(tangent) // the loaded record
 ```
 
 
@@ -794,7 +854,11 @@ Create an instance: `zero := client.Zero(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Zero(nil).Load(map[string]any{"id": "zero_id"}, nil)
+zero, err := client.Zero(nil).Load(map[string]any{"id": "zero_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(zero) // the loaded record
 ```
 
 

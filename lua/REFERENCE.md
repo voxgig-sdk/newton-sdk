@@ -139,7 +139,7 @@ same parameters as `direct()`.
 ## AbsEntity
 
 ```lua
-local abs = client:abs(nil)
+local abs = client:Abs(nil)
 ```
 
 ### Fields
@@ -157,7 +157,7 @@ local abs = client:abs(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:abs():load({ id = "abs_id" })
+local result, err = client:Abs():load({ id = "abs_id" })
 ```
 
 ### Common Methods
@@ -193,7 +193,7 @@ Return the entity name.
 ## ArccoEntity
 
 ```lua
-local arcco = client:arcco(nil)
+local arcco = client:Arcco(nil)
 ```
 
 ### Fields
@@ -211,7 +211,7 @@ local arcco = client:arcco(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:arcco():load({ id = "arcco_id" })
+local result, err = client:Arcco():load({ id = "arcco_id" })
 ```
 
 ### Common Methods
@@ -247,7 +247,7 @@ Return the entity name.
 ## ArcsinEntity
 
 ```lua
-local arcsin = client:arcsin(nil)
+local arcsin = client:Arcsin(nil)
 ```
 
 ### Fields
@@ -265,7 +265,7 @@ local arcsin = client:arcsin(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:arcsin():load({ id = "arcsin_id" })
+local result, err = client:Arcsin():load({ id = "arcsin_id" })
 ```
 
 ### Common Methods
@@ -301,7 +301,7 @@ Return the entity name.
 ## ArctanEntity
 
 ```lua
-local arctan = client:arctan(nil)
+local arctan = client:Arctan(nil)
 ```
 
 ### Fields
@@ -319,7 +319,7 @@ local arctan = client:arctan(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:arctan():load({ id = "arctan_id" })
+local result, err = client:Arctan():load({ id = "arctan_id" })
 ```
 
 ### Common Methods
@@ -355,7 +355,7 @@ Return the entity name.
 ## AreaEntity
 
 ```lua
-local area = client:area(nil)
+local area = client:Area(nil)
 ```
 
 ### Fields
@@ -373,7 +373,7 @@ local area = client:area(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:area():load({ id = "area_id" })
+local result, err = client:Area():load({ id = "area_id" })
 ```
 
 ### Common Methods
@@ -409,7 +409,7 @@ Return the entity name.
 ## CosEntity
 
 ```lua
-local cos = client:cos(nil)
+local cos = client:Cos(nil)
 ```
 
 ### Fields
@@ -427,7 +427,7 @@ local cos = client:cos(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:cos():load({ id = "cos_id" })
+local result, err = client:Cos():load({ id = "cos_id" })
 ```
 
 ### Common Methods
@@ -463,7 +463,7 @@ Return the entity name.
 ## DeriveEntity
 
 ```lua
-local derive = client:derive(nil)
+local derive = client:Derive(nil)
 ```
 
 ### Fields
@@ -481,7 +481,7 @@ local derive = client:derive(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:derive():load({ id = "derive_id" })
+local result, err = client:Derive():load({ id = "derive_id" })
 ```
 
 ### Common Methods
@@ -517,7 +517,7 @@ Return the entity name.
 ## FactorEntity
 
 ```lua
-local factor = client:factor(nil)
+local factor = client:Factor(nil)
 ```
 
 ### Fields
@@ -535,7 +535,7 @@ local factor = client:factor(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:factor():load({ id = "factor_id" })
+local result, err = client:Factor():load({ id = "factor_id" })
 ```
 
 ### Common Methods
@@ -571,7 +571,7 @@ Return the entity name.
 ## IntegrateEntity
 
 ```lua
-local integrate = client:integrate(nil)
+local integrate = client:Integrate(nil)
 ```
 
 ### Fields
@@ -589,7 +589,7 @@ local integrate = client:integrate(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:integrate():load({ id = "integrate_id" })
+local result, err = client:Integrate():load({ id = "integrate_id" })
 ```
 
 ### Common Methods
@@ -625,7 +625,7 @@ Return the entity name.
 ## LogEntity
 
 ```lua
-local log = client:log(nil)
+local log = client:Log(nil)
 ```
 
 ### Fields
@@ -643,7 +643,7 @@ local log = client:log(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:log():load({ id = "log_id" })
+local result, err = client:Log():load({ id = "log_id" })
 ```
 
 ### Common Methods
@@ -679,7 +679,7 @@ Return the entity name.
 ## SimplifyEntity
 
 ```lua
-local simplify = client:simplify(nil)
+local simplify = client:Simplify(nil)
 ```
 
 ### Fields
@@ -697,7 +697,7 @@ local simplify = client:simplify(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:simplify():load({ id = "simplify_id" })
+local result, err = client:Simplify():load({ id = "simplify_id" })
 ```
 
 ### Common Methods
@@ -733,7 +733,7 @@ Return the entity name.
 ## SinEntity
 
 ```lua
-local sin = client:sin(nil)
+local sin = client:Sin(nil)
 ```
 
 ### Fields
@@ -751,7 +751,7 @@ local sin = client:sin(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:sin():load({ id = "sin_id" })
+local result, err = client:Sin():load({ id = "sin_id" })
 ```
 
 ### Common Methods
@@ -787,7 +787,7 @@ Return the entity name.
 ## TanEntity
 
 ```lua
-local tan = client:tan(nil)
+local tan = client:Tan(nil)
 ```
 
 ### Fields
@@ -805,7 +805,7 @@ local tan = client:tan(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:tan():load({ id = "tan_id" })
+local result, err = client:Tan():load({ id = "tan_id" })
 ```
 
 ### Common Methods
@@ -841,7 +841,7 @@ Return the entity name.
 ## TangentEntity
 
 ```lua
-local tangent = client:tangent(nil)
+local tangent = client:Tangent(nil)
 ```
 
 ### Fields
@@ -859,7 +859,7 @@ local tangent = client:tangent(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:tangent():load({ id = "tangent_id" })
+local result, err = client:Tangent():load({ id = "tangent_id" })
 ```
 
 ### Common Methods
@@ -895,7 +895,7 @@ Return the entity name.
 ## ZeroEntity
 
 ```lua
-local zero = client:zero(nil)
+local zero = client:Zero(nil)
 ```
 
 ### Fields
@@ -913,7 +913,7 @@ local zero = client:zero(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:zero():load({ id = "zero_id" })
+local result, err = client:Zero():load({ id = "zero_id" })
 ```
 
 ### Common Methods

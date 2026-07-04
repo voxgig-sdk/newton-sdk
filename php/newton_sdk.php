@@ -233,10 +233,10 @@ class NewtonSDK
 
     private $_abs = null;
 
-    // Idiomatic facade: $client->abs()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Abs() (PHP method
-    // names are case-insensitive).
-    public function abs($data = null)
+    // Canonical facade: $client->Abs()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->abs()
+    // resolves here too.
+    public function Abs($data = null)
     {
         require_once __DIR__ . '/entity/abs_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class NewtonSDK
 
     private $_arcco = null;
 
-    // Idiomatic facade: $client->arcco()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Arcco() (PHP method
-    // names are case-insensitive).
-    public function arcco($data = null)
+    // Canonical facade: $client->Arcco()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->arcco()
+    // resolves here too.
+    public function Arcco($data = null)
     {
         require_once __DIR__ . '/entity/arcco_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class NewtonSDK
 
     private $_arcsin = null;
 
-    // Idiomatic facade: $client->arcsin()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Arcsin() (PHP method
-    // names are case-insensitive).
-    public function arcsin($data = null)
+    // Canonical facade: $client->Arcsin()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->arcsin()
+    // resolves here too.
+    public function Arcsin($data = null)
     {
         require_once __DIR__ . '/entity/arcsin_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class NewtonSDK
 
     private $_arctan = null;
 
-    // Idiomatic facade: $client->arctan()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Arctan() (PHP method
-    // names are case-insensitive).
-    public function arctan($data = null)
+    // Canonical facade: $client->Arctan()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->arctan()
+    // resolves here too.
+    public function Arctan($data = null)
     {
         require_once __DIR__ . '/entity/arctan_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class NewtonSDK
 
     private $_area = null;
 
-    // Idiomatic facade: $client->area()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Area() (PHP method
-    // names are case-insensitive).
-    public function area($data = null)
+    // Canonical facade: $client->Area()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->area()
+    // resolves here too.
+    public function Area($data = null)
     {
         require_once __DIR__ . '/entity/area_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class NewtonSDK
 
     private $_cos = null;
 
-    // Idiomatic facade: $client->cos()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Cos() (PHP method
-    // names are case-insensitive).
-    public function cos($data = null)
+    // Canonical facade: $client->Cos()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->cos()
+    // resolves here too.
+    public function Cos($data = null)
     {
         require_once __DIR__ . '/entity/cos_entity.php';
         if ($data === null) {
@@ -341,10 +341,10 @@ class NewtonSDK
 
     private $_derive = null;
 
-    // Idiomatic facade: $client->derive()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Derive() (PHP method
-    // names are case-insensitive).
-    public function derive($data = null)
+    // Canonical facade: $client->Derive()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->derive()
+    // resolves here too.
+    public function Derive($data = null)
     {
         require_once __DIR__ . '/entity/derive_entity.php';
         if ($data === null) {
@@ -359,10 +359,10 @@ class NewtonSDK
 
     private $_factor = null;
 
-    // Idiomatic facade: $client->factor()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Factor() (PHP method
-    // names are case-insensitive).
-    public function factor($data = null)
+    // Canonical facade: $client->Factor()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->factor()
+    // resolves here too.
+    public function Factor($data = null)
     {
         require_once __DIR__ . '/entity/factor_entity.php';
         if ($data === null) {
@@ -377,10 +377,10 @@ class NewtonSDK
 
     private $_integrate = null;
 
-    // Idiomatic facade: $client->integrate()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Integrate() (PHP method
-    // names are case-insensitive).
-    public function integrate($data = null)
+    // Canonical facade: $client->Integrate()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->integrate()
+    // resolves here too.
+    public function Integrate($data = null)
     {
         require_once __DIR__ . '/entity/integrate_entity.php';
         if ($data === null) {
@@ -395,10 +395,10 @@ class NewtonSDK
 
     private $_log = null;
 
-    // Idiomatic facade: $client->log()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Log() (PHP method
-    // names are case-insensitive).
-    public function log($data = null)
+    // Canonical facade: $client->Log()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->log()
+    // resolves here too.
+    public function Log($data = null)
     {
         require_once __DIR__ . '/entity/log_entity.php';
         if ($data === null) {
@@ -413,10 +413,10 @@ class NewtonSDK
 
     private $_simplify = null;
 
-    // Idiomatic facade: $client->simplify()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Simplify() (PHP method
-    // names are case-insensitive).
-    public function simplify($data = null)
+    // Canonical facade: $client->Simplify()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->simplify()
+    // resolves here too.
+    public function Simplify($data = null)
     {
         require_once __DIR__ . '/entity/simplify_entity.php';
         if ($data === null) {
@@ -431,10 +431,10 @@ class NewtonSDK
 
     private $_sin = null;
 
-    // Idiomatic facade: $client->sin()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Sin() (PHP method
-    // names are case-insensitive).
-    public function sin($data = null)
+    // Canonical facade: $client->Sin()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->sin()
+    // resolves here too.
+    public function Sin($data = null)
     {
         require_once __DIR__ . '/entity/sin_entity.php';
         if ($data === null) {
@@ -449,10 +449,10 @@ class NewtonSDK
 
     private $_tan = null;
 
-    // Idiomatic facade: $client->tan()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Tan() (PHP method
-    // names are case-insensitive).
-    public function tan($data = null)
+    // Canonical facade: $client->Tan()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->tan()
+    // resolves here too.
+    public function Tan($data = null)
     {
         require_once __DIR__ . '/entity/tan_entity.php';
         if ($data === null) {
@@ -467,10 +467,10 @@ class NewtonSDK
 
     private $_tangent = null;
 
-    // Idiomatic facade: $client->tangent()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Tangent() (PHP method
-    // names are case-insensitive).
-    public function tangent($data = null)
+    // Canonical facade: $client->Tangent()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->tangent()
+    // resolves here too.
+    public function Tangent($data = null)
     {
         require_once __DIR__ . '/entity/tangent_entity.php';
         if ($data === null) {
@@ -485,10 +485,10 @@ class NewtonSDK
 
     private $_zero = null;
 
-    // Idiomatic facade: $client->zero()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Zero() (PHP method
-    // names are case-insensitive).
-    public function zero($data = null)
+    // Canonical facade: $client->Zero()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->zero()
+    // resolves here too.
+    public function Zero($data = null)
     {
         require_once __DIR__ . '/entity/zero_entity.php';
         if ($data === null) {

@@ -30,11 +30,14 @@ const client = new NewtonSDK()
 
 ### 3. Load an abs
 
-```ts
-const result = await client.abs.load({ id: 'example_id' })
+`load()` returns the entity directly and throws on failure:
 
-if (result.ok) {
-  console.log(result.data)
+```ts
+try {
+  const abs = await client.Abs().load({ id: 'example_id' })
+  console.log(abs)
+} catch (err) {
+  console.error('load failed:', err)
 }
 ```
 
@@ -52,6 +55,9 @@ const result = await client.direct({
   params: { id: 'example' },
 })
 
+if (result instanceof Error) {
+  throw result
+}
 if (result.ok) {
   console.log(result.status)  // 200
   console.log(result.data)    // response body
@@ -80,9 +86,9 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = NewtonSDK.test()
 
-const result = await client.abs.load({ id: 'test01' })
-// result.ok === true
-// result.data contains mock response data
+const abs = await client.Abs().load({ id: 'test01' })
+// abs is a bare entity populated with mock response data
+console.log(abs)
 ```
 
 You can also use the instance method:
@@ -97,7 +103,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.abs
+const entity = client.Abs()
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -175,15 +181,15 @@ new NewtonSDK(options?: {
 | `utility()` | `Utility` | Deep copy of the SDK utility object. |
 | `prepare(fetchargs?)` | `Promise<FetchDef>` | Build an HTTP request definition without sending it. |
 | `direct(fetchargs?)` | `Promise<DirectResult>` | Build and send an HTTP request. |
-| `Abs(data?)` | `AbsEntity` | Create a Abs entity instance. |
-| `Arcco(data?)` | `ArccoEntity` | Create a Arcco entity instance. |
-| `Arcsin(data?)` | `ArcsinEntity` | Create a Arcsin entity instance. |
-| `Arctan(data?)` | `ArctanEntity` | Create a Arctan entity instance. |
-| `Area(data?)` | `AreaEntity` | Create a Area entity instance. |
+| `Abs(data?)` | `AbsEntity` | Create an Abs entity instance. |
+| `Arcco(data?)` | `ArccoEntity` | Create an Arcco entity instance. |
+| `Arcsin(data?)` | `ArcsinEntity` | Create an Arcsin entity instance. |
+| `Arctan(data?)` | `ArctanEntity` | Create an Arctan entity instance. |
+| `Area(data?)` | `AreaEntity` | Create an Area entity instance. |
 | `Cos(data?)` | `CosEntity` | Create a Cos entity instance. |
 | `Derive(data?)` | `DeriveEntity` | Create a Derive entity instance. |
 | `Factor(data?)` | `FactorEntity` | Create a Factor entity instance. |
-| `Integrate(data?)` | `IntegrateEntity` | Create a Integrate entity instance. |
+| `Integrate(data?)` | `IntegrateEntity` | Create an Integrate entity instance. |
 | `Log(data?)` | `LogEntity` | Create a Log entity instance. |
 | `Simplify(data?)` | `SimplifyEntity` | Create a Simplify entity instance. |
 | `Sin(data?)` | `SinEntity` | Create a Sin entity instance. |
@@ -206,29 +212,30 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `load(reqmatch?, ctrl?): Promise<Result>` | Load a single entity by match criteria. |
-| `list` | `list(reqmatch?, ctrl?): Promise<Result>` | List entities matching the criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Result>` | Create a new entity. |
-| `update` | `update(reqdata?, ctrl?): Promise<Result>` | Update an existing entity. |
-| `remove` | `remove(reqmatch?, ctrl?): Promise<Result>` | Remove an entity. |
+| `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
+| `list` | `list(reqmatch?, ctrl?): Promise<Entity[]>` | List entities matching the criteria. |
+| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
+| `update` | `update(reqdata?, ctrl?): Promise<Entity>` | Update an existing entity. |
+| `remove` | `remove(reqmatch?, ctrl?): Promise<void>` | Remove an entity. |
 | `data` | `data(data?): any` | Get or set entity data. |
 | `match` | `match(match?): any` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
 | `client` | `client(): NewtonSDK` | Return the parent SDK client. |
 | `entopts` | `entopts(): object` | Return a copy of the entity options. |
 
-#### Result shape
+#### Return values
 
-All entity operations return a Result object:
+Entity operations resolve to the entity data directly — there is no
+result envelope:
 
-```ts
-{
-  ok: boolean      // true if the HTTP status is 2xx
-  status: number   // HTTP status code
-  headers: object  // response headers
-  data: any        // parsed JSON response body
-}
-```
+- `load`, `create` and `update` resolve to a single entity object.
+- `list` resolves to an **array** of entity objects (iterate it directly;
+  there is no `.data` and no `.ok`).
+- `remove` resolves to `void`.
+
+On a failed request these methods **throw**, so wrap calls in
+`try`/`catch` to handle errors. Only `direct()` returns the result
+envelope described below.
 
 ### DirectResult shape
 
@@ -447,7 +454,7 @@ API path: `/zeroes/{expression}`
 
 ### Abs
 
-Create an instance: `const abs = client.abs`
+Create an instance: `const abs = client.Abs()`
 
 #### Operations
 
@@ -466,13 +473,13 @@ Create an instance: `const abs = client.abs`
 #### Example: Load
 
 ```ts
-const abs = await client.abs.load({ id: 'abs_id' })
+const abs = await client.Abs().load({ id: 'abs_id' })
 ```
 
 
 ### Arcco
 
-Create an instance: `const arcco = client.arcco`
+Create an instance: `const arcco = client.Arcco()`
 
 #### Operations
 
@@ -491,13 +498,13 @@ Create an instance: `const arcco = client.arcco`
 #### Example: Load
 
 ```ts
-const arcco = await client.arcco.load({ id: 'arcco_id' })
+const arcco = await client.Arcco().load({ id: 'arcco_id' })
 ```
 
 
 ### Arcsin
 
-Create an instance: `const arcsin = client.arcsin`
+Create an instance: `const arcsin = client.Arcsin()`
 
 #### Operations
 
@@ -516,13 +523,13 @@ Create an instance: `const arcsin = client.arcsin`
 #### Example: Load
 
 ```ts
-const arcsin = await client.arcsin.load({ id: 'arcsin_id' })
+const arcsin = await client.Arcsin().load({ id: 'arcsin_id' })
 ```
 
 
 ### Arctan
 
-Create an instance: `const arctan = client.arctan`
+Create an instance: `const arctan = client.Arctan()`
 
 #### Operations
 
@@ -541,13 +548,13 @@ Create an instance: `const arctan = client.arctan`
 #### Example: Load
 
 ```ts
-const arctan = await client.arctan.load({ id: 'arctan_id' })
+const arctan = await client.Arctan().load({ id: 'arctan_id' })
 ```
 
 
 ### Area
 
-Create an instance: `const area = client.area`
+Create an instance: `const area = client.Area()`
 
 #### Operations
 
@@ -566,13 +573,13 @@ Create an instance: `const area = client.area`
 #### Example: Load
 
 ```ts
-const area = await client.area.load({ id: 'area_id' })
+const area = await client.Area().load({ id: 'area_id' })
 ```
 
 
 ### Cos
 
-Create an instance: `const cos = client.cos`
+Create an instance: `const cos = client.Cos()`
 
 #### Operations
 
@@ -591,13 +598,13 @@ Create an instance: `const cos = client.cos`
 #### Example: Load
 
 ```ts
-const cos = await client.cos.load({ id: 'cos_id' })
+const cos = await client.Cos().load({ id: 'cos_id' })
 ```
 
 
 ### Derive
 
-Create an instance: `const derive = client.derive`
+Create an instance: `const derive = client.Derive()`
 
 #### Operations
 
@@ -616,13 +623,13 @@ Create an instance: `const derive = client.derive`
 #### Example: Load
 
 ```ts
-const derive = await client.derive.load({ id: 'derive_id' })
+const derive = await client.Derive().load({ id: 'derive_id' })
 ```
 
 
 ### Factor
 
-Create an instance: `const factor = client.factor`
+Create an instance: `const factor = client.Factor()`
 
 #### Operations
 
@@ -641,13 +648,13 @@ Create an instance: `const factor = client.factor`
 #### Example: Load
 
 ```ts
-const factor = await client.factor.load({ id: 'factor_id' })
+const factor = await client.Factor().load({ id: 'factor_id' })
 ```
 
 
 ### Integrate
 
-Create an instance: `const integrate = client.integrate`
+Create an instance: `const integrate = client.Integrate()`
 
 #### Operations
 
@@ -666,13 +673,13 @@ Create an instance: `const integrate = client.integrate`
 #### Example: Load
 
 ```ts
-const integrate = await client.integrate.load({ id: 'integrate_id' })
+const integrate = await client.Integrate().load({ id: 'integrate_id' })
 ```
 
 
 ### Log
 
-Create an instance: `const log = client.log`
+Create an instance: `const log = client.Log()`
 
 #### Operations
 
@@ -691,13 +698,13 @@ Create an instance: `const log = client.log`
 #### Example: Load
 
 ```ts
-const log = await client.log.load({ id: 'log_id' })
+const log = await client.Log().load({ id: 'log_id' })
 ```
 
 
 ### Simplify
 
-Create an instance: `const simplify = client.simplify`
+Create an instance: `const simplify = client.Simplify()`
 
 #### Operations
 
@@ -716,13 +723,13 @@ Create an instance: `const simplify = client.simplify`
 #### Example: Load
 
 ```ts
-const simplify = await client.simplify.load({ id: 'simplify_id' })
+const simplify = await client.Simplify().load({ id: 'simplify_id' })
 ```
 
 
 ### Sin
 
-Create an instance: `const sin = client.sin`
+Create an instance: `const sin = client.Sin()`
 
 #### Operations
 
@@ -741,13 +748,13 @@ Create an instance: `const sin = client.sin`
 #### Example: Load
 
 ```ts
-const sin = await client.sin.load({ id: 'sin_id' })
+const sin = await client.Sin().load({ id: 'sin_id' })
 ```
 
 
 ### Tan
 
-Create an instance: `const tan = client.tan`
+Create an instance: `const tan = client.Tan()`
 
 #### Operations
 
@@ -766,13 +773,13 @@ Create an instance: `const tan = client.tan`
 #### Example: Load
 
 ```ts
-const tan = await client.tan.load({ id: 'tan_id' })
+const tan = await client.Tan().load({ id: 'tan_id' })
 ```
 
 
 ### Tangent
 
-Create an instance: `const tangent = client.tangent`
+Create an instance: `const tangent = client.Tangent()`
 
 #### Operations
 
@@ -791,13 +798,13 @@ Create an instance: `const tangent = client.tangent`
 #### Example: Load
 
 ```ts
-const tangent = await client.tangent.load({ id: 'tangent_id' })
+const tangent = await client.Tangent().load({ id: 'tangent_id' })
 ```
 
 
 ### Zero
 
-Create an instance: `const zero = client.zero`
+Create an instance: `const zero = client.Zero()`
 
 #### Operations
 
@@ -816,7 +823,7 @@ Create an instance: `const zero = client.zero`
 #### Example: Load
 
 ```ts
-const zero = await client.zero.load({ id: 'zero_id' })
+const zero = await client.Zero().load({ id: 'zero_id' })
 ```
 
 
@@ -887,7 +894,7 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const abs = client.abs
+const abs = client.Abs()
 await abs.load({ id: "example_id" })
 
 // abs.data() now returns the loaded abs data

@@ -220,249 +220,99 @@ class NewtonSDK:
         }
 
 
-    @property
-    def abs(self):
-        """Idiomatic facade: client.abs.list() / client.abs.load({"id": ...})."""
-        from entity.abs_entity import AbsEntity
-        cached = getattr(self, "_abs", None)
-        if cached is None:
-            cached = AbsEntity(self, None)
-            self._abs = cached
-        return cached
-
-    def Abs(self, data=None):
-        # Deprecated: use client.abs instead.
+    def Abs(self, data=None) -> "AbsEntity":
+        """Entity factory: client.Abs().list({}) / client.Abs().load({"id": ...})."""
         from entity.abs_entity import AbsEntity
         return AbsEntity(self, data)
 
 
-    @property
-    def arcco(self):
-        """Idiomatic facade: client.arcco.list() / client.arcco.load({"id": ...})."""
-        from entity.arcco_entity import ArccoEntity
-        cached = getattr(self, "_arcco", None)
-        if cached is None:
-            cached = ArccoEntity(self, None)
-            self._arcco = cached
-        return cached
-
-    def Arcco(self, data=None):
-        # Deprecated: use client.arcco instead.
+    def Arcco(self, data=None) -> "ArccoEntity":
+        """Entity factory: client.Arcco().list({}) / client.Arcco().load({"id": ...})."""
         from entity.arcco_entity import ArccoEntity
         return ArccoEntity(self, data)
 
 
-    @property
-    def arcsin(self):
-        """Idiomatic facade: client.arcsin.list() / client.arcsin.load({"id": ...})."""
-        from entity.arcsin_entity import ArcsinEntity
-        cached = getattr(self, "_arcsin", None)
-        if cached is None:
-            cached = ArcsinEntity(self, None)
-            self._arcsin = cached
-        return cached
-
-    def Arcsin(self, data=None):
-        # Deprecated: use client.arcsin instead.
+    def Arcsin(self, data=None) -> "ArcsinEntity":
+        """Entity factory: client.Arcsin().list({}) / client.Arcsin().load({"id": ...})."""
         from entity.arcsin_entity import ArcsinEntity
         return ArcsinEntity(self, data)
 
 
-    @property
-    def arctan(self):
-        """Idiomatic facade: client.arctan.list() / client.arctan.load({"id": ...})."""
-        from entity.arctan_entity import ArctanEntity
-        cached = getattr(self, "_arctan", None)
-        if cached is None:
-            cached = ArctanEntity(self, None)
-            self._arctan = cached
-        return cached
-
-    def Arctan(self, data=None):
-        # Deprecated: use client.arctan instead.
+    def Arctan(self, data=None) -> "ArctanEntity":
+        """Entity factory: client.Arctan().list({}) / client.Arctan().load({"id": ...})."""
         from entity.arctan_entity import ArctanEntity
         return ArctanEntity(self, data)
 
 
-    @property
-    def area(self):
-        """Idiomatic facade: client.area.list() / client.area.load({"id": ...})."""
-        from entity.area_entity import AreaEntity
-        cached = getattr(self, "_area", None)
-        if cached is None:
-            cached = AreaEntity(self, None)
-            self._area = cached
-        return cached
-
-    def Area(self, data=None):
-        # Deprecated: use client.area instead.
+    def Area(self, data=None) -> "AreaEntity":
+        """Entity factory: client.Area().list({}) / client.Area().load({"id": ...})."""
         from entity.area_entity import AreaEntity
         return AreaEntity(self, data)
 
 
-    @property
-    def cos(self):
-        """Idiomatic facade: client.cos.list() / client.cos.load({"id": ...})."""
-        from entity.cos_entity import CosEntity
-        cached = getattr(self, "_cos", None)
-        if cached is None:
-            cached = CosEntity(self, None)
-            self._cos = cached
-        return cached
-
-    def Cos(self, data=None):
-        # Deprecated: use client.cos instead.
+    def Cos(self, data=None) -> "CosEntity":
+        """Entity factory: client.Cos().list({}) / client.Cos().load({"id": ...})."""
         from entity.cos_entity import CosEntity
         return CosEntity(self, data)
 
 
-    @property
-    def derive(self):
-        """Idiomatic facade: client.derive.list() / client.derive.load({"id": ...})."""
-        from entity.derive_entity import DeriveEntity
-        cached = getattr(self, "_derive", None)
-        if cached is None:
-            cached = DeriveEntity(self, None)
-            self._derive = cached
-        return cached
-
-    def Derive(self, data=None):
-        # Deprecated: use client.derive instead.
+    def Derive(self, data=None) -> "DeriveEntity":
+        """Entity factory: client.Derive().list({}) / client.Derive().load({"id": ...})."""
         from entity.derive_entity import DeriveEntity
         return DeriveEntity(self, data)
 
 
-    @property
-    def factor(self):
-        """Idiomatic facade: client.factor.list() / client.factor.load({"id": ...})."""
-        from entity.factor_entity import FactorEntity
-        cached = getattr(self, "_factor", None)
-        if cached is None:
-            cached = FactorEntity(self, None)
-            self._factor = cached
-        return cached
-
-    def Factor(self, data=None):
-        # Deprecated: use client.factor instead.
+    def Factor(self, data=None) -> "FactorEntity":
+        """Entity factory: client.Factor().list({}) / client.Factor().load({"id": ...})."""
         from entity.factor_entity import FactorEntity
         return FactorEntity(self, data)
 
 
-    @property
-    def integrate(self):
-        """Idiomatic facade: client.integrate.list() / client.integrate.load({"id": ...})."""
-        from entity.integrate_entity import IntegrateEntity
-        cached = getattr(self, "_integrate", None)
-        if cached is None:
-            cached = IntegrateEntity(self, None)
-            self._integrate = cached
-        return cached
-
-    def Integrate(self, data=None):
-        # Deprecated: use client.integrate instead.
+    def Integrate(self, data=None) -> "IntegrateEntity":
+        """Entity factory: client.Integrate().list({}) / client.Integrate().load({"id": ...})."""
         from entity.integrate_entity import IntegrateEntity
         return IntegrateEntity(self, data)
 
 
-    @property
-    def log(self):
-        """Idiomatic facade: client.log.list() / client.log.load({"id": ...})."""
-        from entity.log_entity import LogEntity
-        cached = getattr(self, "_log", None)
-        if cached is None:
-            cached = LogEntity(self, None)
-            self._log = cached
-        return cached
-
-    def Log(self, data=None):
-        # Deprecated: use client.log instead.
+    def Log(self, data=None) -> "LogEntity":
+        """Entity factory: client.Log().list({}) / client.Log().load({"id": ...})."""
         from entity.log_entity import LogEntity
         return LogEntity(self, data)
 
 
-    @property
-    def simplify(self):
-        """Idiomatic facade: client.simplify.list() / client.simplify.load({"id": ...})."""
-        from entity.simplify_entity import SimplifyEntity
-        cached = getattr(self, "_simplify", None)
-        if cached is None:
-            cached = SimplifyEntity(self, None)
-            self._simplify = cached
-        return cached
-
-    def Simplify(self, data=None):
-        # Deprecated: use client.simplify instead.
+    def Simplify(self, data=None) -> "SimplifyEntity":
+        """Entity factory: client.Simplify().list({}) / client.Simplify().load({"id": ...})."""
         from entity.simplify_entity import SimplifyEntity
         return SimplifyEntity(self, data)
 
 
-    @property
-    def sin(self):
-        """Idiomatic facade: client.sin.list() / client.sin.load({"id": ...})."""
-        from entity.sin_entity import SinEntity
-        cached = getattr(self, "_sin", None)
-        if cached is None:
-            cached = SinEntity(self, None)
-            self._sin = cached
-        return cached
-
-    def Sin(self, data=None):
-        # Deprecated: use client.sin instead.
+    def Sin(self, data=None) -> "SinEntity":
+        """Entity factory: client.Sin().list({}) / client.Sin().load({"id": ...})."""
         from entity.sin_entity import SinEntity
         return SinEntity(self, data)
 
 
-    @property
-    def tan(self):
-        """Idiomatic facade: client.tan.list() / client.tan.load({"id": ...})."""
-        from entity.tan_entity import TanEntity
-        cached = getattr(self, "_tan", None)
-        if cached is None:
-            cached = TanEntity(self, None)
-            self._tan = cached
-        return cached
-
-    def Tan(self, data=None):
-        # Deprecated: use client.tan instead.
+    def Tan(self, data=None) -> "TanEntity":
+        """Entity factory: client.Tan().list({}) / client.Tan().load({"id": ...})."""
         from entity.tan_entity import TanEntity
         return TanEntity(self, data)
 
 
-    @property
-    def tangent(self):
-        """Idiomatic facade: client.tangent.list() / client.tangent.load({"id": ...})."""
-        from entity.tangent_entity import TangentEntity
-        cached = getattr(self, "_tangent", None)
-        if cached is None:
-            cached = TangentEntity(self, None)
-            self._tangent = cached
-        return cached
-
-    def Tangent(self, data=None):
-        # Deprecated: use client.tangent instead.
+    def Tangent(self, data=None) -> "TangentEntity":
+        """Entity factory: client.Tangent().list({}) / client.Tangent().load({"id": ...})."""
         from entity.tangent_entity import TangentEntity
         return TangentEntity(self, data)
 
 
-    @property
-    def zero(self):
-        """Idiomatic facade: client.zero.list() / client.zero.load({"id": ...})."""
-        from entity.zero_entity import ZeroEntity
-        cached = getattr(self, "_zero", None)
-        if cached is None:
-            cached = ZeroEntity(self, None)
-            self._zero = cached
-        return cached
-
-    def Zero(self, data=None):
-        # Deprecated: use client.zero instead.
+    def Zero(self, data=None) -> "ZeroEntity":
+        """Entity factory: client.Zero().list({}) / client.Zero().load({"id": ...})."""
         from entity.zero_entity import ZeroEntity
         return ZeroEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "NewtonSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -482,3 +332,23 @@ class NewtonSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.abs_entity import AbsEntity
+    from entity.arcco_entity import ArccoEntity
+    from entity.arcsin_entity import ArcsinEntity
+    from entity.arctan_entity import ArctanEntity
+    from entity.area_entity import AreaEntity
+    from entity.cos_entity import CosEntity
+    from entity.derive_entity import DeriveEntity
+    from entity.factor_entity import FactorEntity
+    from entity.integrate_entity import IntegrateEntity
+    from entity.log_entity import LogEntity
+    from entity.simplify_entity import SimplifyEntity
+    from entity.sin_entity import SinEntity
+    from entity.tan_entity import TanEntity
+    from entity.tangent_entity import TangentEntity
+    from entity.zero_entity import ZeroEntity

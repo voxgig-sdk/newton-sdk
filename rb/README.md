@@ -32,8 +32,9 @@ client = NewtonSDK.new
 
 ```ruby
 begin
-  result = client.abs.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Abs record (raises on error).
+  abs = client.Abs.load({ "id" => "example_id" })
+  puts abs
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = NewtonSDK.test
+client = NewtonSDK.test({
+  "entity" => { "abs" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.abs.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+abs = client.Abs.load({ "id" => "test01" })
+puts abs
 ```
 
 ### Use a custom fetch function
@@ -162,15 +167,15 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `Abs` | `(data) -> AbsEntity` | Create a Abs entity instance. |
-| `Arcco` | `(data) -> ArccoEntity` | Create a Arcco entity instance. |
-| `Arcsin` | `(data) -> ArcsinEntity` | Create a Arcsin entity instance. |
-| `Arctan` | `(data) -> ArctanEntity` | Create a Arctan entity instance. |
-| `Area` | `(data) -> AreaEntity` | Create a Area entity instance. |
+| `Abs` | `(data) -> AbsEntity` | Create an Abs entity instance. |
+| `Arcco` | `(data) -> ArccoEntity` | Create an Arcco entity instance. |
+| `Arcsin` | `(data) -> ArcsinEntity` | Create an Arcsin entity instance. |
+| `Arctan` | `(data) -> ArctanEntity` | Create an Arctan entity instance. |
+| `Area` | `(data) -> AreaEntity` | Create an Area entity instance. |
 | `Cos` | `(data) -> CosEntity` | Create a Cos entity instance. |
 | `Derive` | `(data) -> DeriveEntity` | Create a Derive entity instance. |
 | `Factor` | `(data) -> FactorEntity` | Create a Factor entity instance. |
-| `Integrate` | `(data) -> IntegrateEntity` | Create a Integrate entity instance. |
+| `Integrate` | `(data) -> IntegrateEntity` | Create an Integrate entity instance. |
 | `Log` | `(data) -> LogEntity` | Create a Log entity instance. |
 | `Simplify` | `(data) -> SimplifyEntity` | Create a Simplify entity instance. |
 | `Sin` | `(data) -> SinEntity` | Create a Sin entity instance. |
@@ -402,7 +407,7 @@ API path: `/zeroes/{expression}`
 
 ### Abs
 
-Create an instance: `const abs = client.abs`
+Create an instance: `abs = client.Abs`
 
 #### Operations
 
@@ -420,14 +425,15 @@ Create an instance: `const abs = client.abs`
 
 #### Example: Load
 
-```ts
-const abs = await client.abs.load({ id: 'abs_id' })
+```ruby
+# load returns the bare Abs record (raises on error).
+abs = client.Abs.load({ "id" => "abs_id" })
 ```
 
 
 ### Arcco
 
-Create an instance: `const arcco = client.arcco`
+Create an instance: `arcco = client.Arcco`
 
 #### Operations
 
@@ -445,14 +451,15 @@ Create an instance: `const arcco = client.arcco`
 
 #### Example: Load
 
-```ts
-const arcco = await client.arcco.load({ id: 'arcco_id' })
+```ruby
+# load returns the bare Arcco record (raises on error).
+arcco = client.Arcco.load({ "id" => "arcco_id" })
 ```
 
 
 ### Arcsin
 
-Create an instance: `const arcsin = client.arcsin`
+Create an instance: `arcsin = client.Arcsin`
 
 #### Operations
 
@@ -470,14 +477,15 @@ Create an instance: `const arcsin = client.arcsin`
 
 #### Example: Load
 
-```ts
-const arcsin = await client.arcsin.load({ id: 'arcsin_id' })
+```ruby
+# load returns the bare Arcsin record (raises on error).
+arcsin = client.Arcsin.load({ "id" => "arcsin_id" })
 ```
 
 
 ### Arctan
 
-Create an instance: `const arctan = client.arctan`
+Create an instance: `arctan = client.Arctan`
 
 #### Operations
 
@@ -495,14 +503,15 @@ Create an instance: `const arctan = client.arctan`
 
 #### Example: Load
 
-```ts
-const arctan = await client.arctan.load({ id: 'arctan_id' })
+```ruby
+# load returns the bare Arctan record (raises on error).
+arctan = client.Arctan.load({ "id" => "arctan_id" })
 ```
 
 
 ### Area
 
-Create an instance: `const area = client.area`
+Create an instance: `area = client.Area`
 
 #### Operations
 
@@ -520,14 +529,15 @@ Create an instance: `const area = client.area`
 
 #### Example: Load
 
-```ts
-const area = await client.area.load({ id: 'area_id' })
+```ruby
+# load returns the bare Area record (raises on error).
+area = client.Area.load({ "id" => "area_id" })
 ```
 
 
 ### Cos
 
-Create an instance: `const cos = client.cos`
+Create an instance: `cos = client.Cos`
 
 #### Operations
 
@@ -545,14 +555,15 @@ Create an instance: `const cos = client.cos`
 
 #### Example: Load
 
-```ts
-const cos = await client.cos.load({ id: 'cos_id' })
+```ruby
+# load returns the bare Cos record (raises on error).
+cos = client.Cos.load({ "id" => "cos_id" })
 ```
 
 
 ### Derive
 
-Create an instance: `const derive = client.derive`
+Create an instance: `derive = client.Derive`
 
 #### Operations
 
@@ -570,14 +581,15 @@ Create an instance: `const derive = client.derive`
 
 #### Example: Load
 
-```ts
-const derive = await client.derive.load({ id: 'derive_id' })
+```ruby
+# load returns the bare Derive record (raises on error).
+derive = client.Derive.load({ "id" => "derive_id" })
 ```
 
 
 ### Factor
 
-Create an instance: `const factor = client.factor`
+Create an instance: `factor = client.Factor`
 
 #### Operations
 
@@ -595,14 +607,15 @@ Create an instance: `const factor = client.factor`
 
 #### Example: Load
 
-```ts
-const factor = await client.factor.load({ id: 'factor_id' })
+```ruby
+# load returns the bare Factor record (raises on error).
+factor = client.Factor.load({ "id" => "factor_id" })
 ```
 
 
 ### Integrate
 
-Create an instance: `const integrate = client.integrate`
+Create an instance: `integrate = client.Integrate`
 
 #### Operations
 
@@ -620,14 +633,15 @@ Create an instance: `const integrate = client.integrate`
 
 #### Example: Load
 
-```ts
-const integrate = await client.integrate.load({ id: 'integrate_id' })
+```ruby
+# load returns the bare Integrate record (raises on error).
+integrate = client.Integrate.load({ "id" => "integrate_id" })
 ```
 
 
 ### Log
 
-Create an instance: `const log = client.log`
+Create an instance: `log = client.Log`
 
 #### Operations
 
@@ -645,14 +659,15 @@ Create an instance: `const log = client.log`
 
 #### Example: Load
 
-```ts
-const log = await client.log.load({ id: 'log_id' })
+```ruby
+# load returns the bare Log record (raises on error).
+log = client.Log.load({ "id" => "log_id" })
 ```
 
 
 ### Simplify
 
-Create an instance: `const simplify = client.simplify`
+Create an instance: `simplify = client.Simplify`
 
 #### Operations
 
@@ -670,14 +685,15 @@ Create an instance: `const simplify = client.simplify`
 
 #### Example: Load
 
-```ts
-const simplify = await client.simplify.load({ id: 'simplify_id' })
+```ruby
+# load returns the bare Simplify record (raises on error).
+simplify = client.Simplify.load({ "id" => "simplify_id" })
 ```
 
 
 ### Sin
 
-Create an instance: `const sin = client.sin`
+Create an instance: `sin = client.Sin`
 
 #### Operations
 
@@ -695,14 +711,15 @@ Create an instance: `const sin = client.sin`
 
 #### Example: Load
 
-```ts
-const sin = await client.sin.load({ id: 'sin_id' })
+```ruby
+# load returns the bare Sin record (raises on error).
+sin = client.Sin.load({ "id" => "sin_id" })
 ```
 
 
 ### Tan
 
-Create an instance: `const tan = client.tan`
+Create an instance: `tan = client.Tan`
 
 #### Operations
 
@@ -720,14 +737,15 @@ Create an instance: `const tan = client.tan`
 
 #### Example: Load
 
-```ts
-const tan = await client.tan.load({ id: 'tan_id' })
+```ruby
+# load returns the bare Tan record (raises on error).
+tan = client.Tan.load({ "id" => "tan_id" })
 ```
 
 
 ### Tangent
 
-Create an instance: `const tangent = client.tangent`
+Create an instance: `tangent = client.Tangent`
 
 #### Operations
 
@@ -745,14 +763,15 @@ Create an instance: `const tangent = client.tangent`
 
 #### Example: Load
 
-```ts
-const tangent = await client.tangent.load({ id: 'tangent_id' })
+```ruby
+# load returns the bare Tangent record (raises on error).
+tangent = client.Tangent.load({ "id" => "tangent_id" })
 ```
 
 
 ### Zero
 
-Create an instance: `const zero = client.zero`
+Create an instance: `zero = client.Zero`
 
 #### Operations
 
@@ -770,8 +789,9 @@ Create an instance: `const zero = client.zero`
 
 #### Example: Load
 
-```ts
-const zero = await client.zero.load({ id: 'zero_id' })
+```ruby
+# load returns the bare Zero record (raises on error).
+zero = client.Zero.load({ "id" => "zero_id" })
 ```
 
 
@@ -846,7 +866,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-abs = client.abs
+abs = client.Abs
 abs.load({ "id" => "example_id" })
 
 # abs.data_get now returns the loaded abs data

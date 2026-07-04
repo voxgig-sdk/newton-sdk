@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:abs():list() / client:abs():load({ id = ... })
-function NewtonSDK:abs(data)
+-- Idiomatic facade: client:Abs():list() / client:Abs():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Abs(data)
   local EntityMod = require("entity.abs_entity")
   if data == nil then
     if self._abs == nil then
@@ -256,15 +257,10 @@ function NewtonSDK:abs(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:abs() instead.
-function NewtonSDK:Abs(data)
-  local EntityMod = require("entity.abs_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:arcco():list() / client:arcco():load({ id = ... })
-function NewtonSDK:arcco(data)
+-- Idiomatic facade: client:Arcco():list() / client:Arcco():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Arcco(data)
   local EntityMod = require("entity.arcco_entity")
   if data == nil then
     if self._arcco == nil then
@@ -275,15 +271,10 @@ function NewtonSDK:arcco(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:arcco() instead.
-function NewtonSDK:Arcco(data)
-  local EntityMod = require("entity.arcco_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:arcsin():list() / client:arcsin():load({ id = ... })
-function NewtonSDK:arcsin(data)
+-- Idiomatic facade: client:Arcsin():list() / client:Arcsin():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Arcsin(data)
   local EntityMod = require("entity.arcsin_entity")
   if data == nil then
     if self._arcsin == nil then
@@ -294,15 +285,10 @@ function NewtonSDK:arcsin(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:arcsin() instead.
-function NewtonSDK:Arcsin(data)
-  local EntityMod = require("entity.arcsin_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:arctan():list() / client:arctan():load({ id = ... })
-function NewtonSDK:arctan(data)
+-- Idiomatic facade: client:Arctan():list() / client:Arctan():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Arctan(data)
   local EntityMod = require("entity.arctan_entity")
   if data == nil then
     if self._arctan == nil then
@@ -313,15 +299,10 @@ function NewtonSDK:arctan(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:arctan() instead.
-function NewtonSDK:Arctan(data)
-  local EntityMod = require("entity.arctan_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:area():list() / client:area():load({ id = ... })
-function NewtonSDK:area(data)
+-- Idiomatic facade: client:Area():list() / client:Area():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Area(data)
   local EntityMod = require("entity.area_entity")
   if data == nil then
     if self._area == nil then
@@ -332,15 +313,10 @@ function NewtonSDK:area(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:area() instead.
-function NewtonSDK:Area(data)
-  local EntityMod = require("entity.area_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:cos():list() / client:cos():load({ id = ... })
-function NewtonSDK:cos(data)
+-- Idiomatic facade: client:Cos():list() / client:Cos():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Cos(data)
   local EntityMod = require("entity.cos_entity")
   if data == nil then
     if self._cos == nil then
@@ -351,15 +327,10 @@ function NewtonSDK:cos(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:cos() instead.
-function NewtonSDK:Cos(data)
-  local EntityMod = require("entity.cos_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:derive():list() / client:derive():load({ id = ... })
-function NewtonSDK:derive(data)
+-- Idiomatic facade: client:Derive():list() / client:Derive():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Derive(data)
   local EntityMod = require("entity.derive_entity")
   if data == nil then
     if self._derive == nil then
@@ -370,15 +341,10 @@ function NewtonSDK:derive(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:derive() instead.
-function NewtonSDK:Derive(data)
-  local EntityMod = require("entity.derive_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:factor():list() / client:factor():load({ id = ... })
-function NewtonSDK:factor(data)
+-- Idiomatic facade: client:Factor():list() / client:Factor():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Factor(data)
   local EntityMod = require("entity.factor_entity")
   if data == nil then
     if self._factor == nil then
@@ -389,15 +355,10 @@ function NewtonSDK:factor(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:factor() instead.
-function NewtonSDK:Factor(data)
-  local EntityMod = require("entity.factor_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:integrate():list() / client:integrate():load({ id = ... })
-function NewtonSDK:integrate(data)
+-- Idiomatic facade: client:Integrate():list() / client:Integrate():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Integrate(data)
   local EntityMod = require("entity.integrate_entity")
   if data == nil then
     if self._integrate == nil then
@@ -408,15 +369,10 @@ function NewtonSDK:integrate(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:integrate() instead.
-function NewtonSDK:Integrate(data)
-  local EntityMod = require("entity.integrate_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:log():list() / client:log():load({ id = ... })
-function NewtonSDK:log(data)
+-- Idiomatic facade: client:Log():list() / client:Log():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Log(data)
   local EntityMod = require("entity.log_entity")
   if data == nil then
     if self._log == nil then
@@ -427,15 +383,10 @@ function NewtonSDK:log(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:log() instead.
-function NewtonSDK:Log(data)
-  local EntityMod = require("entity.log_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:simplify():list() / client:simplify():load({ id = ... })
-function NewtonSDK:simplify(data)
+-- Idiomatic facade: client:Simplify():list() / client:Simplify():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Simplify(data)
   local EntityMod = require("entity.simplify_entity")
   if data == nil then
     if self._simplify == nil then
@@ -446,15 +397,10 @@ function NewtonSDK:simplify(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:simplify() instead.
-function NewtonSDK:Simplify(data)
-  local EntityMod = require("entity.simplify_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:sin():list() / client:sin():load({ id = ... })
-function NewtonSDK:sin(data)
+-- Idiomatic facade: client:Sin():list() / client:Sin():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Sin(data)
   local EntityMod = require("entity.sin_entity")
   if data == nil then
     if self._sin == nil then
@@ -465,15 +411,10 @@ function NewtonSDK:sin(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:sin() instead.
-function NewtonSDK:Sin(data)
-  local EntityMod = require("entity.sin_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:tan():list() / client:tan():load({ id = ... })
-function NewtonSDK:tan(data)
+-- Idiomatic facade: client:Tan():list() / client:Tan():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Tan(data)
   local EntityMod = require("entity.tan_entity")
   if data == nil then
     if self._tan == nil then
@@ -484,15 +425,10 @@ function NewtonSDK:tan(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:tan() instead.
-function NewtonSDK:Tan(data)
-  local EntityMod = require("entity.tan_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:tangent():list() / client:tangent():load({ id = ... })
-function NewtonSDK:tangent(data)
+-- Idiomatic facade: client:Tangent():list() / client:Tangent():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Tangent(data)
   local EntityMod = require("entity.tangent_entity")
   if data == nil then
     if self._tangent == nil then
@@ -503,15 +439,10 @@ function NewtonSDK:tangent(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:tangent() instead.
-function NewtonSDK:Tangent(data)
-  local EntityMod = require("entity.tangent_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:zero():list() / client:zero():load({ id = ... })
-function NewtonSDK:zero(data)
+-- Idiomatic facade: client:Zero():list() / client:Zero():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function NewtonSDK:Zero(data)
   local EntityMod = require("entity.zero_entity")
   if data == nil then
     if self._zero == nil then
@@ -519,12 +450,6 @@ function NewtonSDK:zero(data)
     end
     return self._zero
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:zero() instead.
-function NewtonSDK:Zero(data)
-  local EntityMod = require("entity.zero_entity")
   return EntityMod.new(self, data)
 end
 

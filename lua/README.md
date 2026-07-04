@@ -34,9 +34,9 @@ local client = sdk.new()
 ### 3. Load an abs
 
 ```lua
-local result, err = client:abs():load({ id = "example_id" })
+local abs, err = client:Abs():load({ id = "example_id" })
 if err then error(err) end
-print(result)
+print(abs)
 ```
 
 
@@ -82,8 +82,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:abs():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Abs():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -161,15 +161,15 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> table, err` | Build an HTTP request definition without sending. |
 | `direct` | `(fetchargs) -> table, err` | Build and send an HTTP request. |
-| `Abs` | `(data) -> AbsEntity` | Create a Abs entity instance. |
-| `Arcco` | `(data) -> ArccoEntity` | Create a Arcco entity instance. |
-| `Arcsin` | `(data) -> ArcsinEntity` | Create a Arcsin entity instance. |
-| `Arctan` | `(data) -> ArctanEntity` | Create a Arctan entity instance. |
-| `Area` | `(data) -> AreaEntity` | Create a Area entity instance. |
+| `Abs` | `(data) -> AbsEntity` | Create an Abs entity instance. |
+| `Arcco` | `(data) -> ArccoEntity` | Create an Arcco entity instance. |
+| `Arcsin` | `(data) -> ArcsinEntity` | Create an Arcsin entity instance. |
+| `Arctan` | `(data) -> ArctanEntity` | Create an Arctan entity instance. |
+| `Area` | `(data) -> AreaEntity` | Create an Area entity instance. |
 | `Cos` | `(data) -> CosEntity` | Create a Cos entity instance. |
 | `Derive` | `(data) -> DeriveEntity` | Create a Derive entity instance. |
 | `Factor` | `(data) -> FactorEntity` | Create a Factor entity instance. |
-| `Integrate` | `(data) -> IntegrateEntity` | Create a Integrate entity instance. |
+| `Integrate` | `(data) -> IntegrateEntity` | Create an Integrate entity instance. |
 | `Log` | `(data) -> LogEntity` | Create a Log entity instance. |
 | `Simplify` | `(data) -> SimplifyEntity` | Create a Simplify entity instance. |
 | `Sin` | `(data) -> SinEntity` | Create a Sin entity instance. |
@@ -197,17 +197,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local abs, err = client:Abs():load({ id = "example_id" })
+    if err then error(err) end
+    -- abs is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -398,7 +403,7 @@ API path: `/zeroes/{expression}`
 
 ### Abs
 
-Create an instance: `const abs = client.abs`
+Create an instance: `local abs = client:Abs(nil)`
 
 #### Operations
 
@@ -416,14 +421,14 @@ Create an instance: `const abs = client.abs`
 
 #### Example: Load
 
-```ts
-const abs = await client.abs.load({ id: 'abs_id' })
+```lua
+local abs, err = client:Abs():load({ id = "abs_id" })
 ```
 
 
 ### Arcco
 
-Create an instance: `const arcco = client.arcco`
+Create an instance: `local arcco = client:Arcco(nil)`
 
 #### Operations
 
@@ -441,14 +446,14 @@ Create an instance: `const arcco = client.arcco`
 
 #### Example: Load
 
-```ts
-const arcco = await client.arcco.load({ id: 'arcco_id' })
+```lua
+local arcco, err = client:Arcco():load({ id = "arcco_id" })
 ```
 
 
 ### Arcsin
 
-Create an instance: `const arcsin = client.arcsin`
+Create an instance: `local arcsin = client:Arcsin(nil)`
 
 #### Operations
 
@@ -466,14 +471,14 @@ Create an instance: `const arcsin = client.arcsin`
 
 #### Example: Load
 
-```ts
-const arcsin = await client.arcsin.load({ id: 'arcsin_id' })
+```lua
+local arcsin, err = client:Arcsin():load({ id = "arcsin_id" })
 ```
 
 
 ### Arctan
 
-Create an instance: `const arctan = client.arctan`
+Create an instance: `local arctan = client:Arctan(nil)`
 
 #### Operations
 
@@ -491,14 +496,14 @@ Create an instance: `const arctan = client.arctan`
 
 #### Example: Load
 
-```ts
-const arctan = await client.arctan.load({ id: 'arctan_id' })
+```lua
+local arctan, err = client:Arctan():load({ id = "arctan_id" })
 ```
 
 
 ### Area
 
-Create an instance: `const area = client.area`
+Create an instance: `local area = client:Area(nil)`
 
 #### Operations
 
@@ -516,14 +521,14 @@ Create an instance: `const area = client.area`
 
 #### Example: Load
 
-```ts
-const area = await client.area.load({ id: 'area_id' })
+```lua
+local area, err = client:Area():load({ id = "area_id" })
 ```
 
 
 ### Cos
 
-Create an instance: `const cos = client.cos`
+Create an instance: `local cos = client:Cos(nil)`
 
 #### Operations
 
@@ -541,14 +546,14 @@ Create an instance: `const cos = client.cos`
 
 #### Example: Load
 
-```ts
-const cos = await client.cos.load({ id: 'cos_id' })
+```lua
+local cos, err = client:Cos():load({ id = "cos_id" })
 ```
 
 
 ### Derive
 
-Create an instance: `const derive = client.derive`
+Create an instance: `local derive = client:Derive(nil)`
 
 #### Operations
 
@@ -566,14 +571,14 @@ Create an instance: `const derive = client.derive`
 
 #### Example: Load
 
-```ts
-const derive = await client.derive.load({ id: 'derive_id' })
+```lua
+local derive, err = client:Derive():load({ id = "derive_id" })
 ```
 
 
 ### Factor
 
-Create an instance: `const factor = client.factor`
+Create an instance: `local factor = client:Factor(nil)`
 
 #### Operations
 
@@ -591,14 +596,14 @@ Create an instance: `const factor = client.factor`
 
 #### Example: Load
 
-```ts
-const factor = await client.factor.load({ id: 'factor_id' })
+```lua
+local factor, err = client:Factor():load({ id = "factor_id" })
 ```
 
 
 ### Integrate
 
-Create an instance: `const integrate = client.integrate`
+Create an instance: `local integrate = client:Integrate(nil)`
 
 #### Operations
 
@@ -616,14 +621,14 @@ Create an instance: `const integrate = client.integrate`
 
 #### Example: Load
 
-```ts
-const integrate = await client.integrate.load({ id: 'integrate_id' })
+```lua
+local integrate, err = client:Integrate():load({ id = "integrate_id" })
 ```
 
 
 ### Log
 
-Create an instance: `const log = client.log`
+Create an instance: `local log = client:Log(nil)`
 
 #### Operations
 
@@ -641,14 +646,14 @@ Create an instance: `const log = client.log`
 
 #### Example: Load
 
-```ts
-const log = await client.log.load({ id: 'log_id' })
+```lua
+local log, err = client:Log():load({ id = "log_id" })
 ```
 
 
 ### Simplify
 
-Create an instance: `const simplify = client.simplify`
+Create an instance: `local simplify = client:Simplify(nil)`
 
 #### Operations
 
@@ -666,14 +671,14 @@ Create an instance: `const simplify = client.simplify`
 
 #### Example: Load
 
-```ts
-const simplify = await client.simplify.load({ id: 'simplify_id' })
+```lua
+local simplify, err = client:Simplify():load({ id = "simplify_id" })
 ```
 
 
 ### Sin
 
-Create an instance: `const sin = client.sin`
+Create an instance: `local sin = client:Sin(nil)`
 
 #### Operations
 
@@ -691,14 +696,14 @@ Create an instance: `const sin = client.sin`
 
 #### Example: Load
 
-```ts
-const sin = await client.sin.load({ id: 'sin_id' })
+```lua
+local sin, err = client:Sin():load({ id = "sin_id" })
 ```
 
 
 ### Tan
 
-Create an instance: `const tan = client.tan`
+Create an instance: `local tan = client:Tan(nil)`
 
 #### Operations
 
@@ -716,14 +721,14 @@ Create an instance: `const tan = client.tan`
 
 #### Example: Load
 
-```ts
-const tan = await client.tan.load({ id: 'tan_id' })
+```lua
+local tan, err = client:Tan():load({ id = "tan_id" })
 ```
 
 
 ### Tangent
 
-Create an instance: `const tangent = client.tangent`
+Create an instance: `local tangent = client:Tangent(nil)`
 
 #### Operations
 
@@ -741,14 +746,14 @@ Create an instance: `const tangent = client.tangent`
 
 #### Example: Load
 
-```ts
-const tangent = await client.tangent.load({ id: 'tangent_id' })
+```lua
+local tangent, err = client:Tangent():load({ id = "tangent_id" })
 ```
 
 
 ### Zero
 
-Create an instance: `const zero = client.zero`
+Create an instance: `local zero = client:Zero(nil)`
 
 #### Operations
 
@@ -766,8 +771,8 @@ Create an instance: `const zero = client.zero`
 
 #### Example: Load
 
-```ts
-const zero = await client.zero.load({ id: 'zero_id' })
+```lua
+local zero, err = client:Zero():load({ id = "zero_id" })
 ```
 
 
@@ -842,7 +847,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local abs = client:abs()
+local abs = client:Abs()
 abs:load({ id = "example_id" })
 
 -- abs:data_get() now returns the loaded abs data

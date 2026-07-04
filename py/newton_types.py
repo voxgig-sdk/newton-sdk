@@ -4,189 +4,163 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Abs:
+class Abs(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class AbsLoadMatch:
+class AbsLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Arcco:
+class Arcco(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class ArccoLoadMatch:
+class ArccoLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Arcsin:
+class Arcsin(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class ArcsinLoadMatch:
+class ArcsinLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Arctan:
+class Arctan(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class ArctanLoadMatch:
+class ArctanLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Area:
+class Area(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class AreaLoadMatch:
+class AreaLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Cos:
+class Cos(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class CosLoadMatch:
+class CosLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Derive:
+class Derive(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class DeriveLoadMatch:
+class DeriveLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Factor:
+class Factor(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class FactorLoadMatch:
+class FactorLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Integrate:
+class Integrate(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class IntegrateLoadMatch:
+class IntegrateLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Log:
+class Log(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class LogLoadMatch:
+class LogLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Simplify:
+class Simplify(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class SimplifyLoadMatch:
+class SimplifyLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Sin:
+class Sin(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class SinLoadMatch:
+class SinLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Tan:
+class Tan(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class TanLoadMatch:
+class TanLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Tangent:
+class Tangent(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class TangentLoadMatch:
+class TangentLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Zero:
+class Zero(TypedDict):
     expression: str
     operation: str
     result: str
 
 
-@dataclass
-class ZeroLoadMatch:
+class ZeroLoadMatch(TypedDict):
     id: str
-

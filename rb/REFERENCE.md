@@ -142,7 +142,7 @@ same parameters as `direct()`. Raises on error.
 ## AbsEntity
 
 ```ruby
-abs = client.abs
+abs = client.Abs
 ```
 
 ### Fields
@@ -160,7 +160,7 @@ abs = client.abs
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.abs.load({ "id" => "abs_id" })
+result = client.Abs.load({ "id" => "abs_id" })
 ```
 
 ### Common Methods
@@ -196,7 +196,7 @@ Return the entity name.
 ## ArccoEntity
 
 ```ruby
-arcco = client.arcco
+arcco = client.Arcco
 ```
 
 ### Fields
@@ -214,7 +214,7 @@ arcco = client.arcco
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.arcco.load({ "id" => "arcco_id" })
+result = client.Arcco.load({ "id" => "arcco_id" })
 ```
 
 ### Common Methods
@@ -250,7 +250,7 @@ Return the entity name.
 ## ArcsinEntity
 
 ```ruby
-arcsin = client.arcsin
+arcsin = client.Arcsin
 ```
 
 ### Fields
@@ -268,7 +268,7 @@ arcsin = client.arcsin
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.arcsin.load({ "id" => "arcsin_id" })
+result = client.Arcsin.load({ "id" => "arcsin_id" })
 ```
 
 ### Common Methods
@@ -304,7 +304,7 @@ Return the entity name.
 ## ArctanEntity
 
 ```ruby
-arctan = client.arctan
+arctan = client.Arctan
 ```
 
 ### Fields
@@ -322,7 +322,7 @@ arctan = client.arctan
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.arctan.load({ "id" => "arctan_id" })
+result = client.Arctan.load({ "id" => "arctan_id" })
 ```
 
 ### Common Methods
@@ -358,7 +358,7 @@ Return the entity name.
 ## AreaEntity
 
 ```ruby
-area = client.area
+area = client.Area
 ```
 
 ### Fields
@@ -376,7 +376,7 @@ area = client.area
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.area.load({ "id" => "area_id" })
+result = client.Area.load({ "id" => "area_id" })
 ```
 
 ### Common Methods
@@ -412,7 +412,7 @@ Return the entity name.
 ## CosEntity
 
 ```ruby
-cos = client.cos
+cos = client.Cos
 ```
 
 ### Fields
@@ -430,7 +430,7 @@ cos = client.cos
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.cos.load({ "id" => "cos_id" })
+result = client.Cos.load({ "id" => "cos_id" })
 ```
 
 ### Common Methods
@@ -466,7 +466,7 @@ Return the entity name.
 ## DeriveEntity
 
 ```ruby
-derive = client.derive
+derive = client.Derive
 ```
 
 ### Fields
@@ -484,7 +484,7 @@ derive = client.derive
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.derive.load({ "id" => "derive_id" })
+result = client.Derive.load({ "id" => "derive_id" })
 ```
 
 ### Common Methods
@@ -520,7 +520,7 @@ Return the entity name.
 ## FactorEntity
 
 ```ruby
-factor = client.factor
+factor = client.Factor
 ```
 
 ### Fields
@@ -538,7 +538,7 @@ factor = client.factor
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.factor.load({ "id" => "factor_id" })
+result = client.Factor.load({ "id" => "factor_id" })
 ```
 
 ### Common Methods
@@ -574,7 +574,7 @@ Return the entity name.
 ## IntegrateEntity
 
 ```ruby
-integrate = client.integrate
+integrate = client.Integrate
 ```
 
 ### Fields
@@ -592,7 +592,7 @@ integrate = client.integrate
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.integrate.load({ "id" => "integrate_id" })
+result = client.Integrate.load({ "id" => "integrate_id" })
 ```
 
 ### Common Methods
@@ -628,7 +628,7 @@ Return the entity name.
 ## LogEntity
 
 ```ruby
-log = client.log
+log = client.Log
 ```
 
 ### Fields
@@ -646,7 +646,7 @@ log = client.log
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.log.load({ "id" => "log_id" })
+result = client.Log.load({ "id" => "log_id" })
 ```
 
 ### Common Methods
@@ -682,7 +682,7 @@ Return the entity name.
 ## SimplifyEntity
 
 ```ruby
-simplify = client.simplify
+simplify = client.Simplify
 ```
 
 ### Fields
@@ -700,7 +700,7 @@ simplify = client.simplify
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.simplify.load({ "id" => "simplify_id" })
+result = client.Simplify.load({ "id" => "simplify_id" })
 ```
 
 ### Common Methods
@@ -736,7 +736,7 @@ Return the entity name.
 ## SinEntity
 
 ```ruby
-sin = client.sin
+sin = client.Sin
 ```
 
 ### Fields
@@ -754,7 +754,7 @@ sin = client.sin
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.sin.load({ "id" => "sin_id" })
+result = client.Sin.load({ "id" => "sin_id" })
 ```
 
 ### Common Methods
@@ -790,7 +790,7 @@ Return the entity name.
 ## TanEntity
 
 ```ruby
-tan = client.tan
+tan = client.Tan
 ```
 
 ### Fields
@@ -808,7 +808,7 @@ tan = client.tan
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.tan.load({ "id" => "tan_id" })
+result = client.Tan.load({ "id" => "tan_id" })
 ```
 
 ### Common Methods
@@ -844,7 +844,7 @@ Return the entity name.
 ## TangentEntity
 
 ```ruby
-tangent = client.tangent
+tangent = client.Tangent
 ```
 
 ### Fields
@@ -862,7 +862,7 @@ tangent = client.tangent
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.tangent.load({ "id" => "tangent_id" })
+result = client.Tangent.load({ "id" => "tangent_id" })
 ```
 
 ### Common Methods
@@ -898,7 +898,7 @@ Return the entity name.
 ## ZeroEntity
 
 ```ruby
-zero = client.zero
+zero = client.Zero
 ```
 
 ### Fields
@@ -916,7 +916,7 @@ zero = client.zero
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.zero.load({ "id" => "zero_id" })
+result = client.Zero.load({ "id" => "zero_id" })
 ```
 
 ### Common Methods

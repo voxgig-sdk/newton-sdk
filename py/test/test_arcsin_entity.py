@@ -49,8 +49,7 @@ class TestArcsinEntity:
         # LOAD
         arcsin_ref01_ent = client.Arcsin(None)
         arcsin_ref01_match_dt0 = {}
-        arcsin_ref01_data_dt0_loaded, err = arcsin_ref01_ent.load(arcsin_ref01_match_dt0, None)
-        assert err is None
+        arcsin_ref01_data_dt0_loaded = arcsin_ref01_ent.load(arcsin_ref01_match_dt0, None)
         assert arcsin_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _arcsin_basic_setup(extra):
         "NEWTON_TEST_ARCSIN_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _arcsin_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch DeriveLoadMatch
+---@param ctrl? table
+---@return Derive
+---@return string? err
 function DeriveEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

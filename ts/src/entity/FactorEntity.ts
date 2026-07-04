@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Factor,
+  FactorLoadMatch,
+} from '../NewtonTypes'
 
 // TODO: needs Entity superclass
-class FactorEntity extends NewtonEntityBase {
+class FactorEntity extends NewtonEntityBase<Factor> {
 
   constructor(client: NewtonSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class FactorEntity extends NewtonEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: FactorLoadMatch, ctrl?: Control): Promise<Factor> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class FactorEntity extends NewtonEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Factor> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

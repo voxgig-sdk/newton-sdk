@@ -9,9 +9,12 @@ The TypeScript SDK for the Newton API — a type-safe, entity-oriented client wi
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/newton
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/newton-sdk/releases](https://github.com/voxgig-sdk/newton-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { NewtonSDK } from 'newton'
+import { NewtonSDK } from '@voxgig-sdk/newton'
 
-const client = new NewtonSDK({
-  apikey: process.env.NEWTON_APIKEY,
-})
+const client = new NewtonSDK()
 ```
 
-### 3. Load a abs
+### 3. Load an abs
 
 ```ts
-const result = await client.Abs().load({ id: 'example_id' })
+const result = await client.abs.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = NewtonSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.abs.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new NewtonSDK({ apikey: '...' })
+const client = new NewtonSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.abs
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new NewtonSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -134,7 +134,6 @@ Create a `.env.local` file at the project root:
 
 ```
 NEWTON_TEST_LIVE=TRUE
-NEWTON_APIKEY=<your-key>
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new NewtonSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new NewtonSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -450,7 +447,7 @@ API path: `/zeroes/{expression}`
 
 ### Abs
 
-Create an instance: `const abs = client.Abs()`
+Create an instance: `const abs = client.abs`
 
 #### Operations
 
@@ -469,13 +466,13 @@ Create an instance: `const abs = client.Abs()`
 #### Example: Load
 
 ```ts
-const abs = await client.Abs().load({ id: 'abs_id' })
+const abs = await client.abs.load({ id: 'abs_id' })
 ```
 
 
 ### Arcco
 
-Create an instance: `const arcco = client.Arcco()`
+Create an instance: `const arcco = client.arcco`
 
 #### Operations
 
@@ -494,13 +491,13 @@ Create an instance: `const arcco = client.Arcco()`
 #### Example: Load
 
 ```ts
-const arcco = await client.Arcco().load({ id: 'arcco_id' })
+const arcco = await client.arcco.load({ id: 'arcco_id' })
 ```
 
 
 ### Arcsin
 
-Create an instance: `const arcsin = client.Arcsin()`
+Create an instance: `const arcsin = client.arcsin`
 
 #### Operations
 
@@ -519,13 +516,13 @@ Create an instance: `const arcsin = client.Arcsin()`
 #### Example: Load
 
 ```ts
-const arcsin = await client.Arcsin().load({ id: 'arcsin_id' })
+const arcsin = await client.arcsin.load({ id: 'arcsin_id' })
 ```
 
 
 ### Arctan
 
-Create an instance: `const arctan = client.Arctan()`
+Create an instance: `const arctan = client.arctan`
 
 #### Operations
 
@@ -544,13 +541,13 @@ Create an instance: `const arctan = client.Arctan()`
 #### Example: Load
 
 ```ts
-const arctan = await client.Arctan().load({ id: 'arctan_id' })
+const arctan = await client.arctan.load({ id: 'arctan_id' })
 ```
 
 
 ### Area
 
-Create an instance: `const area = client.Area()`
+Create an instance: `const area = client.area`
 
 #### Operations
 
@@ -569,13 +566,13 @@ Create an instance: `const area = client.Area()`
 #### Example: Load
 
 ```ts
-const area = await client.Area().load({ id: 'area_id' })
+const area = await client.area.load({ id: 'area_id' })
 ```
 
 
 ### Cos
 
-Create an instance: `const cos = client.Cos()`
+Create an instance: `const cos = client.cos`
 
 #### Operations
 
@@ -594,13 +591,13 @@ Create an instance: `const cos = client.Cos()`
 #### Example: Load
 
 ```ts
-const cos = await client.Cos().load({ id: 'cos_id' })
+const cos = await client.cos.load({ id: 'cos_id' })
 ```
 
 
 ### Derive
 
-Create an instance: `const derive = client.Derive()`
+Create an instance: `const derive = client.derive`
 
 #### Operations
 
@@ -619,13 +616,13 @@ Create an instance: `const derive = client.Derive()`
 #### Example: Load
 
 ```ts
-const derive = await client.Derive().load({ id: 'derive_id' })
+const derive = await client.derive.load({ id: 'derive_id' })
 ```
 
 
 ### Factor
 
-Create an instance: `const factor = client.Factor()`
+Create an instance: `const factor = client.factor`
 
 #### Operations
 
@@ -644,13 +641,13 @@ Create an instance: `const factor = client.Factor()`
 #### Example: Load
 
 ```ts
-const factor = await client.Factor().load({ id: 'factor_id' })
+const factor = await client.factor.load({ id: 'factor_id' })
 ```
 
 
 ### Integrate
 
-Create an instance: `const integrate = client.Integrate()`
+Create an instance: `const integrate = client.integrate`
 
 #### Operations
 
@@ -669,13 +666,13 @@ Create an instance: `const integrate = client.Integrate()`
 #### Example: Load
 
 ```ts
-const integrate = await client.Integrate().load({ id: 'integrate_id' })
+const integrate = await client.integrate.load({ id: 'integrate_id' })
 ```
 
 
 ### Log
 
-Create an instance: `const log = client.Log()`
+Create an instance: `const log = client.log`
 
 #### Operations
 
@@ -694,13 +691,13 @@ Create an instance: `const log = client.Log()`
 #### Example: Load
 
 ```ts
-const log = await client.Log().load({ id: 'log_id' })
+const log = await client.log.load({ id: 'log_id' })
 ```
 
 
 ### Simplify
 
-Create an instance: `const simplify = client.Simplify()`
+Create an instance: `const simplify = client.simplify`
 
 #### Operations
 
@@ -719,13 +716,13 @@ Create an instance: `const simplify = client.Simplify()`
 #### Example: Load
 
 ```ts
-const simplify = await client.Simplify().load({ id: 'simplify_id' })
+const simplify = await client.simplify.load({ id: 'simplify_id' })
 ```
 
 
 ### Sin
 
-Create an instance: `const sin = client.Sin()`
+Create an instance: `const sin = client.sin`
 
 #### Operations
 
@@ -744,13 +741,13 @@ Create an instance: `const sin = client.Sin()`
 #### Example: Load
 
 ```ts
-const sin = await client.Sin().load({ id: 'sin_id' })
+const sin = await client.sin.load({ id: 'sin_id' })
 ```
 
 
 ### Tan
 
-Create an instance: `const tan = client.Tan()`
+Create an instance: `const tan = client.tan`
 
 #### Operations
 
@@ -769,13 +766,13 @@ Create an instance: `const tan = client.Tan()`
 #### Example: Load
 
 ```ts
-const tan = await client.Tan().load({ id: 'tan_id' })
+const tan = await client.tan.load({ id: 'tan_id' })
 ```
 
 
 ### Tangent
 
-Create an instance: `const tangent = client.Tangent()`
+Create an instance: `const tangent = client.tangent`
 
 #### Operations
 
@@ -794,13 +791,13 @@ Create an instance: `const tangent = client.Tangent()`
 #### Example: Load
 
 ```ts
-const tangent = await client.Tangent().load({ id: 'tangent_id' })
+const tangent = await client.tangent.load({ id: 'tangent_id' })
 ```
 
 
 ### Zero
 
-Create an instance: `const zero = client.Zero()`
+Create an instance: `const zero = client.zero`
 
 #### Operations
 
@@ -819,7 +816,7 @@ Create an instance: `const zero = client.Zero()`
 #### Example: Load
 
 ```ts
-const zero = await client.Zero().load({ id: 'zero_id' })
+const zero = await client.zero.load({ id: 'zero_id' })
 ```
 
 
@@ -880,7 +877,7 @@ newton/
 Import the SDK from the package root:
 
 ```ts
-import { NewtonSDK } from 'newton'
+import { NewtonSDK } from '@voxgig-sdk/newton'
 ```
 
 ### Entity state
@@ -890,11 +887,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const abs = client.abs
+await abs.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// abs.data() now returns the loaded abs data
+// abs.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

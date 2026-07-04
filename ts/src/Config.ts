@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://newton.now.sh/api/v2',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -139,7 +135,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -214,7 +211,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -289,7 +287,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -364,7 +363,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -439,7 +439,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -514,7 +515,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -589,7 +591,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -664,7 +667,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -739,7 +743,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -814,7 +819,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -889,7 +895,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -964,7 +971,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -1039,7 +1047,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -1114,7 +1123,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -1189,7 +1199,8 @@ class Config {
                     "name": "id",
                     "orig": "expression",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },

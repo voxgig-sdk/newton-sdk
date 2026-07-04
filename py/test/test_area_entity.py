@@ -49,8 +49,7 @@ class TestAreaEntity:
         # LOAD
         area_ref01_ent = client.Area(None)
         area_ref01_match_dt0 = {}
-        area_ref01_data_dt0_loaded, err = area_ref01_ent.load(area_ref01_match_dt0, None)
-        assert err is None
+        area_ref01_data_dt0_loaded = area_ref01_ent.load(area_ref01_match_dt0, None)
         assert area_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _area_basic_setup(extra):
         "NEWTON_TEST_AREA_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _area_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

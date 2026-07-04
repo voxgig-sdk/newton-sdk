@@ -103,7 +103,7 @@ class NewtonSDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class NewtonSDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class NewtonSDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,122 +216,287 @@ class NewtonSDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function Abs($data = null)
+    private $_abs = null;
+
+    // Idiomatic facade: $client->abs()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Abs() (PHP method
+    // names are case-insensitive).
+    public function abs($data = null)
     {
         require_once __DIR__ . '/entity/abs_entity.php';
+        if ($data === null) {
+            if ($this->_abs === null) {
+                $this->_abs = new AbsEntity($this, null);
+            }
+            return $this->_abs;
+        }
         return new AbsEntity($this, $data);
     }
 
 
-    public function Arcco($data = null)
+    private $_arcco = null;
+
+    // Idiomatic facade: $client->arcco()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Arcco() (PHP method
+    // names are case-insensitive).
+    public function arcco($data = null)
     {
         require_once __DIR__ . '/entity/arcco_entity.php';
+        if ($data === null) {
+            if ($this->_arcco === null) {
+                $this->_arcco = new ArccoEntity($this, null);
+            }
+            return $this->_arcco;
+        }
         return new ArccoEntity($this, $data);
     }
 
 
-    public function Arcsin($data = null)
+    private $_arcsin = null;
+
+    // Idiomatic facade: $client->arcsin()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Arcsin() (PHP method
+    // names are case-insensitive).
+    public function arcsin($data = null)
     {
         require_once __DIR__ . '/entity/arcsin_entity.php';
+        if ($data === null) {
+            if ($this->_arcsin === null) {
+                $this->_arcsin = new ArcsinEntity($this, null);
+            }
+            return $this->_arcsin;
+        }
         return new ArcsinEntity($this, $data);
     }
 
 
-    public function Arctan($data = null)
+    private $_arctan = null;
+
+    // Idiomatic facade: $client->arctan()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Arctan() (PHP method
+    // names are case-insensitive).
+    public function arctan($data = null)
     {
         require_once __DIR__ . '/entity/arctan_entity.php';
+        if ($data === null) {
+            if ($this->_arctan === null) {
+                $this->_arctan = new ArctanEntity($this, null);
+            }
+            return $this->_arctan;
+        }
         return new ArctanEntity($this, $data);
     }
 
 
-    public function Area($data = null)
+    private $_area = null;
+
+    // Idiomatic facade: $client->area()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Area() (PHP method
+    // names are case-insensitive).
+    public function area($data = null)
     {
         require_once __DIR__ . '/entity/area_entity.php';
+        if ($data === null) {
+            if ($this->_area === null) {
+                $this->_area = new AreaEntity($this, null);
+            }
+            return $this->_area;
+        }
         return new AreaEntity($this, $data);
     }
 
 
-    public function Cos($data = null)
+    private $_cos = null;
+
+    // Idiomatic facade: $client->cos()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Cos() (PHP method
+    // names are case-insensitive).
+    public function cos($data = null)
     {
         require_once __DIR__ . '/entity/cos_entity.php';
+        if ($data === null) {
+            if ($this->_cos === null) {
+                $this->_cos = new CosEntity($this, null);
+            }
+            return $this->_cos;
+        }
         return new CosEntity($this, $data);
     }
 
 
-    public function Derive($data = null)
+    private $_derive = null;
+
+    // Idiomatic facade: $client->derive()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Derive() (PHP method
+    // names are case-insensitive).
+    public function derive($data = null)
     {
         require_once __DIR__ . '/entity/derive_entity.php';
+        if ($data === null) {
+            if ($this->_derive === null) {
+                $this->_derive = new DeriveEntity($this, null);
+            }
+            return $this->_derive;
+        }
         return new DeriveEntity($this, $data);
     }
 
 
-    public function Factor($data = null)
+    private $_factor = null;
+
+    // Idiomatic facade: $client->factor()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Factor() (PHP method
+    // names are case-insensitive).
+    public function factor($data = null)
     {
         require_once __DIR__ . '/entity/factor_entity.php';
+        if ($data === null) {
+            if ($this->_factor === null) {
+                $this->_factor = new FactorEntity($this, null);
+            }
+            return $this->_factor;
+        }
         return new FactorEntity($this, $data);
     }
 
 
-    public function Integrate($data = null)
+    private $_integrate = null;
+
+    // Idiomatic facade: $client->integrate()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Integrate() (PHP method
+    // names are case-insensitive).
+    public function integrate($data = null)
     {
         require_once __DIR__ . '/entity/integrate_entity.php';
+        if ($data === null) {
+            if ($this->_integrate === null) {
+                $this->_integrate = new IntegrateEntity($this, null);
+            }
+            return $this->_integrate;
+        }
         return new IntegrateEntity($this, $data);
     }
 
 
-    public function Log($data = null)
+    private $_log = null;
+
+    // Idiomatic facade: $client->log()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Log() (PHP method
+    // names are case-insensitive).
+    public function log($data = null)
     {
         require_once __DIR__ . '/entity/log_entity.php';
+        if ($data === null) {
+            if ($this->_log === null) {
+                $this->_log = new LogEntity($this, null);
+            }
+            return $this->_log;
+        }
         return new LogEntity($this, $data);
     }
 
 
-    public function Simplify($data = null)
+    private $_simplify = null;
+
+    // Idiomatic facade: $client->simplify()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Simplify() (PHP method
+    // names are case-insensitive).
+    public function simplify($data = null)
     {
         require_once __DIR__ . '/entity/simplify_entity.php';
+        if ($data === null) {
+            if ($this->_simplify === null) {
+                $this->_simplify = new SimplifyEntity($this, null);
+            }
+            return $this->_simplify;
+        }
         return new SimplifyEntity($this, $data);
     }
 
 
-    public function Sin($data = null)
+    private $_sin = null;
+
+    // Idiomatic facade: $client->sin()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Sin() (PHP method
+    // names are case-insensitive).
+    public function sin($data = null)
     {
         require_once __DIR__ . '/entity/sin_entity.php';
+        if ($data === null) {
+            if ($this->_sin === null) {
+                $this->_sin = new SinEntity($this, null);
+            }
+            return $this->_sin;
+        }
         return new SinEntity($this, $data);
     }
 
 
-    public function Tan($data = null)
+    private $_tan = null;
+
+    // Idiomatic facade: $client->tan()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Tan() (PHP method
+    // names are case-insensitive).
+    public function tan($data = null)
     {
         require_once __DIR__ . '/entity/tan_entity.php';
+        if ($data === null) {
+            if ($this->_tan === null) {
+                $this->_tan = new TanEntity($this, null);
+            }
+            return $this->_tan;
+        }
         return new TanEntity($this, $data);
     }
 
 
-    public function Tangent($data = null)
+    private $_tangent = null;
+
+    // Idiomatic facade: $client->tangent()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Tangent() (PHP method
+    // names are case-insensitive).
+    public function tangent($data = null)
     {
         require_once __DIR__ . '/entity/tangent_entity.php';
+        if ($data === null) {
+            if ($this->_tangent === null) {
+                $this->_tangent = new TangentEntity($this, null);
+            }
+            return $this->_tangent;
+        }
         return new TangentEntity($this, $data);
     }
 
 
-    public function Zero($data = null)
+    private $_zero = null;
+
+    // Idiomatic facade: $client->zero()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Zero() (PHP method
+    // names are case-insensitive).
+    public function zero($data = null)
     {
         require_once __DIR__ . '/entity/zero_entity.php';
+        if ($data === null) {
+            if ($this->_zero === null) {
+                $this->_zero = new ZeroEntity($this, null);
+            }
+            return $this->_zero;
+        }
         return new ZeroEntity($this, $data);
     }
 

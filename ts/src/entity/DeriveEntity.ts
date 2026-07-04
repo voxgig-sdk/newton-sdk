@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Derive,
+  DeriveLoadMatch,
+} from '../NewtonTypes'
 
 // TODO: needs Entity superclass
-class DeriveEntity extends NewtonEntityBase {
+class DeriveEntity extends NewtonEntityBase<Derive> {
 
   constructor(client: NewtonSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class DeriveEntity extends NewtonEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: DeriveLoadMatch, ctrl?: Control): Promise<Derive> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class DeriveEntity extends NewtonEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Derive> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

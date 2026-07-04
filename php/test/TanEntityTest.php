@@ -49,8 +49,7 @@ class TanEntityTest extends TestCase
         // LOAD
         $tan_ref01_ent = $client->Tan(null);
         $tan_ref01_match_dt0 = [];
-        [$tan_ref01_data_dt0_loaded, $err] = $tan_ref01_ent->load($tan_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $tan_ref01_data_dt0_loaded = $tan_ref01_ent->load($tan_ref01_match_dt0, null);
         $this->assertNotNull($tan_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function tan_basic_setup($extra)
         "NEWTON_TEST_TAN_ENTID" => $idmap,
         "NEWTON_TEST_LIVE" => "FALSE",
         "NEWTON_TEST_EXPLAIN" => "FALSE",
-        "NEWTON_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function tan_basic_setup($extra)
     if ($env["NEWTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["NEWTON_APIKEY"],
             ],
             $extra ?? [],
         ]);

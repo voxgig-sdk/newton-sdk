@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch SinLoadMatch
+---@param ctrl? table
+---@return Sin
+---@return string? err
 function SinEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

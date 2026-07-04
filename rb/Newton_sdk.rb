@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'Newton_types'
+
 
 class NewtonSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class NewtonSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class NewtonSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue NewtonError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = NewtonHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class NewtonSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,100 +198,205 @@ class NewtonSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.abs.list / client.abs.load({ "id" => ... })
+  def abs
+    require_relative 'entity/abs_entity'
+    @abs ||= AbsEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.abs instead.
   def Abs(data = nil)
     require_relative 'entity/abs_entity'
     AbsEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.arcco.list / client.arcco.load({ "id" => ... })
+  def arcco
+    require_relative 'entity/arcco_entity'
+    @arcco ||= ArccoEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.arcco instead.
   def Arcco(data = nil)
     require_relative 'entity/arcco_entity'
     ArccoEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.arcsin.list / client.arcsin.load({ "id" => ... })
+  def arcsin
+    require_relative 'entity/arcsin_entity'
+    @arcsin ||= ArcsinEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.arcsin instead.
   def Arcsin(data = nil)
     require_relative 'entity/arcsin_entity'
     ArcsinEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.arctan.list / client.arctan.load({ "id" => ... })
+  def arctan
+    require_relative 'entity/arctan_entity'
+    @arctan ||= ArctanEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.arctan instead.
   def Arctan(data = nil)
     require_relative 'entity/arctan_entity'
     ArctanEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.area.list / client.area.load({ "id" => ... })
+  def area
+    require_relative 'entity/area_entity'
+    @area ||= AreaEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.area instead.
   def Area(data = nil)
     require_relative 'entity/area_entity'
     AreaEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.cos.list / client.cos.load({ "id" => ... })
+  def cos
+    require_relative 'entity/cos_entity'
+    @cos ||= CosEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.cos instead.
   def Cos(data = nil)
     require_relative 'entity/cos_entity'
     CosEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.derive.list / client.derive.load({ "id" => ... })
+  def derive
+    require_relative 'entity/derive_entity'
+    @derive ||= DeriveEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.derive instead.
   def Derive(data = nil)
     require_relative 'entity/derive_entity'
     DeriveEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.factor.list / client.factor.load({ "id" => ... })
+  def factor
+    require_relative 'entity/factor_entity'
+    @factor ||= FactorEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.factor instead.
   def Factor(data = nil)
     require_relative 'entity/factor_entity'
     FactorEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.integrate.list / client.integrate.load({ "id" => ... })
+  def integrate
+    require_relative 'entity/integrate_entity'
+    @integrate ||= IntegrateEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.integrate instead.
   def Integrate(data = nil)
     require_relative 'entity/integrate_entity'
     IntegrateEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.log.list / client.log.load({ "id" => ... })
+  def log
+    require_relative 'entity/log_entity'
+    @log ||= LogEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.log instead.
   def Log(data = nil)
     require_relative 'entity/log_entity'
     LogEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.simplify.list / client.simplify.load({ "id" => ... })
+  def simplify
+    require_relative 'entity/simplify_entity'
+    @simplify ||= SimplifyEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.simplify instead.
   def Simplify(data = nil)
     require_relative 'entity/simplify_entity'
     SimplifyEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.sin.list / client.sin.load({ "id" => ... })
+  def sin
+    require_relative 'entity/sin_entity'
+    @sin ||= SinEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.sin instead.
   def Sin(data = nil)
     require_relative 'entity/sin_entity'
     SinEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.tan.list / client.tan.load({ "id" => ... })
+  def tan
+    require_relative 'entity/tan_entity'
+    @tan ||= TanEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.tan instead.
   def Tan(data = nil)
     require_relative 'entity/tan_entity'
     TanEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.tangent.list / client.tangent.load({ "id" => ... })
+  def tangent
+    require_relative 'entity/tangent_entity'
+    @tangent ||= TangentEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.tangent instead.
   def Tangent(data = nil)
     require_relative 'entity/tangent_entity'
     TangentEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.zero.list / client.zero.load({ "id" => ... })
+  def zero
+    require_relative 'entity/zero_entity'
+    @zero ||= ZeroEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.zero instead.
   def Zero(data = nil)
     require_relative 'entity/zero_entity'
     ZeroEntity.new(self, data)

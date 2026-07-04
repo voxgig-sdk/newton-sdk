@@ -49,8 +49,7 @@ class FactorEntityTest extends TestCase
         // LOAD
         $factor_ref01_ent = $client->Factor(null);
         $factor_ref01_match_dt0 = [];
-        [$factor_ref01_data_dt0_loaded, $err] = $factor_ref01_ent->load($factor_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $factor_ref01_data_dt0_loaded = $factor_ref01_ent->load($factor_ref01_match_dt0, null);
         $this->assertNotNull($factor_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function factor_basic_setup($extra)
         "NEWTON_TEST_FACTOR_ENTID" => $idmap,
         "NEWTON_TEST_LIVE" => "FALSE",
         "NEWTON_TEST_EXPLAIN" => "FALSE",
-        "NEWTON_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function factor_basic_setup($extra)
     if ($env["NEWTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["NEWTON_APIKEY"],
             ],
             $extra ?? [],
         ]);

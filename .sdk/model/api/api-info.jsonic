@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "Newton API"
         url: "https://github.com/aunyks/newton-api"

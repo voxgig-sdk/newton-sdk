@@ -49,8 +49,7 @@ class TestAbsEntity:
         # LOAD
         abs_ref01_ent = client.Abs(None)
         abs_ref01_match_dt0 = {}
-        abs_ref01_data_dt0_loaded, err = abs_ref01_ent.load(abs_ref01_match_dt0, None)
-        assert err is None
+        abs_ref01_data_dt0_loaded = abs_ref01_ent.load(abs_ref01_match_dt0, None)
         assert abs_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _abs_basic_setup(extra):
         "NEWTON_TEST_ABS_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _abs_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

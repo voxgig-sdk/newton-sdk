@@ -42,8 +42,7 @@ class SinEntityTest < Minitest::Test
     # LOAD
     sin_ref01_ent = client.Sin(nil)
     sin_ref01_match_dt0 = {}
-    sin_ref01_data_dt0_loaded, err = sin_ref01_ent.load(sin_ref01_match_dt0, nil)
-    assert_nil err
+    sin_ref01_data_dt0_loaded = sin_ref01_ent.load(sin_ref01_match_dt0, nil)
     assert !sin_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def sin_basic_setup(extra)
     "NEWTON_TEST_SIN_ENTID" => idmap,
     "NEWTON_TEST_LIVE" => "FALSE",
     "NEWTON_TEST_EXPLAIN" => "FALSE",
-    "NEWTON_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def sin_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NEWTON_APIKEY"],
       },
       extra || {},
     ])

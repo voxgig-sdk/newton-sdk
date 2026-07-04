@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch AbsLoadMatch
+---@param ctrl? table
+---@return Abs
+---@return string? err
 function AbsEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

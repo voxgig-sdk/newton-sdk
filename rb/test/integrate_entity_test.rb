@@ -42,8 +42,7 @@ class IntegrateEntityTest < Minitest::Test
     # LOAD
     integrate_ref01_ent = client.Integrate(nil)
     integrate_ref01_match_dt0 = {}
-    integrate_ref01_data_dt0_loaded, err = integrate_ref01_ent.load(integrate_ref01_match_dt0, nil)
-    assert_nil err
+    integrate_ref01_data_dt0_loaded = integrate_ref01_ent.load(integrate_ref01_match_dt0, nil)
     assert !integrate_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def integrate_basic_setup(extra)
     "NEWTON_TEST_INTEGRATE_ENTID" => idmap,
     "NEWTON_TEST_LIVE" => "FALSE",
     "NEWTON_TEST_EXPLAIN" => "FALSE",
-    "NEWTON_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def integrate_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NEWTON_APIKEY"],
       },
       extra || {},
     ])

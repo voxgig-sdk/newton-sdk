@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch TanLoadMatch
+---@param ctrl? table
+---@return Tan
+---@return string? err
 function TanEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

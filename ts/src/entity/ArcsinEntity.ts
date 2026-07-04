@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Arcsin,
+  ArcsinLoadMatch,
+} from '../NewtonTypes'
 
 // TODO: needs Entity superclass
-class ArcsinEntity extends NewtonEntityBase {
+class ArcsinEntity extends NewtonEntityBase<Arcsin> {
 
   constructor(client: NewtonSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class ArcsinEntity extends NewtonEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: ArcsinLoadMatch, ctrl?: Control): Promise<Arcsin> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class ArcsinEntity extends NewtonEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Arcsin> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

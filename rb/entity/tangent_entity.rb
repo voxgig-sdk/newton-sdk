@@ -45,6 +45,7 @@ class TangentEntity
     end
   end
 
+  # @return [Tangent, Hash] the current Tangent data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class TangentEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Tangent fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Tangent.
+  #
+  # @param reqmatch [TangentLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Tangent, Hash] the loaded Tangent; raises NewtonError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

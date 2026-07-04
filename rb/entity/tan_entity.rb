@@ -45,6 +45,7 @@ class TanEntity
     end
   end
 
+  # @return [Tan, Hash] the current Tan data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class TanEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Tan fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Tan.
+  #
+  # @param reqmatch [TanLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Tan, Hash] the loaded Tan; raises NewtonError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

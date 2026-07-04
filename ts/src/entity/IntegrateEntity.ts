@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Integrate,
+  IntegrateLoadMatch,
+} from '../NewtonTypes'
 
 // TODO: needs Entity superclass
-class IntegrateEntity extends NewtonEntityBase {
+class IntegrateEntity extends NewtonEntityBase<Integrate> {
 
   constructor(client: NewtonSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class IntegrateEntity extends NewtonEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: IntegrateLoadMatch, ctrl?: Control): Promise<Integrate> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class IntegrateEntity extends NewtonEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Integrate> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

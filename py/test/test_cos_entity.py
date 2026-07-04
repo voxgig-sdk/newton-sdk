@@ -49,8 +49,7 @@ class TestCosEntity:
         # LOAD
         cos_ref01_ent = client.Cos(None)
         cos_ref01_match_dt0 = {}
-        cos_ref01_data_dt0_loaded, err = cos_ref01_ent.load(cos_ref01_match_dt0, None)
-        assert err is None
+        cos_ref01_data_dt0_loaded = cos_ref01_ent.load(cos_ref01_match_dt0, None)
         assert cos_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _cos_basic_setup(extra):
         "NEWTON_TEST_COS_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _cos_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

@@ -9,21 +9,10 @@ The Ruby SDK for the Newton API — an entity-oriented client using idiomatic Ru
 
 
 ## Install
-```bash
-gem install voxgig-sdk-newton
-```
+This package is not yet published to RubyGems. Install it from the
+GitHub release tag (`rb/vX.Y.Z`):
 
-Or add to your `Gemfile`:
-
-```ruby
-gem "voxgig-sdk-newton"
-```
-
-Then run:
-
-```bash
-bundle install
-```
+- Releases: [https://github.com/voxgig-sdk/newton-sdk/releases](https://github.com/voxgig-sdk/newton-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -36,17 +25,18 @@ loading a specific record.
 ```ruby
 require_relative "Newton_sdk"
 
-client = NewtonSDK.new({
-  "apikey" => ENV["NEWTON_APIKEY"],
-})
+client = NewtonSDK.new
 ```
 
-### 3. Load a abs
+### 3. Load an abs
 
 ```ruby
-result, err = client.Abs().load({ "id" => "example_id" })
-raise err if err
-puts result
+begin
+  result = client.abs.load({ "id" => "example_id" })
+  puts result
+rescue => err
+  warn "load failed: #{err}"
+end
 ```
 
 
@@ -57,32 +47,35 @@ puts result
 For endpoints not covered by entity methods:
 
 ```ruby
-result, err = client.direct({
+result = client.direct({
   "path" => "/api/resource/{id}",
   "method" => "GET",
   "params" => { "id" => "example" },
 })
-raise err if err
 
 if result["ok"]
   puts result["status"]  # 200
   puts result["data"]    # response body
+else
+  warn result["err"]
 end
 ```
 
 ### Prepare a request without sending it
 
 ```ruby
-fetchdef, err = client.prepare({
-  "path" => "/api/resource/{id}",
-  "method" => "DELETE",
-  "params" => { "id" => "example" },
-})
-raise err if err
-
-puts fetchdef["url"]
-puts fetchdef["method"]
-puts fetchdef["headers"]
+begin
+  fetchdef = client.prepare({
+    "path" => "/api/resource/{id}",
+    "method" => "DELETE",
+    "params" => { "id" => "example" },
+  })
+  puts fetchdef["url"]
+  puts fetchdef["method"]
+  puts fetchdef["headers"]
+rescue => err
+  warn "prepare failed: #{err}"
+end
 ```
 
 ### Use test mode
@@ -92,7 +85,7 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = NewtonSDK.test
 
-result, err = client.Newton().load({ "id" => "test01" })
+result = client.abs.load({ "id" => "test01" })
 # result contains mock response data
 ```
 
@@ -124,7 +117,6 @@ Create a `.env.local` file at the project root:
 
 ```
 NEWTON_TEST_LIVE=TRUE
-NEWTON_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,7 +139,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |
@@ -169,8 +160,8 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | --- | --- | --- |
 | `options_map` | `() -> Hash` | Deep copy of current SDK options. |
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
-| `prepare` | `(fetchargs) -> [Hash, err]` | Build an HTTP request definition without sending. |
-| `direct` | `(fetchargs) -> [Hash, err]` | Build and send an HTTP request. |
+| `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
+| `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
 | `Abs` | `(data) -> AbsEntity` | Create a Abs entity instance. |
 | `Arcco` | `(data) -> ArccoEntity` | Create a Arcco entity instance. |
 | `Arcsin` | `(data) -> ArcsinEntity` | Create a Arcsin entity instance. |
@@ -193,11 +184,11 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> [any, err]` | Load a single entity by match criteria. |
-| `list` | `(reqmatch, ctrl) -> [any, err]` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> [any, err]` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> [any, err]` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> [any, err]` | Remove an entity. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
+| `list` | `(reqmatch, ctrl) -> Array` | List entities matching the criteria. Raises on error. |
+| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
+| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
+| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -207,8 +198,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[any, err]`. The first value is a
-`Hash` with these keys:
+Entity operations return the result data directly. On failure they
+raise a `NewtonError` (a `StandardError` subclass), so wrap
+calls in `begin`/`rescue` where you need to handle errors.
+
+The `direct` escape hatch is the exception: it never raises and instead
+returns a result `Hash` with these keys:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -216,8 +211,7 @@ Entity operations return `[any, err]`. The first value is a
 | `status` | `Integer` | HTTP status code. |
 | `headers` | `Hash` | Response headers. |
 | `data` | `any` | Parsed JSON response body. |
-
-On error, `ok` is `false` and `err` contains the error value.
+| `err` | `Error` | Present when `ok` is `false`. |
 
 ### Entities
 
@@ -408,7 +402,7 @@ API path: `/zeroes/{expression}`
 
 ### Abs
 
-Create an instance: `const abs = client.Abs()`
+Create an instance: `const abs = client.abs`
 
 #### Operations
 
@@ -427,13 +421,13 @@ Create an instance: `const abs = client.Abs()`
 #### Example: Load
 
 ```ts
-const abs = await client.Abs().load({ id: 'abs_id' })
+const abs = await client.abs.load({ id: 'abs_id' })
 ```
 
 
 ### Arcco
 
-Create an instance: `const arcco = client.Arcco()`
+Create an instance: `const arcco = client.arcco`
 
 #### Operations
 
@@ -452,13 +446,13 @@ Create an instance: `const arcco = client.Arcco()`
 #### Example: Load
 
 ```ts
-const arcco = await client.Arcco().load({ id: 'arcco_id' })
+const arcco = await client.arcco.load({ id: 'arcco_id' })
 ```
 
 
 ### Arcsin
 
-Create an instance: `const arcsin = client.Arcsin()`
+Create an instance: `const arcsin = client.arcsin`
 
 #### Operations
 
@@ -477,13 +471,13 @@ Create an instance: `const arcsin = client.Arcsin()`
 #### Example: Load
 
 ```ts
-const arcsin = await client.Arcsin().load({ id: 'arcsin_id' })
+const arcsin = await client.arcsin.load({ id: 'arcsin_id' })
 ```
 
 
 ### Arctan
 
-Create an instance: `const arctan = client.Arctan()`
+Create an instance: `const arctan = client.arctan`
 
 #### Operations
 
@@ -502,13 +496,13 @@ Create an instance: `const arctan = client.Arctan()`
 #### Example: Load
 
 ```ts
-const arctan = await client.Arctan().load({ id: 'arctan_id' })
+const arctan = await client.arctan.load({ id: 'arctan_id' })
 ```
 
 
 ### Area
 
-Create an instance: `const area = client.Area()`
+Create an instance: `const area = client.area`
 
 #### Operations
 
@@ -527,13 +521,13 @@ Create an instance: `const area = client.Area()`
 #### Example: Load
 
 ```ts
-const area = await client.Area().load({ id: 'area_id' })
+const area = await client.area.load({ id: 'area_id' })
 ```
 
 
 ### Cos
 
-Create an instance: `const cos = client.Cos()`
+Create an instance: `const cos = client.cos`
 
 #### Operations
 
@@ -552,13 +546,13 @@ Create an instance: `const cos = client.Cos()`
 #### Example: Load
 
 ```ts
-const cos = await client.Cos().load({ id: 'cos_id' })
+const cos = await client.cos.load({ id: 'cos_id' })
 ```
 
 
 ### Derive
 
-Create an instance: `const derive = client.Derive()`
+Create an instance: `const derive = client.derive`
 
 #### Operations
 
@@ -577,13 +571,13 @@ Create an instance: `const derive = client.Derive()`
 #### Example: Load
 
 ```ts
-const derive = await client.Derive().load({ id: 'derive_id' })
+const derive = await client.derive.load({ id: 'derive_id' })
 ```
 
 
 ### Factor
 
-Create an instance: `const factor = client.Factor()`
+Create an instance: `const factor = client.factor`
 
 #### Operations
 
@@ -602,13 +596,13 @@ Create an instance: `const factor = client.Factor()`
 #### Example: Load
 
 ```ts
-const factor = await client.Factor().load({ id: 'factor_id' })
+const factor = await client.factor.load({ id: 'factor_id' })
 ```
 
 
 ### Integrate
 
-Create an instance: `const integrate = client.Integrate()`
+Create an instance: `const integrate = client.integrate`
 
 #### Operations
 
@@ -627,13 +621,13 @@ Create an instance: `const integrate = client.Integrate()`
 #### Example: Load
 
 ```ts
-const integrate = await client.Integrate().load({ id: 'integrate_id' })
+const integrate = await client.integrate.load({ id: 'integrate_id' })
 ```
 
 
 ### Log
 
-Create an instance: `const log = client.Log()`
+Create an instance: `const log = client.log`
 
 #### Operations
 
@@ -652,13 +646,13 @@ Create an instance: `const log = client.Log()`
 #### Example: Load
 
 ```ts
-const log = await client.Log().load({ id: 'log_id' })
+const log = await client.log.load({ id: 'log_id' })
 ```
 
 
 ### Simplify
 
-Create an instance: `const simplify = client.Simplify()`
+Create an instance: `const simplify = client.simplify`
 
 #### Operations
 
@@ -677,13 +671,13 @@ Create an instance: `const simplify = client.Simplify()`
 #### Example: Load
 
 ```ts
-const simplify = await client.Simplify().load({ id: 'simplify_id' })
+const simplify = await client.simplify.load({ id: 'simplify_id' })
 ```
 
 
 ### Sin
 
-Create an instance: `const sin = client.Sin()`
+Create an instance: `const sin = client.sin`
 
 #### Operations
 
@@ -702,13 +696,13 @@ Create an instance: `const sin = client.Sin()`
 #### Example: Load
 
 ```ts
-const sin = await client.Sin().load({ id: 'sin_id' })
+const sin = await client.sin.load({ id: 'sin_id' })
 ```
 
 
 ### Tan
 
-Create an instance: `const tan = client.Tan()`
+Create an instance: `const tan = client.tan`
 
 #### Operations
 
@@ -727,13 +721,13 @@ Create an instance: `const tan = client.Tan()`
 #### Example: Load
 
 ```ts
-const tan = await client.Tan().load({ id: 'tan_id' })
+const tan = await client.tan.load({ id: 'tan_id' })
 ```
 
 
 ### Tangent
 
-Create an instance: `const tangent = client.Tangent()`
+Create an instance: `const tangent = client.tangent`
 
 #### Operations
 
@@ -752,13 +746,13 @@ Create an instance: `const tangent = client.Tangent()`
 #### Example: Load
 
 ```ts
-const tangent = await client.Tangent().load({ id: 'tangent_id' })
+const tangent = await client.tangent.load({ id: 'tangent_id' })
 ```
 
 
 ### Zero
 
-Create an instance: `const zero = client.Zero()`
+Create an instance: `const zero = client.zero`
 
 #### Operations
 
@@ -777,7 +771,7 @@ Create an instance: `const zero = client.Zero()`
 #### Example: Load
 
 ```ts
-const zero = await client.Zero().load({ id: 'zero_id' })
+const zero = await client.zero.load({ id: 'zero_id' })
 ```
 
 
@@ -852,11 +846,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-moon = client.Moon
-moon.load({ "planet_id" => "earth", "id" => "luna" })
+abs = client.abs
+abs.load({ "id" => "example_id" })
 
-# moon.data_get now returns the loaded moon data
-# moon.match_get returns the last match criteria
+# abs.data_get now returns the loaded abs data
+# abs.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

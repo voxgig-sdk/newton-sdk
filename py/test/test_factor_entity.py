@@ -49,8 +49,7 @@ class TestFactorEntity:
         # LOAD
         factor_ref01_ent = client.Factor(None)
         factor_ref01_match_dt0 = {}
-        factor_ref01_data_dt0_loaded, err = factor_ref01_ent.load(factor_ref01_match_dt0, None)
-        assert err is None
+        factor_ref01_data_dt0_loaded = factor_ref01_ent.load(factor_ref01_match_dt0, None)
         assert factor_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _factor_basic_setup(extra):
         "NEWTON_TEST_FACTOR_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _factor_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

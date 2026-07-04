@@ -85,6 +85,27 @@ func (e *ArccoEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Arcco; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *ArccoEntity) DataTyped(data ...Arcco) Arcco {
+	if len(data) > 0 {
+		return typedFrom[Arcco](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Arcco](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Arcco (all fields
+// optional at the wire level).
+func (e *ArccoEntity) MatchTyped(match ...Arcco) Arcco {
+	if len(match) > 0 {
+		return typedFrom[Arcco](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Arcco](e.Match())
+}
+
 
 func (e *ArccoEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *ArccoEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, e
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// ArccoLoadMatch and returns an Arcco. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *ArccoEntity) LoadTyped(reqmatch ArccoLoadMatch, ctrl map[string]any) (Arcco, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Arcco{}, err
+	}
+	return typedFrom[Arcco](res), nil
 }
 
 

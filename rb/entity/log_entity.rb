@@ -45,6 +45,7 @@ class LogEntity
     end
   end
 
+  # @return [Log, Hash] the current Log data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class LogEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Log fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Log.
+  #
+  # @param reqmatch [LogLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Log, Hash] the loaded Log; raises NewtonError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

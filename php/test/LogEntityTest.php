@@ -49,8 +49,7 @@ class LogEntityTest extends TestCase
         // LOAD
         $log_ref01_ent = $client->Log(null);
         $log_ref01_match_dt0 = [];
-        [$log_ref01_data_dt0_loaded, $err] = $log_ref01_ent->load($log_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $log_ref01_data_dt0_loaded = $log_ref01_ent->load($log_ref01_match_dt0, null);
         $this->assertNotNull($log_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function log_basic_setup($extra)
         "NEWTON_TEST_LOG_ENTID" => $idmap,
         "NEWTON_TEST_LIVE" => "FALSE",
         "NEWTON_TEST_EXPLAIN" => "FALSE",
-        "NEWTON_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function log_basic_setup($extra)
     if ($env["NEWTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["NEWTON_APIKEY"],
             ],
             $extra ?? [],
         ]);

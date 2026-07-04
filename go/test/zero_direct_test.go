@@ -110,14 +110,12 @@ func zeroDirectSetup(mockres any) *zeroDirectSetupResult {
 	env := envOverride(map[string]any{
 		"NEWTON_TEST_ZERO_ENTID": map[string]any{},
 		"NEWTON_TEST_LIVE":    "FALSE",
-		"NEWTON_APIKEY":       "NONE",
 	})
 
 	live := env["NEWTON_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["NEWTON_APIKEY"],
 		}
 		client := sdk.NewNewtonSDK(mergedOpts)
 

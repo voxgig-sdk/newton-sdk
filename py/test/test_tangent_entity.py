@@ -49,8 +49,7 @@ class TestTangentEntity:
         # LOAD
         tangent_ref01_ent = client.Tangent(None)
         tangent_ref01_match_dt0 = {}
-        tangent_ref01_data_dt0_loaded, err = tangent_ref01_ent.load(tangent_ref01_match_dt0, None)
-        assert err is None
+        tangent_ref01_data_dt0_loaded = tangent_ref01_ent.load(tangent_ref01_match_dt0, None)
         assert tangent_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _tangent_basic_setup(extra):
         "NEWTON_TEST_TANGENT_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _tangent_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

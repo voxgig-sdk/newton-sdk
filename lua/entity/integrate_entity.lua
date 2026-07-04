@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch IntegrateLoadMatch
+---@param ctrl? table
+---@return Integrate
+---@return string? err
 function IntegrateEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

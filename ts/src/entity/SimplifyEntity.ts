@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Simplify,
+  SimplifyLoadMatch,
+} from '../NewtonTypes'
 
 // TODO: needs Entity superclass
-class SimplifyEntity extends NewtonEntityBase {
+class SimplifyEntity extends NewtonEntityBase<Simplify> {
 
   constructor(client: NewtonSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class SimplifyEntity extends NewtonEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: SimplifyLoadMatch, ctrl?: Control): Promise<Simplify> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class SimplifyEntity extends NewtonEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Simplify> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

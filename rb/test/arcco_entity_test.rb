@@ -42,8 +42,7 @@ class ArccoEntityTest < Minitest::Test
     # LOAD
     arcco_ref01_ent = client.Arcco(nil)
     arcco_ref01_match_dt0 = {}
-    arcco_ref01_data_dt0_loaded, err = arcco_ref01_ent.load(arcco_ref01_match_dt0, nil)
-    assert_nil err
+    arcco_ref01_data_dt0_loaded = arcco_ref01_ent.load(arcco_ref01_match_dt0, nil)
     assert !arcco_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def arcco_basic_setup(extra)
     "NEWTON_TEST_ARCCO_ENTID" => idmap,
     "NEWTON_TEST_LIVE" => "FALSE",
     "NEWTON_TEST_EXPLAIN" => "FALSE",
-    "NEWTON_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def arcco_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NEWTON_APIKEY"],
       },
       extra || {},
     ])

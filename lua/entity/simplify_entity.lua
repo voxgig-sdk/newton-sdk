@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch SimplifyLoadMatch
+---@param ctrl? table
+---@return Simplify
+---@return string? err
 function SimplifyEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

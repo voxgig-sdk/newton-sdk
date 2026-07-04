@@ -49,8 +49,7 @@ class TestSinEntity:
         # LOAD
         sin_ref01_ent = client.Sin(None)
         sin_ref01_match_dt0 = {}
-        sin_ref01_data_dt0_loaded, err = sin_ref01_ent.load(sin_ref01_match_dt0, None)
-        assert err is None
+        sin_ref01_data_dt0_loaded = sin_ref01_ent.load(sin_ref01_match_dt0, None)
         assert sin_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _sin_basic_setup(extra):
         "NEWTON_TEST_SIN_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _sin_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

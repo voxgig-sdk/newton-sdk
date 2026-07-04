@@ -49,8 +49,7 @@ class CosEntityTest extends TestCase
         // LOAD
         $cos_ref01_ent = $client->Cos(null);
         $cos_ref01_match_dt0 = [];
-        [$cos_ref01_data_dt0_loaded, $err] = $cos_ref01_ent->load($cos_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $cos_ref01_data_dt0_loaded = $cos_ref01_ent->load($cos_ref01_match_dt0, null);
         $this->assertNotNull($cos_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function cos_basic_setup($extra)
         "NEWTON_TEST_COS_ENTID" => $idmap,
         "NEWTON_TEST_LIVE" => "FALSE",
         "NEWTON_TEST_EXPLAIN" => "FALSE",
-        "NEWTON_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function cos_basic_setup($extra)
     if ($env["NEWTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["NEWTON_APIKEY"],
             ],
             $extra ?? [],
         ]);

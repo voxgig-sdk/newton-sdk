@@ -49,8 +49,7 @@ class TestZeroEntity:
         # LOAD
         zero_ref01_ent = client.Zero(None)
         zero_ref01_match_dt0 = {}
-        zero_ref01_data_dt0_loaded, err = zero_ref01_ent.load(zero_ref01_match_dt0, None)
-        assert err is None
+        zero_ref01_data_dt0_loaded = zero_ref01_ent.load(zero_ref01_match_dt0, None)
         assert zero_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _zero_basic_setup(extra):
         "NEWTON_TEST_ZERO_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _zero_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

@@ -42,8 +42,7 @@ class ArcsinEntityTest < Minitest::Test
     # LOAD
     arcsin_ref01_ent = client.Arcsin(nil)
     arcsin_ref01_match_dt0 = {}
-    arcsin_ref01_data_dt0_loaded, err = arcsin_ref01_ent.load(arcsin_ref01_match_dt0, nil)
-    assert_nil err
+    arcsin_ref01_data_dt0_loaded = arcsin_ref01_ent.load(arcsin_ref01_match_dt0, nil)
     assert !arcsin_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def arcsin_basic_setup(extra)
     "NEWTON_TEST_ARCSIN_ENTID" => idmap,
     "NEWTON_TEST_LIVE" => "FALSE",
     "NEWTON_TEST_EXPLAIN" => "FALSE",
-    "NEWTON_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def arcsin_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NEWTON_APIKEY"],
       },
       extra || {},
     ])

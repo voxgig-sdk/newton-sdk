@@ -42,8 +42,7 @@ class CosEntityTest < Minitest::Test
     # LOAD
     cos_ref01_ent = client.Cos(nil)
     cos_ref01_match_dt0 = {}
-    cos_ref01_data_dt0_loaded, err = cos_ref01_ent.load(cos_ref01_match_dt0, nil)
-    assert_nil err
+    cos_ref01_data_dt0_loaded = cos_ref01_ent.load(cos_ref01_match_dt0, nil)
     assert !cos_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def cos_basic_setup(extra)
     "NEWTON_TEST_COS_ENTID" => idmap,
     "NEWTON_TEST_LIVE" => "FALSE",
     "NEWTON_TEST_EXPLAIN" => "FALSE",
-    "NEWTON_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def cos_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NEWTON_APIKEY"],
       },
       extra || {},
     ])

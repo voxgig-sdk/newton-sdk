@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Log,
+  LogLoadMatch,
+} from '../NewtonTypes'
 
 // TODO: needs Entity superclass
-class LogEntity extends NewtonEntityBase {
+class LogEntity extends NewtonEntityBase<Log> {
 
   constructor(client: NewtonSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class LogEntity extends NewtonEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: LogLoadMatch, ctrl?: Control): Promise<Log> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class LogEntity extends NewtonEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Log> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

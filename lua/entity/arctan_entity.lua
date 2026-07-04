@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ArctanLoadMatch
+---@param ctrl? table
+---@return Arctan
+---@return string? err
 function ArctanEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

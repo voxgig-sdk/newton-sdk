@@ -245,76 +245,121 @@ func (sdk *NewtonSDK) Direct(fetchargs map[string]any) (map[string]any, error) {
 }
 
 
+// Abs returns a Abs entity bound to this client.
+// Idiomatic usage: client.Abs(nil).List(nil, nil) or
+// client.Abs(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Abs(data map[string]any) NewtonEntity {
 	return NewAbsEntityFunc(sdk, data)
 }
 
 
+// Arcco returns a Arcco entity bound to this client.
+// Idiomatic usage: client.Arcco(nil).List(nil, nil) or
+// client.Arcco(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Arcco(data map[string]any) NewtonEntity {
 	return NewArccoEntityFunc(sdk, data)
 }
 
 
+// Arcsin returns a Arcsin entity bound to this client.
+// Idiomatic usage: client.Arcsin(nil).List(nil, nil) or
+// client.Arcsin(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Arcsin(data map[string]any) NewtonEntity {
 	return NewArcsinEntityFunc(sdk, data)
 }
 
 
+// Arctan returns a Arctan entity bound to this client.
+// Idiomatic usage: client.Arctan(nil).List(nil, nil) or
+// client.Arctan(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Arctan(data map[string]any) NewtonEntity {
 	return NewArctanEntityFunc(sdk, data)
 }
 
 
+// Area returns a Area entity bound to this client.
+// Idiomatic usage: client.Area(nil).List(nil, nil) or
+// client.Area(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Area(data map[string]any) NewtonEntity {
 	return NewAreaEntityFunc(sdk, data)
 }
 
 
+// Cos returns a Cos entity bound to this client.
+// Idiomatic usage: client.Cos(nil).List(nil, nil) or
+// client.Cos(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Cos(data map[string]any) NewtonEntity {
 	return NewCosEntityFunc(sdk, data)
 }
 
 
+// Derive returns a Derive entity bound to this client.
+// Idiomatic usage: client.Derive(nil).List(nil, nil) or
+// client.Derive(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Derive(data map[string]any) NewtonEntity {
 	return NewDeriveEntityFunc(sdk, data)
 }
 
 
+// Factor returns a Factor entity bound to this client.
+// Idiomatic usage: client.Factor(nil).List(nil, nil) or
+// client.Factor(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Factor(data map[string]any) NewtonEntity {
 	return NewFactorEntityFunc(sdk, data)
 }
 
 
+// Integrate returns a Integrate entity bound to this client.
+// Idiomatic usage: client.Integrate(nil).List(nil, nil) or
+// client.Integrate(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Integrate(data map[string]any) NewtonEntity {
 	return NewIntegrateEntityFunc(sdk, data)
 }
 
 
+// Log returns a Log entity bound to this client.
+// Idiomatic usage: client.Log(nil).List(nil, nil) or
+// client.Log(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Log(data map[string]any) NewtonEntity {
 	return NewLogEntityFunc(sdk, data)
 }
 
 
+// Simplify returns a Simplify entity bound to this client.
+// Idiomatic usage: client.Simplify(nil).List(nil, nil) or
+// client.Simplify(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Simplify(data map[string]any) NewtonEntity {
 	return NewSimplifyEntityFunc(sdk, data)
 }
 
 
+// Sin returns a Sin entity bound to this client.
+// Idiomatic usage: client.Sin(nil).List(nil, nil) or
+// client.Sin(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Sin(data map[string]any) NewtonEntity {
 	return NewSinEntityFunc(sdk, data)
 }
 
 
+// Tan returns a Tan entity bound to this client.
+// Idiomatic usage: client.Tan(nil).List(nil, nil) or
+// client.Tan(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Tan(data map[string]any) NewtonEntity {
 	return NewTanEntityFunc(sdk, data)
 }
 
 
+// Tangent returns a Tangent entity bound to this client.
+// Idiomatic usage: client.Tangent(nil).List(nil, nil) or
+// client.Tangent(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Tangent(data map[string]any) NewtonEntity {
 	return NewTangentEntityFunc(sdk, data)
 }
 
 
+// Zero returns a Zero entity bound to this client.
+// Idiomatic usage: client.Zero(nil).List(nil, nil) or
+// client.Zero(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *NewtonSDK) Zero(data map[string]any) NewtonEntity {
 	return NewZeroEntityFunc(sdk, data)
 }

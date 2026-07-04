@@ -16,6 +16,8 @@ import { TanEntity } from './entity/TanEntity'
 import { TangentEntity } from './entity/TangentEntity'
 import { ZeroEntity } from './entity/ZeroEntity'
 
+export type * from './NewtonTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -216,90 +218,210 @@ class NewtonSDK {
 
 
 
+  _abs?: AbsEntity
+
+  // Idiomatic facade: `client.abs.list()` / `client.abs.load({ id })`.
+  get abs(): AbsEntity {
+    return (this._abs ??= new AbsEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.abs` instead. */
   Abs(data?: any) {
     const self = this
     return new AbsEntity(self,data)
   }
 
 
+  _arcco?: ArccoEntity
+
+  // Idiomatic facade: `client.arcco.list()` / `client.arcco.load({ id })`.
+  get arcco(): ArccoEntity {
+    return (this._arcco ??= new ArccoEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.arcco` instead. */
   Arcco(data?: any) {
     const self = this
     return new ArccoEntity(self,data)
   }
 
 
+  _arcsin?: ArcsinEntity
+
+  // Idiomatic facade: `client.arcsin.list()` / `client.arcsin.load({ id })`.
+  get arcsin(): ArcsinEntity {
+    return (this._arcsin ??= new ArcsinEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.arcsin` instead. */
   Arcsin(data?: any) {
     const self = this
     return new ArcsinEntity(self,data)
   }
 
 
+  _arctan?: ArctanEntity
+
+  // Idiomatic facade: `client.arctan.list()` / `client.arctan.load({ id })`.
+  get arctan(): ArctanEntity {
+    return (this._arctan ??= new ArctanEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.arctan` instead. */
   Arctan(data?: any) {
     const self = this
     return new ArctanEntity(self,data)
   }
 
 
+  _area?: AreaEntity
+
+  // Idiomatic facade: `client.area.list()` / `client.area.load({ id })`.
+  get area(): AreaEntity {
+    return (this._area ??= new AreaEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.area` instead. */
   Area(data?: any) {
     const self = this
     return new AreaEntity(self,data)
   }
 
 
+  _cos?: CosEntity
+
+  // Idiomatic facade: `client.cos.list()` / `client.cos.load({ id })`.
+  get cos(): CosEntity {
+    return (this._cos ??= new CosEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.cos` instead. */
   Cos(data?: any) {
     const self = this
     return new CosEntity(self,data)
   }
 
 
+  _derive?: DeriveEntity
+
+  // Idiomatic facade: `client.derive.list()` / `client.derive.load({ id })`.
+  get derive(): DeriveEntity {
+    return (this._derive ??= new DeriveEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.derive` instead. */
   Derive(data?: any) {
     const self = this
     return new DeriveEntity(self,data)
   }
 
 
+  _factor?: FactorEntity
+
+  // Idiomatic facade: `client.factor.list()` / `client.factor.load({ id })`.
+  get factor(): FactorEntity {
+    return (this._factor ??= new FactorEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.factor` instead. */
   Factor(data?: any) {
     const self = this
     return new FactorEntity(self,data)
   }
 
 
+  _integrate?: IntegrateEntity
+
+  // Idiomatic facade: `client.integrate.list()` / `client.integrate.load({ id })`.
+  get integrate(): IntegrateEntity {
+    return (this._integrate ??= new IntegrateEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.integrate` instead. */
   Integrate(data?: any) {
     const self = this
     return new IntegrateEntity(self,data)
   }
 
 
+  _log?: LogEntity
+
+  // Idiomatic facade: `client.log.list()` / `client.log.load({ id })`.
+  get log(): LogEntity {
+    return (this._log ??= new LogEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.log` instead. */
   Log(data?: any) {
     const self = this
     return new LogEntity(self,data)
   }
 
 
+  _simplify?: SimplifyEntity
+
+  // Idiomatic facade: `client.simplify.list()` / `client.simplify.load({ id })`.
+  get simplify(): SimplifyEntity {
+    return (this._simplify ??= new SimplifyEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.simplify` instead. */
   Simplify(data?: any) {
     const self = this
     return new SimplifyEntity(self,data)
   }
 
 
+  _sin?: SinEntity
+
+  // Idiomatic facade: `client.sin.list()` / `client.sin.load({ id })`.
+  get sin(): SinEntity {
+    return (this._sin ??= new SinEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.sin` instead. */
   Sin(data?: any) {
     const self = this
     return new SinEntity(self,data)
   }
 
 
+  _tan?: TanEntity
+
+  // Idiomatic facade: `client.tan.list()` / `client.tan.load({ id })`.
+  get tan(): TanEntity {
+    return (this._tan ??= new TanEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.tan` instead. */
   Tan(data?: any) {
     const self = this
     return new TanEntity(self,data)
   }
 
 
+  _tangent?: TangentEntity
+
+  // Idiomatic facade: `client.tangent.list()` / `client.tangent.load({ id })`.
+  get tangent(): TangentEntity {
+    return (this._tangent ??= new TangentEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.tangent` instead. */
   Tangent(data?: any) {
     const self = this
     return new TangentEntity(self,data)
   }
 
 
+  _zero?: ZeroEntity
+
+  // Idiomatic facade: `client.zero.list()` / `client.zero.load({ id })`.
+  get zero(): ZeroEntity {
+    return (this._zero ??= new ZeroEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.zero` instead. */
   Zero(data?: any) {
     const self = this
     return new ZeroEntity(self,data)

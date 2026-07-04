@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch FactorLoadMatch
+---@param ctrl? table
+---@return Factor
+---@return string? err
 function FactorEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

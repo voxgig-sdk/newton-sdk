@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch CosLoadMatch
+---@param ctrl? table
+---@return Cos
+---@return string? err
 function CosEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -49,8 +49,7 @@ class TestArccoEntity:
         # LOAD
         arcco_ref01_ent = client.Arcco(None)
         arcco_ref01_match_dt0 = {}
-        arcco_ref01_data_dt0_loaded, err = arcco_ref01_ent.load(arcco_ref01_match_dt0, None)
-        assert err is None
+        arcco_ref01_data_dt0_loaded = arcco_ref01_ent.load(arcco_ref01_match_dt0, None)
         assert arcco_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _arcco_basic_setup(extra):
         "NEWTON_TEST_ARCCO_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _arcco_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ArccoLoadMatch
+---@param ctrl? table
+---@return Arcco
+---@return string? err
 function ArccoEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

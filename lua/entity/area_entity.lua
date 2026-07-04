@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch AreaLoadMatch
+---@param ctrl? table
+---@return Area
+---@return string? err
 function AreaEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

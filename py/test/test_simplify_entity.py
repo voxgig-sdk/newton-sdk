@@ -49,8 +49,7 @@ class TestSimplifyEntity:
         # LOAD
         simplify_ref01_ent = client.Simplify(None)
         simplify_ref01_match_dt0 = {}
-        simplify_ref01_data_dt0_loaded, err = simplify_ref01_ent.load(simplify_ref01_match_dt0, None)
-        assert err is None
+        simplify_ref01_data_dt0_loaded = simplify_ref01_ent.load(simplify_ref01_match_dt0, None)
         assert simplify_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _simplify_basic_setup(extra):
         "NEWTON_TEST_SIMPLIFY_ENTID": idmap,
         "NEWTON_TEST_LIVE": "FALSE",
         "NEWTON_TEST_EXPLAIN": "FALSE",
-        "NEWTON_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _simplify_basic_setup(extra):
     if env.get("NEWTON_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("NEWTON_APIKEY"),
             },
             extra or {},
         ])

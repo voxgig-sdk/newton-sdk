@@ -49,8 +49,7 @@ class TangentEntityTest extends TestCase
         // LOAD
         $tangent_ref01_ent = $client->Tangent(null);
         $tangent_ref01_match_dt0 = [];
-        [$tangent_ref01_data_dt0_loaded, $err] = $tangent_ref01_ent->load($tangent_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $tangent_ref01_data_dt0_loaded = $tangent_ref01_ent->load($tangent_ref01_match_dt0, null);
         $this->assertNotNull($tangent_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function tangent_basic_setup($extra)
         "NEWTON_TEST_TANGENT_ENTID" => $idmap,
         "NEWTON_TEST_LIVE" => "FALSE",
         "NEWTON_TEST_EXPLAIN" => "FALSE",
-        "NEWTON_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function tangent_basic_setup($extra)
     if ($env["NEWTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["NEWTON_APIKEY"],
             ],
             $extra ?? [],
         ]);

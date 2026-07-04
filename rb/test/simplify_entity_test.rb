@@ -42,8 +42,7 @@ class SimplifyEntityTest < Minitest::Test
     # LOAD
     simplify_ref01_ent = client.Simplify(nil)
     simplify_ref01_match_dt0 = {}
-    simplify_ref01_data_dt0_loaded, err = simplify_ref01_ent.load(simplify_ref01_match_dt0, nil)
-    assert_nil err
+    simplify_ref01_data_dt0_loaded = simplify_ref01_ent.load(simplify_ref01_match_dt0, nil)
     assert !simplify_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def simplify_basic_setup(extra)
     "NEWTON_TEST_SIMPLIFY_ENTID" => idmap,
     "NEWTON_TEST_LIVE" => "FALSE",
     "NEWTON_TEST_EXPLAIN" => "FALSE",
-    "NEWTON_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def simplify_basic_setup(extra)
   if env["NEWTON_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["NEWTON_APIKEY"],
       },
       extra || {},
     ])

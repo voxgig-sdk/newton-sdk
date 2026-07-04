@@ -9,11 +9,9 @@ The Python SDK for the Newton API — an entity-oriented client following Python
 
 
 ## Install
-```bash
-pip install voxgig-sdk-newton
-```
-
-Or install from source:
+This package is not yet published to PyPI. Install it from the GitHub
+release tag (`py/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/newton-sdk/releases)) or
+from a source checkout:
 
 ```bash
 pip install -e .
@@ -28,21 +26,19 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from newton_sdk import NewtonSDK
 
-client = NewtonSDK({
-    "apikey": os.environ.get("NEWTON_APIKEY"),
-})
+client = NewtonSDK()
 ```
 
-### 3. Load a abs
+### 3. Load an abs
 
 ```python
-result, err = client.Abs().load({"id": "example_id"})
-if err:
-    raise Exception(err)
-print(result)
+try:
+    result = client.abs.load({"id": "example_id"})
+    print(result)
+except Exception as err:
+    print(f"load failed: {err}")
 ```
 
 
@@ -53,29 +49,28 @@ print(result)
 For endpoints not covered by entity methods:
 
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
+else:
+    print(result["err"])     # error value
 ```
 
 ### Prepare a request without sending it
 
 ```python
-fetchdef, err = client.prepare({
+# prepare() returns the fetch definition and raises on error.
+fetchdef = client.prepare({
     "path": "/api/resource/{id}",
     "method": "DELETE",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 print(fetchdef["url"])
 print(fetchdef["method"])
@@ -89,7 +84,7 @@ Create a mock client for unit testing — no server required:
 ```python
 client = NewtonSDK.test()
 
-result, err = client.Newton().load({"id": "test01"})
+result = client.abs.load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -120,7 +115,6 @@ Create a `.env.local` file at the project root:
 
 ```
 NEWTON_TEST_LIVE=TRUE
-NEWTON_APIKEY=<your-key>
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |
@@ -166,8 +159,8 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | --- | --- | --- |
 | `options_map` | `() -> dict` | Deep copy of current SDK options. |
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
-| `prepare` | `(fetchargs) -> (dict, err)` | Build an HTTP request definition without sending. |
-| `direct` | `(fetchargs) -> (dict, err)` | Build and send an HTTP request. |
+| `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
+| `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `Abs` | `(data) -> AbsEntity` | Create a Abs entity instance. |
 | `Arcco` | `(data) -> ArccoEntity` | Create a Arcco entity instance. |
 | `Arcsin` | `(data) -> ArcsinEntity` | Create a Arcsin entity instance. |
@@ -190,11 +183,11 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> (any, err)` | Load a single entity by match criteria. |
-| `list` | `(reqmatch, ctrl) -> (any, err)` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> (any, err)` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> (any, err)` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> (any, err)` | Remove an entity. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
+| `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
+| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
+| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
+| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -204,8 +197,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`dict` with these keys:
+Entity operations return the bare result data (a `dict` for single-entity
+ops, a `list` for `list`) and raise on error. Wrap calls in
+`try`/`except` to handle failures.
+
+The `direct()` escape hatch never raises — it returns a result `dict`
+you branch on via `result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -405,7 +402,7 @@ API path: `/zeroes/{expression}`
 
 ### Abs
 
-Create an instance: `const abs = client.Abs()`
+Create an instance: `const abs = client.abs`
 
 #### Operations
 
@@ -424,13 +421,13 @@ Create an instance: `const abs = client.Abs()`
 #### Example: Load
 
 ```ts
-const abs = await client.Abs().load({ id: 'abs_id' })
+const abs = await client.abs.load({ id: 'abs_id' })
 ```
 
 
 ### Arcco
 
-Create an instance: `const arcco = client.Arcco()`
+Create an instance: `const arcco = client.arcco`
 
 #### Operations
 
@@ -449,13 +446,13 @@ Create an instance: `const arcco = client.Arcco()`
 #### Example: Load
 
 ```ts
-const arcco = await client.Arcco().load({ id: 'arcco_id' })
+const arcco = await client.arcco.load({ id: 'arcco_id' })
 ```
 
 
 ### Arcsin
 
-Create an instance: `const arcsin = client.Arcsin()`
+Create an instance: `const arcsin = client.arcsin`
 
 #### Operations
 
@@ -474,13 +471,13 @@ Create an instance: `const arcsin = client.Arcsin()`
 #### Example: Load
 
 ```ts
-const arcsin = await client.Arcsin().load({ id: 'arcsin_id' })
+const arcsin = await client.arcsin.load({ id: 'arcsin_id' })
 ```
 
 
 ### Arctan
 
-Create an instance: `const arctan = client.Arctan()`
+Create an instance: `const arctan = client.arctan`
 
 #### Operations
 
@@ -499,13 +496,13 @@ Create an instance: `const arctan = client.Arctan()`
 #### Example: Load
 
 ```ts
-const arctan = await client.Arctan().load({ id: 'arctan_id' })
+const arctan = await client.arctan.load({ id: 'arctan_id' })
 ```
 
 
 ### Area
 
-Create an instance: `const area = client.Area()`
+Create an instance: `const area = client.area`
 
 #### Operations
 
@@ -524,13 +521,13 @@ Create an instance: `const area = client.Area()`
 #### Example: Load
 
 ```ts
-const area = await client.Area().load({ id: 'area_id' })
+const area = await client.area.load({ id: 'area_id' })
 ```
 
 
 ### Cos
 
-Create an instance: `const cos = client.Cos()`
+Create an instance: `const cos = client.cos`
 
 #### Operations
 
@@ -549,13 +546,13 @@ Create an instance: `const cos = client.Cos()`
 #### Example: Load
 
 ```ts
-const cos = await client.Cos().load({ id: 'cos_id' })
+const cos = await client.cos.load({ id: 'cos_id' })
 ```
 
 
 ### Derive
 
-Create an instance: `const derive = client.Derive()`
+Create an instance: `const derive = client.derive`
 
 #### Operations
 
@@ -574,13 +571,13 @@ Create an instance: `const derive = client.Derive()`
 #### Example: Load
 
 ```ts
-const derive = await client.Derive().load({ id: 'derive_id' })
+const derive = await client.derive.load({ id: 'derive_id' })
 ```
 
 
 ### Factor
 
-Create an instance: `const factor = client.Factor()`
+Create an instance: `const factor = client.factor`
 
 #### Operations
 
@@ -599,13 +596,13 @@ Create an instance: `const factor = client.Factor()`
 #### Example: Load
 
 ```ts
-const factor = await client.Factor().load({ id: 'factor_id' })
+const factor = await client.factor.load({ id: 'factor_id' })
 ```
 
 
 ### Integrate
 
-Create an instance: `const integrate = client.Integrate()`
+Create an instance: `const integrate = client.integrate`
 
 #### Operations
 
@@ -624,13 +621,13 @@ Create an instance: `const integrate = client.Integrate()`
 #### Example: Load
 
 ```ts
-const integrate = await client.Integrate().load({ id: 'integrate_id' })
+const integrate = await client.integrate.load({ id: 'integrate_id' })
 ```
 
 
 ### Log
 
-Create an instance: `const log = client.Log()`
+Create an instance: `const log = client.log`
 
 #### Operations
 
@@ -649,13 +646,13 @@ Create an instance: `const log = client.Log()`
 #### Example: Load
 
 ```ts
-const log = await client.Log().load({ id: 'log_id' })
+const log = await client.log.load({ id: 'log_id' })
 ```
 
 
 ### Simplify
 
-Create an instance: `const simplify = client.Simplify()`
+Create an instance: `const simplify = client.simplify`
 
 #### Operations
 
@@ -674,13 +671,13 @@ Create an instance: `const simplify = client.Simplify()`
 #### Example: Load
 
 ```ts
-const simplify = await client.Simplify().load({ id: 'simplify_id' })
+const simplify = await client.simplify.load({ id: 'simplify_id' })
 ```
 
 
 ### Sin
 
-Create an instance: `const sin = client.Sin()`
+Create an instance: `const sin = client.sin`
 
 #### Operations
 
@@ -699,13 +696,13 @@ Create an instance: `const sin = client.Sin()`
 #### Example: Load
 
 ```ts
-const sin = await client.Sin().load({ id: 'sin_id' })
+const sin = await client.sin.load({ id: 'sin_id' })
 ```
 
 
 ### Tan
 
-Create an instance: `const tan = client.Tan()`
+Create an instance: `const tan = client.tan`
 
 #### Operations
 
@@ -724,13 +721,13 @@ Create an instance: `const tan = client.Tan()`
 #### Example: Load
 
 ```ts
-const tan = await client.Tan().load({ id: 'tan_id' })
+const tan = await client.tan.load({ id: 'tan_id' })
 ```
 
 
 ### Tangent
 
-Create an instance: `const tangent = client.Tangent()`
+Create an instance: `const tangent = client.tangent`
 
 #### Operations
 
@@ -749,13 +746,13 @@ Create an instance: `const tangent = client.Tangent()`
 #### Example: Load
 
 ```ts
-const tangent = await client.Tangent().load({ id: 'tangent_id' })
+const tangent = await client.tangent.load({ id: 'tangent_id' })
 ```
 
 
 ### Zero
 
-Create an instance: `const zero = client.Zero()`
+Create an instance: `const zero = client.zero`
 
 #### Operations
 
@@ -774,7 +771,7 @@ Create an instance: `const zero = client.Zero()`
 #### Example: Load
 
 ```ts
-const zero = await client.Zero().load({ id: 'zero_id' })
+const zero = await client.zero.load({ id: 'zero_id' })
 ```
 
 
@@ -848,11 +845,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-moon = client.Moon()
-moon.load({"planet_id": "earth", "id": "luna"})
+abs = client.abs
+abs.load({"id": "example_id"})
 
-# moon.data_get() now returns the loaded moon data
-# moon.match_get() returns the last match criteria
+# abs.data_get() now returns the loaded abs data
+# abs.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

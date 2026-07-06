@@ -143,9 +143,9 @@ abs = client.Abs()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -196,9 +196,9 @@ arcco = client.Arcco()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -249,9 +249,9 @@ arcsin = client.Arcsin()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -302,9 +302,9 @@ arctan = client.Arctan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -355,9 +355,9 @@ area = client.Area()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -408,9 +408,9 @@ cos = client.Cos()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -461,9 +461,9 @@ derive = client.Derive()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -514,9 +514,9 @@ factor = client.Factor()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -567,9 +567,9 @@ integrate = client.Integrate()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -620,9 +620,9 @@ log = client.Log()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -673,9 +673,9 @@ simplify = client.Simplify()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -726,9 +726,9 @@ sin = client.Sin()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -779,9 +779,9 @@ tan = client.Tan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -832,9 +832,9 @@ tangent = client.Tangent()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 
@@ -885,9 +885,9 @@ zero = client.Zero()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `str` | Yes |  |
+| `operation` | `str` | Yes |  |
+| `result` | `str` | Yes |  |
 
 ### Operations
 

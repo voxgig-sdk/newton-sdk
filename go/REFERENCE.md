@@ -153,9 +153,9 @@ abs := client.Abs(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -201,9 +201,9 @@ arcco := client.Arcco(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -249,9 +249,9 @@ arcsin := client.Arcsin(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -297,9 +297,9 @@ arctan := client.Arctan(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -345,9 +345,9 @@ area := client.Area(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -393,9 +393,9 @@ cos := client.Cos(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -441,9 +441,9 @@ derive := client.Derive(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -489,9 +489,9 @@ factor := client.Factor(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -537,9 +537,9 @@ integrate := client.Integrate(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -585,9 +585,9 @@ log := client.Log(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -633,9 +633,9 @@ simplify := client.Simplify(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -681,9 +681,9 @@ sin := client.Sin(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -729,9 +729,9 @@ tan := client.Tan(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -777,9 +777,9 @@ tangent := client.Tangent(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -825,9 +825,9 @@ zero := client.Zero(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 

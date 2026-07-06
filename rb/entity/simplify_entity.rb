@@ -67,10 +67,12 @@ class SimplifyEntity
   
   # Load a single Simplify.
   #
-  # @param reqmatch [SimplifyLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param reqmatch [SimplifyLoadMatch, Hash, nil] match criteria (id/query fields);
+  #   optional — an entity with no id-like key loads with no match (nil is treated
+  #   as an empty match, so client.Simplify.load works with no args).
   # @param ctrl [Object, nil] optional per-call control
   # @return [Simplify, Hash] the loaded Simplify; raises NewtonError on failure
-  def load(reqmatch, ctrl = nil)
+  def load(reqmatch = nil, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
       "opname" => "load",

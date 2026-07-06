@@ -221,91 +221,91 @@ class NewtonSDK:
 
 
     def Abs(self, data=None) -> "AbsEntity":
-        """Entity factory: client.Abs().list({}) / client.Abs().load({"id": ...})."""
+        """Entity factory: client.Abs().list() / client.Abs().load({"id": ...})."""
         from entity.abs_entity import AbsEntity
         return AbsEntity(self, data)
 
 
     def Arcco(self, data=None) -> "ArccoEntity":
-        """Entity factory: client.Arcco().list({}) / client.Arcco().load({"id": ...})."""
+        """Entity factory: client.Arcco().list() / client.Arcco().load({"id": ...})."""
         from entity.arcco_entity import ArccoEntity
         return ArccoEntity(self, data)
 
 
     def Arcsin(self, data=None) -> "ArcsinEntity":
-        """Entity factory: client.Arcsin().list({}) / client.Arcsin().load({"id": ...})."""
+        """Entity factory: client.Arcsin().list() / client.Arcsin().load({"id": ...})."""
         from entity.arcsin_entity import ArcsinEntity
         return ArcsinEntity(self, data)
 
 
     def Arctan(self, data=None) -> "ArctanEntity":
-        """Entity factory: client.Arctan().list({}) / client.Arctan().load({"id": ...})."""
+        """Entity factory: client.Arctan().list() / client.Arctan().load({"id": ...})."""
         from entity.arctan_entity import ArctanEntity
         return ArctanEntity(self, data)
 
 
     def Area(self, data=None) -> "AreaEntity":
-        """Entity factory: client.Area().list({}) / client.Area().load({"id": ...})."""
+        """Entity factory: client.Area().list() / client.Area().load({"id": ...})."""
         from entity.area_entity import AreaEntity
         return AreaEntity(self, data)
 
 
     def Cos(self, data=None) -> "CosEntity":
-        """Entity factory: client.Cos().list({}) / client.Cos().load({"id": ...})."""
+        """Entity factory: client.Cos().list() / client.Cos().load({"id": ...})."""
         from entity.cos_entity import CosEntity
         return CosEntity(self, data)
 
 
     def Derive(self, data=None) -> "DeriveEntity":
-        """Entity factory: client.Derive().list({}) / client.Derive().load({"id": ...})."""
+        """Entity factory: client.Derive().list() / client.Derive().load({"id": ...})."""
         from entity.derive_entity import DeriveEntity
         return DeriveEntity(self, data)
 
 
     def Factor(self, data=None) -> "FactorEntity":
-        """Entity factory: client.Factor().list({}) / client.Factor().load({"id": ...})."""
+        """Entity factory: client.Factor().list() / client.Factor().load({"id": ...})."""
         from entity.factor_entity import FactorEntity
         return FactorEntity(self, data)
 
 
     def Integrate(self, data=None) -> "IntegrateEntity":
-        """Entity factory: client.Integrate().list({}) / client.Integrate().load({"id": ...})."""
+        """Entity factory: client.Integrate().list() / client.Integrate().load({"id": ...})."""
         from entity.integrate_entity import IntegrateEntity
         return IntegrateEntity(self, data)
 
 
     def Log(self, data=None) -> "LogEntity":
-        """Entity factory: client.Log().list({}) / client.Log().load({"id": ...})."""
+        """Entity factory: client.Log().list() / client.Log().load({"id": ...})."""
         from entity.log_entity import LogEntity
         return LogEntity(self, data)
 
 
     def Simplify(self, data=None) -> "SimplifyEntity":
-        """Entity factory: client.Simplify().list({}) / client.Simplify().load({"id": ...})."""
+        """Entity factory: client.Simplify().list() / client.Simplify().load({"id": ...})."""
         from entity.simplify_entity import SimplifyEntity
         return SimplifyEntity(self, data)
 
 
     def Sin(self, data=None) -> "SinEntity":
-        """Entity factory: client.Sin().list({}) / client.Sin().load({"id": ...})."""
+        """Entity factory: client.Sin().list() / client.Sin().load({"id": ...})."""
         from entity.sin_entity import SinEntity
         return SinEntity(self, data)
 
 
     def Tan(self, data=None) -> "TanEntity":
-        """Entity factory: client.Tan().list({}) / client.Tan().load({"id": ...})."""
+        """Entity factory: client.Tan().list() / client.Tan().load({"id": ...})."""
         from entity.tan_entity import TanEntity
         return TanEntity(self, data)
 
 
     def Tangent(self, data=None) -> "TangentEntity":
-        """Entity factory: client.Tangent().list({}) / client.Tangent().load({"id": ...})."""
+        """Entity factory: client.Tangent().list() / client.Tangent().load({"id": ...})."""
         from entity.tangent_entity import TangentEntity
         return TangentEntity(self, data)
 
 
     def Zero(self, data=None) -> "ZeroEntity":
-        """Entity factory: client.Zero().list({}) / client.Zero().load({"id": ...})."""
+        """Entity factory: client.Zero().list() / client.Zero().load({"id": ...})."""
         from entity.zero_entity import ZeroEntity
         return ZeroEntity(self, data)
 

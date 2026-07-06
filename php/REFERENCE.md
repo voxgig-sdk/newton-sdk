@@ -101,11 +101,11 @@ Create a new `TangentEntity` instance. Pass `null` for no initial data.
 
 Create a new `ZeroEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): NewtonUtility`
 
 Return a copy of the SDK utility object.
 
@@ -148,9 +148,9 @@ $abs = $client->Abs();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -164,19 +164,19 @@ $result = $client->Abs()->load(["id" => "abs_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -185,7 +185,7 @@ Set the entity match criteria.
 Create a new `AbsEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -202,9 +202,9 @@ $arcco = $client->Arcco();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -218,19 +218,19 @@ $result = $client->Arcco()->load(["id" => "arcco_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -239,7 +239,7 @@ Set the entity match criteria.
 Create a new `ArccoEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -256,9 +256,9 @@ $arcsin = $client->Arcsin();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -272,19 +272,19 @@ $result = $client->Arcsin()->load(["id" => "arcsin_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -293,7 +293,7 @@ Set the entity match criteria.
 Create a new `ArcsinEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -310,9 +310,9 @@ $arctan = $client->Arctan();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -326,19 +326,19 @@ $result = $client->Arctan()->load(["id" => "arctan_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -347,7 +347,7 @@ Set the entity match criteria.
 Create a new `ArctanEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -364,9 +364,9 @@ $area = $client->Area();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -380,19 +380,19 @@ $result = $client->Area()->load(["id" => "area_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -401,7 +401,7 @@ Set the entity match criteria.
 Create a new `AreaEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -418,9 +418,9 @@ $cos = $client->Cos();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -434,19 +434,19 @@ $result = $client->Cos()->load(["id" => "cos_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -455,7 +455,7 @@ Set the entity match criteria.
 Create a new `CosEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -472,9 +472,9 @@ $derive = $client->Derive();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -488,19 +488,19 @@ $result = $client->Derive()->load(["id" => "derive_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -509,7 +509,7 @@ Set the entity match criteria.
 Create a new `DeriveEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -526,9 +526,9 @@ $factor = $client->Factor();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -542,19 +542,19 @@ $result = $client->Factor()->load(["id" => "factor_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -563,7 +563,7 @@ Set the entity match criteria.
 Create a new `FactorEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -580,9 +580,9 @@ $integrate = $client->Integrate();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -596,19 +596,19 @@ $result = $client->Integrate()->load(["id" => "integrate_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -617,7 +617,7 @@ Set the entity match criteria.
 Create a new `IntegrateEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -634,9 +634,9 @@ $log = $client->Log();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -650,19 +650,19 @@ $result = $client->Log()->load(["id" => "log_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -671,7 +671,7 @@ Set the entity match criteria.
 Create a new `LogEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -688,9 +688,9 @@ $simplify = $client->Simplify();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -704,19 +704,19 @@ $result = $client->Simplify()->load(["id" => "simplify_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -725,7 +725,7 @@ Set the entity match criteria.
 Create a new `SimplifyEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -742,9 +742,9 @@ $sin = $client->Sin();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -758,19 +758,19 @@ $result = $client->Sin()->load(["id" => "sin_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -779,7 +779,7 @@ Set the entity match criteria.
 Create a new `SinEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -796,9 +796,9 @@ $tan = $client->Tan();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -812,19 +812,19 @@ $result = $client->Tan()->load(["id" => "tan_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -833,7 +833,7 @@ Set the entity match criteria.
 Create a new `TanEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -850,9 +850,9 @@ $tangent = $client->Tangent();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -866,19 +866,19 @@ $result = $client->Tangent()->load(["id" => "tangent_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -887,7 +887,7 @@ Set the entity match criteria.
 Create a new `TangentEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -904,9 +904,9 @@ $zero = $client->Zero();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -920,19 +920,19 @@ $result = $client->Zero()->load(["id" => "zero_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -941,7 +941,7 @@ Set the entity match criteria.
 Create a new `ZeroEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

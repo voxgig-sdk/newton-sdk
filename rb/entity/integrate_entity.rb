@@ -67,10 +67,12 @@ class IntegrateEntity
   
   # Load a single Integrate.
   #
-  # @param reqmatch [IntegrateLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param reqmatch [IntegrateLoadMatch, Hash, nil] match criteria (id/query fields);
+  #   optional — an entity with no id-like key loads with no match (nil is treated
+  #   as an empty match, so client.Integrate.load works with no args).
   # @param ctrl [Object, nil] optional per-call control
   # @return [Integrate, Hash] the loaded Integrate; raises NewtonError on failure
-  def load(reqmatch, ctrl = nil)
+  def load(reqmatch = nil, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
       "opname" => "load",

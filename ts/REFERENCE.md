@@ -284,9 +284,9 @@ const abs = client.Abs()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -336,9 +336,9 @@ const arcco = client.Arcco()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -388,9 +388,9 @@ const arcsin = client.Arcsin()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -440,9 +440,9 @@ const arctan = client.Arctan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -492,9 +492,9 @@ const area = client.Area()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -544,9 +544,9 @@ const cos = client.Cos()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -596,9 +596,9 @@ const derive = client.Derive()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -648,9 +648,9 @@ const factor = client.Factor()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -700,9 +700,9 @@ const integrate = client.Integrate()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -752,9 +752,9 @@ const log = client.Log()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -804,9 +804,9 @@ const simplify = client.Simplify()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -856,9 +856,9 @@ const sin = client.Sin()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -908,9 +908,9 @@ const tan = client.Tan()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -960,9 +960,9 @@ const tangent = client.Tangent()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 
@@ -1012,9 +1012,9 @@ const zero = client.Zero()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | ``$STRING`` | Yes |  |
-| `operation` | ``$STRING`` | Yes |  |
-| `result` | ``$STRING`` | Yes |  |
+| `expression` | `string` | Yes |  |
+| `operation` | `string` | Yes |  |
+| `result` | `string` | Yes |  |
 
 ### Operations
 

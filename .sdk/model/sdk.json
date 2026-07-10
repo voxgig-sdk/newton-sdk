@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -1719,14 +1716,17 @@
           "name": "GNU GPLv3",
           "url": "https://www.gnu.org/licenses/gpl-3.0.html"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://newton.now.sh/api/v2"
           }
         ],
+        "summary": "The Newton API is a micro-service that provides advanced math functionalities such as derivatives, integrals, simplifications, and more.",
         "title": "Newton API",
-        "version": "2.0.0"
+        "version": "2.0.0",
+        "website": "https://newton.now.sh"
       },
       "option": {},
       "target": {
@@ -1779,6 +1779,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -1829,6 +1832,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

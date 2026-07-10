@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Load a single abs — the value is the loaded record.
-    abs, err := client.Abs(nil).Load(map[string]any{"id": "example"}, nil)
+    abs, err := client.Abs(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil {
         panic(err)
     }

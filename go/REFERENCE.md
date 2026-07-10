@@ -147,6 +147,7 @@ same parameters as `Direct()`.
 
 ```go
 abs := client.Abs(nil)
+fmt.Println(abs.GetName()) // "abs"
 ```
 
 ### Fields
@@ -165,6 +166,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Abs(nil).Load(map[string]any{"id": "abs_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -195,6 +200,7 @@ Return the entity name.
 
 ```go
 arcco := client.Arcco(nil)
+fmt.Println(arcco.GetName()) // "arcco"
 ```
 
 ### Fields
@@ -213,6 +219,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Arcco(nil).Load(map[string]any{"id": "arcco_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -243,6 +253,7 @@ Return the entity name.
 
 ```go
 arcsin := client.Arcsin(nil)
+fmt.Println(arcsin.GetName()) // "arcsin"
 ```
 
 ### Fields
@@ -261,6 +272,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Arcsin(nil).Load(map[string]any{"id": "arcsin_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -291,6 +306,7 @@ Return the entity name.
 
 ```go
 arctan := client.Arctan(nil)
+fmt.Println(arctan.GetName()) // "arctan"
 ```
 
 ### Fields
@@ -309,6 +325,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Arctan(nil).Load(map[string]any{"id": "arctan_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -339,6 +359,7 @@ Return the entity name.
 
 ```go
 area := client.Area(nil)
+fmt.Println(area.GetName()) // "area"
 ```
 
 ### Fields
@@ -357,6 +378,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Area(nil).Load(map[string]any{"id": "area_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -387,6 +412,7 @@ Return the entity name.
 
 ```go
 cos := client.Cos(nil)
+fmt.Println(cos.GetName()) // "cos"
 ```
 
 ### Fields
@@ -405,6 +431,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Cos(nil).Load(map[string]any{"id": "cos_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -435,6 +465,7 @@ Return the entity name.
 
 ```go
 derive := client.Derive(nil)
+fmt.Println(derive.GetName()) // "derive"
 ```
 
 ### Fields
@@ -453,6 +484,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Derive(nil).Load(map[string]any{"id": "derive_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -483,6 +518,7 @@ Return the entity name.
 
 ```go
 factor := client.Factor(nil)
+fmt.Println(factor.GetName()) // "factor"
 ```
 
 ### Fields
@@ -501,6 +537,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Factor(nil).Load(map[string]any{"id": "factor_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -531,6 +571,7 @@ Return the entity name.
 
 ```go
 integrate := client.Integrate(nil)
+fmt.Println(integrate.GetName()) // "integrate"
 ```
 
 ### Fields
@@ -549,6 +590,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Integrate(nil).Load(map[string]any{"id": "integrate_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -579,6 +624,7 @@ Return the entity name.
 
 ```go
 log := client.Log(nil)
+fmt.Println(log.GetName()) // "log"
 ```
 
 ### Fields
@@ -597,6 +643,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Log(nil).Load(map[string]any{"id": "log_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -627,6 +677,7 @@ Return the entity name.
 
 ```go
 simplify := client.Simplify(nil)
+fmt.Println(simplify.GetName()) // "simplify"
 ```
 
 ### Fields
@@ -645,6 +696,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Simplify(nil).Load(map[string]any{"id": "simplify_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -675,6 +730,7 @@ Return the entity name.
 
 ```go
 sin := client.Sin(nil)
+fmt.Println(sin.GetName()) // "sin"
 ```
 
 ### Fields
@@ -693,6 +749,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Sin(nil).Load(map[string]any{"id": "sin_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -723,6 +783,7 @@ Return the entity name.
 
 ```go
 tan := client.Tan(nil)
+fmt.Println(tan.GetName()) // "tan"
 ```
 
 ### Fields
@@ -741,6 +802,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Tan(nil).Load(map[string]any{"id": "tan_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -771,6 +836,7 @@ Return the entity name.
 
 ```go
 tangent := client.Tangent(nil)
+fmt.Println(tangent.GetName()) // "tangent"
 ```
 
 ### Fields
@@ -789,6 +855,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Tangent(nil).Load(map[string]any{"id": "tangent_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -819,6 +889,7 @@ Return the entity name.
 
 ```go
 zero := client.Zero(nil)
+fmt.Println(zero.GetName()) // "zero"
 ```
 
 ### Fields
@@ -837,6 +908,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Zero(nil).Load(map[string]any{"id": "zero_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

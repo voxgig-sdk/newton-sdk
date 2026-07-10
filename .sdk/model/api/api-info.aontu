@@ -20,9 +20,9 @@ main: {
           url: "https://newton.now.sh/api/v2"
         }
       ]
+      summary: "The Newton API is a micro-service that provides advanced math functionalities such as derivatives, integrals, simplifications, and more."
       title: "Newton API"
       version: "2.0.0"
+      website: "https://newton.now.sh"
     }
   }
-}
-

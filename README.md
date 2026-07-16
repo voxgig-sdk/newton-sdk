@@ -16,8 +16,8 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 ## Entities, not endpoints
 
-This SDK exposes the API as a small set of **semantic entities** — Abs, Arcco, Arcsin, Arctan, Area, Cos, Derive, Factor, Integrate, Log, Simplify, Sin, Tan, Tangent and Zero — that you
-call directly, instead of assembling URL paths and query strings. Entities are
+This SDK exposes the API as **15 semantic entities** that you
+call directly, instead of assembling URL paths and query strings. See the [Entities](#entities) table below for the full list. Entities are
 **Capitalised** to mark them as the primary surface, each with the operations they
 support (`load`):
 

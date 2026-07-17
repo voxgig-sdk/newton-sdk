@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Newton SDK exists test
 
 local sdk = require("newton_sdk")
 

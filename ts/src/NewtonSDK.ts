@@ -160,8 +160,29 @@ class NewtonSDK {
   }
 
 
+  // Raw endpoint access is operator-controllable, like every entity op.
+  // Blocking it means denying BOTH the 'direct' and 'graphql' tokens, since
+  // either one reaches the same endpoint.
   async direct(fetchargs?: any) {
+    if (!this._options.allow.op.includes('direct')) {
+      return {
+        ok: false,
+        err: new Error('NewtonSDK: direct: operation not allowed by' +
+          ' SDK option allow.op value: "' + this._options.allow.op + '"'),
+      }
+    }
+
+    return this._rawRequest(fetchargs)
+  }
+
+
+  // Ungated request path shared by direct() and graphql(), each of which
+  // checks its own allow.op token first. Private, rather than a flag on
+  // fetchargs: a caller-supplied marker would let anyone opt straight back
+  // out of the gate by passing it.
+  async _rawRequest(fetchargs?: any) {
     const utility = this._utility
+
     const fetcher = utility.fetcher
     const makeContext = utility.makeContext
 
@@ -222,108 +243,192 @@ class NewtonSDK {
 
 
 
+  // Raw GraphQL access: the pressure valve that makes the generated
+  // surface's deliberate omissions (per-call selection sets, typed filter
+  // builders, batching, subscriptions) livable — the whole schema stays
+  // reachable.
+  //
+  // Thin wrapper over the same prepare/fetch path `direct` uses, with the
+  // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
+  // HTTP 200 as a top-level `errors` array, so status alone would report a
+  // failed query as ok.
+  //
+  // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
+  // ratelimit or paging features apply.
+  async graphql(query: string, variables?: any, ctrl?: any) {
+    const options = this._options
+
+    if (!options.allow.op.includes('graphql')) {
+      return {
+        ok: false,
+        err: new Error('NewtonSDK: graphql: operation not allowed by' +
+          ' SDK option allow.op value: "' + options.allow.op + '"'),
+      }
+    }
+
+    const res: any = await this._rawRequest({
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: { query, variables: variables || {} },
+      ctrl,
+    })
+
+    if (res instanceof Error) {
+      return res
+    }
+
+    // Errors are read BEFORE any status check: a GraphQL parse or validation
+    // failure comes back as HTTP 400 carrying the standard { errors: [...] }
+    // body, and the raw path represents a non-2xx as { ok: false } with no
+    // err — so returning early on status would discard the server's own
+    // diagnostics, which are the only useful part of that response.
+    const errors = null == res.data ? undefined : res.data.errors
+
+    if (null != errors && Array.isArray(errors) && 0 < errors.length) {
+      const first = errors[0] || {}
+      const err: any = new Error('NewtonSDK: graphql: ' +
+        (first.message || 'graphql error'))
+      err.graphql = errors
+      return { ok: false, status: res.status, headers: res.headers, err, data: res.data }
+    }
+
+    return res
+  }
+
+
+
   // Entity access: `client.Abs().list()` / `client.Abs().load({ id })`.
-  Abs(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Abs(entopts?: Record<string, any>) {
     const self = this
-    return new AbsEntity(self,data)
+    return new AbsEntity(self, entopts)
   }
 
 
   // Entity access: `client.Arcco().list()` / `client.Arcco().load({ id })`.
-  Arcco(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Arcco(entopts?: Record<string, any>) {
     const self = this
-    return new ArccoEntity(self,data)
+    return new ArccoEntity(self, entopts)
   }
 
 
   // Entity access: `client.Arcsin().list()` / `client.Arcsin().load({ id })`.
-  Arcsin(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Arcsin(entopts?: Record<string, any>) {
     const self = this
-    return new ArcsinEntity(self,data)
+    return new ArcsinEntity(self, entopts)
   }
 
 
   // Entity access: `client.Arctan().list()` / `client.Arctan().load({ id })`.
-  Arctan(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Arctan(entopts?: Record<string, any>) {
     const self = this
-    return new ArctanEntity(self,data)
+    return new ArctanEntity(self, entopts)
   }
 
 
   // Entity access: `client.Area().list()` / `client.Area().load({ id })`.
-  Area(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Area(entopts?: Record<string, any>) {
     const self = this
-    return new AreaEntity(self,data)
+    return new AreaEntity(self, entopts)
   }
 
 
   // Entity access: `client.Cos().list()` / `client.Cos().load({ id })`.
-  Cos(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Cos(entopts?: Record<string, any>) {
     const self = this
-    return new CosEntity(self,data)
+    return new CosEntity(self, entopts)
   }
 
 
   // Entity access: `client.Derive().list()` / `client.Derive().load({ id })`.
-  Derive(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Derive(entopts?: Record<string, any>) {
     const self = this
-    return new DeriveEntity(self,data)
+    return new DeriveEntity(self, entopts)
   }
 
 
   // Entity access: `client.Factor().list()` / `client.Factor().load({ id })`.
-  Factor(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Factor(entopts?: Record<string, any>) {
     const self = this
-    return new FactorEntity(self,data)
+    return new FactorEntity(self, entopts)
   }
 
 
   // Entity access: `client.Integrate().list()` / `client.Integrate().load({ id })`.
-  Integrate(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Integrate(entopts?: Record<string, any>) {
     const self = this
-    return new IntegrateEntity(self,data)
+    return new IntegrateEntity(self, entopts)
   }
 
 
   // Entity access: `client.Log().list()` / `client.Log().load({ id })`.
-  Log(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Log(entopts?: Record<string, any>) {
     const self = this
-    return new LogEntity(self,data)
+    return new LogEntity(self, entopts)
   }
 
 
   // Entity access: `client.Simplify().list()` / `client.Simplify().load({ id })`.
-  Simplify(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Simplify(entopts?: Record<string, any>) {
     const self = this
-    return new SimplifyEntity(self,data)
+    return new SimplifyEntity(self, entopts)
   }
 
 
   // Entity access: `client.Sin().list()` / `client.Sin().load({ id })`.
-  Sin(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Sin(entopts?: Record<string, any>) {
     const self = this
-    return new SinEntity(self,data)
+    return new SinEntity(self, entopts)
   }
 
 
   // Entity access: `client.Tan().list()` / `client.Tan().load({ id })`.
-  Tan(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Tan(entopts?: Record<string, any>) {
     const self = this
-    return new TanEntity(self,data)
+    return new TanEntity(self, entopts)
   }
 
 
   // Entity access: `client.Tangent().list()` / `client.Tangent().load({ id })`.
-  Tangent(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Tangent(entopts?: Record<string, any>) {
     const self = this
-    return new TangentEntity(self,data)
+    return new TangentEntity(self, entopts)
   }
 
 
   // Entity access: `client.Zero().list()` / `client.Zero().load({ id })`.
-  Zero(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Zero(entopts?: Record<string, any>) {
     const self = this
-    return new ZeroEntity(self,data)
+    return new ZeroEntity(self, entopts)
   }
 
 

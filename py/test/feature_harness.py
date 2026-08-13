@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import NewtonControl
-from core.error import NewtonError
-from core.result import NewtonResult
-from core.spec import NewtonSpec
+from newton_sdk.config import make_config
+from newton_sdk.features import _make_feature
+from newton_sdk.core.control import NewtonControl
+from newton_sdk.core.error import NewtonError
+from newton_sdk.core.result import NewtonResult
+from newton_sdk.core.spec import NewtonSpec
 
 
 # True when this SDK was generated with the named feature.

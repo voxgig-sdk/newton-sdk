@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Newton',
   }
 
 
@@ -140,6 +140,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/abs/{expression}",
               "parts": [
@@ -216,6 +217,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/arccos/{expression}",
               "parts": [
@@ -292,6 +294,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/arcsin/{expression}",
               "parts": [
@@ -368,6 +371,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/arctan/{expression}",
               "parts": [
@@ -444,6 +448,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/area/{expression}",
               "parts": [
@@ -520,6 +525,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/cos/{expression}",
               "parts": [
@@ -596,6 +602,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/derive/{expression}",
               "parts": [
@@ -672,6 +679,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/factor/{expression}",
               "parts": [
@@ -748,6 +756,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/integrate/{expression}",
               "parts": [
@@ -824,6 +833,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/log/{expression}",
               "parts": [
@@ -900,6 +910,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/simplify/{expression}",
               "parts": [
@@ -976,6 +987,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/sin/{expression}",
               "parts": [
@@ -1052,6 +1064,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/tan/{expression}",
               "parts": [
@@ -1128,6 +1141,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/tangent/{expression}",
               "parts": [
@@ -1204,6 +1218,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/zeroes/{expression}",
               "parts": [

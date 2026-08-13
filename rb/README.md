@@ -34,7 +34,7 @@ client = NewtonSDK.new
 
 ```ruby
 begin
-  # load returns the bare Abs record (raises on error).
+  # load returns the ENTITY — call data_get for the Abs record (raises on error).
   abs = client.Abs.load({ "id" => "example_id" })
   puts abs
 rescue => err
@@ -49,7 +49,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  abs = client.Abs.load({ "id" => "example_id" })
+  arcco = client.Arcco.load({ "id" => "example_id" })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -117,12 +117,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
 client = NewtonSDK.test({
-  "entity" => { "abs" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "arcco" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
-abs = client.Abs.load({ "id" => "test01" })
-puts abs
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+arcco = client.Arcco.load({ "id" => "test01" })
+puts arcco
 ```
 
 ### Use a custom fetch function
@@ -453,7 +454,7 @@ Create an instance: `abs = client.Abs`
 #### Example: Load
 
 ```ruby
-# load returns the bare Abs record (raises on error).
+# load returns the ENTITY — call data_get for the Abs record (raises on error).
 abs = client.Abs.load({ "id" => "abs_id" })
 ```
 
@@ -479,7 +480,7 @@ Create an instance: `arcco = client.Arcco`
 #### Example: Load
 
 ```ruby
-# load returns the bare Arcco record (raises on error).
+# load returns the ENTITY — call data_get for the Arcco record (raises on error).
 arcco = client.Arcco.load({ "id" => "arcco_id" })
 ```
 
@@ -505,7 +506,7 @@ Create an instance: `arcsin = client.Arcsin`
 #### Example: Load
 
 ```ruby
-# load returns the bare Arcsin record (raises on error).
+# load returns the ENTITY — call data_get for the Arcsin record (raises on error).
 arcsin = client.Arcsin.load({ "id" => "arcsin_id" })
 ```
 
@@ -531,7 +532,7 @@ Create an instance: `arctan = client.Arctan`
 #### Example: Load
 
 ```ruby
-# load returns the bare Arctan record (raises on error).
+# load returns the ENTITY — call data_get for the Arctan record (raises on error).
 arctan = client.Arctan.load({ "id" => "arctan_id" })
 ```
 
@@ -557,7 +558,7 @@ Create an instance: `area = client.Area`
 #### Example: Load
 
 ```ruby
-# load returns the bare Area record (raises on error).
+# load returns the ENTITY — call data_get for the Area record (raises on error).
 area = client.Area.load({ "id" => "area_id" })
 ```
 
@@ -583,7 +584,7 @@ Create an instance: `cos = client.Cos`
 #### Example: Load
 
 ```ruby
-# load returns the bare Cos record (raises on error).
+# load returns the ENTITY — call data_get for the Cos record (raises on error).
 cos = client.Cos.load({ "id" => "cos_id" })
 ```
 
@@ -609,7 +610,7 @@ Create an instance: `derive = client.Derive`
 #### Example: Load
 
 ```ruby
-# load returns the bare Derive record (raises on error).
+# load returns the ENTITY — call data_get for the Derive record (raises on error).
 derive = client.Derive.load({ "id" => "derive_id" })
 ```
 
@@ -635,7 +636,7 @@ Create an instance: `factor = client.Factor`
 #### Example: Load
 
 ```ruby
-# load returns the bare Factor record (raises on error).
+# load returns the ENTITY — call data_get for the Factor record (raises on error).
 factor = client.Factor.load({ "id" => "factor_id" })
 ```
 
@@ -661,7 +662,7 @@ Create an instance: `integrate = client.Integrate`
 #### Example: Load
 
 ```ruby
-# load returns the bare Integrate record (raises on error).
+# load returns the ENTITY — call data_get for the Integrate record (raises on error).
 integrate = client.Integrate.load({ "id" => "integrate_id" })
 ```
 
@@ -687,7 +688,7 @@ Create an instance: `log = client.Log`
 #### Example: Load
 
 ```ruby
-# load returns the bare Log record (raises on error).
+# load returns the ENTITY — call data_get for the Log record (raises on error).
 log = client.Log.load({ "id" => "log_id" })
 ```
 
@@ -713,7 +714,7 @@ Create an instance: `simplify = client.Simplify`
 #### Example: Load
 
 ```ruby
-# load returns the bare Simplify record (raises on error).
+# load returns the ENTITY — call data_get for the Simplify record (raises on error).
 simplify = client.Simplify.load({ "id" => "simplify_id" })
 ```
 
@@ -739,7 +740,7 @@ Create an instance: `sin = client.Sin`
 #### Example: Load
 
 ```ruby
-# load returns the bare Sin record (raises on error).
+# load returns the ENTITY — call data_get for the Sin record (raises on error).
 sin = client.Sin.load({ "id" => "sin_id" })
 ```
 
@@ -765,7 +766,7 @@ Create an instance: `tan = client.Tan`
 #### Example: Load
 
 ```ruby
-# load returns the bare Tan record (raises on error).
+# load returns the ENTITY — call data_get for the Tan record (raises on error).
 tan = client.Tan.load({ "id" => "tan_id" })
 ```
 
@@ -791,7 +792,7 @@ Create an instance: `tangent = client.Tangent`
 #### Example: Load
 
 ```ruby
-# load returns the bare Tangent record (raises on error).
+# load returns the ENTITY — call data_get for the Tangent record (raises on error).
 tangent = client.Tangent.load({ "id" => "tangent_id" })
 ```
 
@@ -817,7 +818,7 @@ Create an instance: `zero = client.Zero`
 #### Example: Load
 
 ```ruby
-# load returns the bare Zero record (raises on error).
+# load returns the ENTITY — call data_get for the Zero record (raises on error).
 zero = client.Zero.load({ "id" => "zero_id" })
 ```
 
@@ -898,11 +899,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-abs = client.Abs
-abs.load({ "id" => "example_id" })
+arcco = client.Arcco
+arcco.load({ "id" => "example_id" })
 
-# abs.data_get now returns the abs data from the last load
-# abs.match_get returns the last match criteria
+# arcco.data_get now returns the arcco data from the last load
+# arcco.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Newton SDK exists test
 
 import pytest
 from newton_sdk import NewtonSDK

@@ -66,12 +66,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-abs, err := client.Abs(nil).Load(map[string]any{"id": "example_id"}, nil)
+arcco, err := client.Arcco(nil).Load(map[string]any{"id": "example_id"}, nil)
 if err != nil {
     // handle err
     return
 }
-_ = abs
+_ = arcco
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-abs, err := client.Abs(nil).Load(
+arcco, err := client.Arcco(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(abs) // the returned mock data
+fmt.Println(arcco) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -961,11 +961,11 @@ Entity instances are stateful. After a successful `Load`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-abs := client.Abs(nil)
-abs.Load(map[string]any{"id": "example_id"}, nil)
+arcco := client.Arcco(nil)
+arcco.Load(map[string]any{"id": "example_id"}, nil)
 
-// abs.Data() now returns the abs data from the last load
-// abs.Match() returns the last match criteria
+// arcco.Data() now returns the arcco data from the last load
+// arcco.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

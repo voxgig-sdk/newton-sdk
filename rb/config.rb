@@ -83,6 +83,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/abs/{expression}",
                   "parts" => [
@@ -159,6 +160,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/arccos/{expression}",
                   "parts" => [
@@ -235,6 +237,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/arcsin/{expression}",
                   "parts" => [
@@ -311,6 +314,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/arctan/{expression}",
                   "parts" => [
@@ -387,6 +391,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/area/{expression}",
                   "parts" => [
@@ -463,6 +468,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/cos/{expression}",
                   "parts" => [
@@ -539,6 +545,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/derive/{expression}",
                   "parts" => [
@@ -615,6 +622,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/factor/{expression}",
                   "parts" => [
@@ -691,6 +699,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/integrate/{expression}",
                   "parts" => [
@@ -767,6 +776,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/log/{expression}",
                   "parts" => [
@@ -843,6 +853,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/simplify/{expression}",
                   "parts" => [
@@ -919,6 +930,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/sin/{expression}",
                   "parts" => [
@@ -995,6 +1007,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/tan/{expression}",
                   "parts" => [
@@ -1071,6 +1084,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/tangent/{expression}",
                   "parts" => [
@@ -1147,6 +1161,7 @@ module NewtonConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/zeroes/{expression}",
                   "parts" => [

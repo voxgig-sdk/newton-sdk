@@ -23,7 +23,7 @@ support (`load`):
 
 ```ts
 const client = new NewtonSDK()
-const abs = await client.Abs().load()
+const abs = await client.Abs().load({ id: "example_id" })
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = NewtonSDK.test()
-const abs = await client.Abs().load({ id: 'test01' })
-// abs is a bare Abs populated with mock data
-console.log(abs)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = NewtonSDK.test({
+  entity: {
+    arcco: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const arcco = await client.Arcco().load({ id: 'test01' })
+// arcco is the Arcco entity, populated with mock data
+// — call arcco.data() for the record itself
+console.log(arcco)
 ```
 
 ### Python
 
 ```python
 client = NewtonSDK.test()
-abs = client.Abs().load({"id": "test01"})
-print(abs)
+arcco = client.Arcco().load({"id": "test01"})
+print(arcco)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(abs)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = NewtonSDK::test([
-    "entity" => ["abs" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["arcco" => ["test01" => ["id" => "test01"]]],
 ]);
-$abs = $client->Abs()->load(["id" => "test01"]);
+$arcco = $client->Arcco()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.Abs(nil).Load(
+result, err := client.Arcco(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.Abs(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = NewtonSDK.test({
-  "entity" => { "abs" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "arcco" => { "test01" => { "id" => "test01" } } },
 })
-abs = client.Abs.load({ "id" => "test01" })
+arcco = client.Arcco.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:Abs():load({ id = "test01" })
+local result, err = client:Arcco():load({ id = "test01" })
 ```
 
 ## Packages
@@ -196,7 +205,7 @@ require_once 'newton_sdk.php';
 $client = new NewtonSDK();
 
 
-// Load a specific abs (returns the bare record; throws on error)
+// Load a specific abs (returns the ENTITY; call data_get() for the record; throws on error)
 $abs = $client->Abs()->load(["id" => "example_id"]);
 print_r($abs);
 ```
@@ -224,7 +233,7 @@ require_relative "Newton_sdk"
 client = NewtonSDK.new
 
 
-# Load a specific abs (returns the bare record; raises on error)
+# Load a specific abs (returns the ENTITY; call data_get for the record)
 abs = client.Abs.load({ "id" => "example_id" })
 puts abs
 ```
@@ -358,6 +367,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/aunyks/newton-api](https://github.com/aunyks/newton-api)
 

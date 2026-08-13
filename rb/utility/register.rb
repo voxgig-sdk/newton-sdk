@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ NewtonUtility.registrar = ->(u) {
   u.prepare_params = NewtonUtilities::PrepareParams
   u.prepare_path = NewtonUtilities::PreparePath
   u.prepare_query = NewtonUtilities::PrepareQuery
+  u.graphql_body = NewtonUtilities::GraphqlBody
+  u.graphql_errors = NewtonUtilities::GraphqlErrors
   u.result_basic = NewtonUtilities::ResultBasic
   u.result_body = NewtonUtilities::ResultBody
   u.result_headers = NewtonUtilities::ResultHeaders

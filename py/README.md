@@ -38,7 +38,7 @@ client = NewtonSDK()
 
 ### 3. Load an abs
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -55,8 +55,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    abs = client.Abs().load({"id": "example_id"})
-    print(abs)
+    arcco = client.Arcco().load({"id": "example_id"})
+    print(arcco)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -122,9 +122,10 @@ Create a mock client for unit testing — no server required:
 ```python
 client = NewtonSDK.test()
 
-# Entity ops return the bare record and raise on error.
-abs = client.Abs().load({"id": "test01"})
-# abs contains the mock response record
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+arcco = client.Arcco().load({"id": "test01"})
+# arcco contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -232,7 +233,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -885,11 +886,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-abs = client.Abs()
-abs.load({"id": "example_id"})
+arcco = client.Arcco()
+arcco.load({"id": "example_id"})
 
-# abs.data_get() now returns the abs data from the last load
-# abs.match_get() returns the last match criteria
+# arcco.data_get() now returns the arcco data from the last load
+# arcco.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

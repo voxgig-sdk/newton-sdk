@@ -35,7 +35,7 @@ $client = new NewtonSDK();
 
 ```php
 try {
-    // load() returns the bare Abs record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Abs record (throws on error).
     $abs = $client->Abs()->load(["id" => "example_id"]);
     print_r($abs);
 } catch (\Throwable $err) {
@@ -51,7 +51,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $abs = $client->Abs()->load(["id" => "example_id"]);
+    $arcco = $client->Arcco()->load(["id" => "example_id"]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -123,12 +123,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```php
 $client = NewtonSDK::test([
-    "entity" => ["abs" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["arcco" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
-$abs = $client->Abs()->load(["id" => "test01"]);
-print_r($abs);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$arcco = $client->Arcco()->load(["id" => "test01"]);
+print_r($arcco);
 ```
 
 ### Use a custom fetch function
@@ -239,7 +240,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -463,7 +464,7 @@ Create an instance: `$abs = $client->Abs();`
 #### Example: Load
 
 ```php
-// load() returns the bare Abs record (throws on error).
+// load() returns the ENTITY — call data_get() for the Abs record (throws on error).
 $abs = $client->Abs()->load(["id" => "abs_id"]);
 ```
 
@@ -489,7 +490,7 @@ Create an instance: `$arcco = $client->Arcco();`
 #### Example: Load
 
 ```php
-// load() returns the bare Arcco record (throws on error).
+// load() returns the ENTITY — call data_get() for the Arcco record (throws on error).
 $arcco = $client->Arcco()->load(["id" => "arcco_id"]);
 ```
 
@@ -515,7 +516,7 @@ Create an instance: `$arcsin = $client->Arcsin();`
 #### Example: Load
 
 ```php
-// load() returns the bare Arcsin record (throws on error).
+// load() returns the ENTITY — call data_get() for the Arcsin record (throws on error).
 $arcsin = $client->Arcsin()->load(["id" => "arcsin_id"]);
 ```
 
@@ -541,7 +542,7 @@ Create an instance: `$arctan = $client->Arctan();`
 #### Example: Load
 
 ```php
-// load() returns the bare Arctan record (throws on error).
+// load() returns the ENTITY — call data_get() for the Arctan record (throws on error).
 $arctan = $client->Arctan()->load(["id" => "arctan_id"]);
 ```
 
@@ -567,7 +568,7 @@ Create an instance: `$area = $client->Area();`
 #### Example: Load
 
 ```php
-// load() returns the bare Area record (throws on error).
+// load() returns the ENTITY — call data_get() for the Area record (throws on error).
 $area = $client->Area()->load(["id" => "area_id"]);
 ```
 
@@ -593,7 +594,7 @@ Create an instance: `$cos = $client->Cos();`
 #### Example: Load
 
 ```php
-// load() returns the bare Cos record (throws on error).
+// load() returns the ENTITY — call data_get() for the Cos record (throws on error).
 $cos = $client->Cos()->load(["id" => "cos_id"]);
 ```
 
@@ -619,7 +620,7 @@ Create an instance: `$derive = $client->Derive();`
 #### Example: Load
 
 ```php
-// load() returns the bare Derive record (throws on error).
+// load() returns the ENTITY — call data_get() for the Derive record (throws on error).
 $derive = $client->Derive()->load(["id" => "derive_id"]);
 ```
 
@@ -645,7 +646,7 @@ Create an instance: `$factor = $client->Factor();`
 #### Example: Load
 
 ```php
-// load() returns the bare Factor record (throws on error).
+// load() returns the ENTITY — call data_get() for the Factor record (throws on error).
 $factor = $client->Factor()->load(["id" => "factor_id"]);
 ```
 
@@ -671,7 +672,7 @@ Create an instance: `$integrate = $client->Integrate();`
 #### Example: Load
 
 ```php
-// load() returns the bare Integrate record (throws on error).
+// load() returns the ENTITY — call data_get() for the Integrate record (throws on error).
 $integrate = $client->Integrate()->load(["id" => "integrate_id"]);
 ```
 
@@ -697,7 +698,7 @@ Create an instance: `$log = $client->Log();`
 #### Example: Load
 
 ```php
-// load() returns the bare Log record (throws on error).
+// load() returns the ENTITY — call data_get() for the Log record (throws on error).
 $log = $client->Log()->load(["id" => "log_id"]);
 ```
 
@@ -723,7 +724,7 @@ Create an instance: `$simplify = $client->Simplify();`
 #### Example: Load
 
 ```php
-// load() returns the bare Simplify record (throws on error).
+// load() returns the ENTITY — call data_get() for the Simplify record (throws on error).
 $simplify = $client->Simplify()->load(["id" => "simplify_id"]);
 ```
 
@@ -749,7 +750,7 @@ Create an instance: `$sin = $client->Sin();`
 #### Example: Load
 
 ```php
-// load() returns the bare Sin record (throws on error).
+// load() returns the ENTITY — call data_get() for the Sin record (throws on error).
 $sin = $client->Sin()->load(["id" => "sin_id"]);
 ```
 
@@ -775,7 +776,7 @@ Create an instance: `$tan = $client->Tan();`
 #### Example: Load
 
 ```php
-// load() returns the bare Tan record (throws on error).
+// load() returns the ENTITY — call data_get() for the Tan record (throws on error).
 $tan = $client->Tan()->load(["id" => "tan_id"]);
 ```
 
@@ -801,7 +802,7 @@ Create an instance: `$tangent = $client->Tangent();`
 #### Example: Load
 
 ```php
-// load() returns the bare Tangent record (throws on error).
+// load() returns the ENTITY — call data_get() for the Tangent record (throws on error).
 $tangent = $client->Tangent()->load(["id" => "tangent_id"]);
 ```
 
@@ -827,7 +828,7 @@ Create an instance: `$zero = $client->Zero();`
 #### Example: Load
 
 ```php
-// load() returns the bare Zero record (throws on error).
+// load() returns the ENTITY — call data_get() for the Zero record (throws on error).
 $zero = $client->Zero()->load(["id" => "zero_id"]);
 ```
 
@@ -908,11 +909,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$abs = $client->Abs();
-$abs->load(["id" => "example_id"]);
+$arcco = $client->Arcco();
+$arcco->load(["id" => "example_id"]);
 
-// $abs->data_get() now returns the abs data from the last load
-// $abs->match_get() returns the last match criteria
+// $arcco->data_get() now returns the arcco data from the last load
+// $arcco->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

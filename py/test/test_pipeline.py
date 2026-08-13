@@ -16,11 +16,11 @@
 import pytest
 
 from newton_sdk import NewtonSDK
-from core.error import NewtonError
-from core.result import NewtonResult
-from core.response import NewtonResponse
-from core.spec import NewtonSpec
-from feature.base_feature import NewtonBaseFeature
+from newton_sdk.core.error import NewtonError
+from newton_sdk.core.result import NewtonResult
+from newton_sdk.core.response import NewtonResponse
+from newton_sdk.core.spec import NewtonSpec
+from newton_sdk.feature.base_feature import NewtonBaseFeature
 
 
 def _client():

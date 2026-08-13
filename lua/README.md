@@ -48,7 +48,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local abs, err = client:Abs():load({ id = "example_id" })
+local arcco, err = client:Arcco():load({ id = "example_id" })
 if err then error(err) end
 ```
 
@@ -106,7 +106,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Abs():load({ id = "test01" })
+local result, err = client:Arcco():load({ id = "test01" })
 -- result is the returned data; err is set on failure
 ```
 
@@ -871,11 +871,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local abs = client:Abs()
-abs:load({ id = "example_id" })
+local arcco = client:Arcco()
+arcco:load({ id = "example_id" })
 
--- abs:data_get() now returns the abs data from the last load
--- abs:match_get() returns the last match criteria
+-- arcco:data_get() now returns the arcco data from the last load
+-- arcco:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -53,8 +53,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const abs = await client.Abs().load({ id: "example_id" })
-  console.log(abs)
+  const arcco = await client.Arcco().load({ id: "example_id" })
+  console.log(arcco)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -120,9 +120,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = NewtonSDK.test()
 
-const abs = await client.Abs().load({ id: 'test01' })
-// abs is a bare entity populated with mock response data
-console.log(abs)
+const arcco = await client.Arcco().load({ id: 'test01' })
+// arcco is the entity, populated with mock response data
+// — call arcco.data() for the record itself
+console.log(arcco)
 ```
 
 You can also use the instance method:
@@ -137,7 +138,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Abs()
+const entity = client.Arcco()
 
 // First call runs the operation and stores its result
 await entity.load({ id: 'example' })
@@ -923,11 +924,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const abs = client.Abs()
-await abs.load({ id: "example_id" })
+const arcco = client.Arcco()
+await arcco.load({ id: "example_id" })
 
-// abs.data() now returns the abs data from the last `load`
-// abs.match() returns { id: "example_id" }
+// arcco.data() now returns the arcco data from the last `load`
+// arcco.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

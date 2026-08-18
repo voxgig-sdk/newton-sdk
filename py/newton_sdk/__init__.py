@@ -23,8 +23,8 @@ class NewtonSDK:
         utility = NewtonUtility()
         self._utility = utility
 
-        from newton_sdk.config import make_config
-        config = make_config()
+        from newton_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

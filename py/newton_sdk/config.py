@@ -1,7 +1,30 @@
 # Newton SDK configuration
 
 
+_shared_config = None
+
+
+def shared_config():
+    """Return the process-wide config, built once on first use.
+
+    The SDK reads the config on every request and never writes to it, so one
+    instance is shared by every client rather than rebuilt per client.
+
+    The returned dict is shared: treat it as read-only. Callers that need to
+    mutate should use make_config, which always returns a fresh copy.
+    """
+    global _shared_config
+    if _shared_config is None:
+        _shared_config = make_config()
+    return _shared_config
+
+
 def make_config():
+    """Build a fresh, fully materialised config dict.
+
+    Every call rebuilds the whole structure, so prefer shared_config unless
+    you need a private copy you intend to mutate.
+    """
     return {
         "main": {
             "name": "Newton",
@@ -40,25 +63,19 @@ def make_config():
       "abs": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "abs",
@@ -68,18 +85,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "-1",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -104,10 +118,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -117,25 +129,19 @@ def make_config():
       "arcco": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "arcco",
@@ -145,18 +151,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "1",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -181,10 +184,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -194,25 +195,19 @@ def make_config():
       "arcsin": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "arcsin",
@@ -222,18 +217,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "0",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -258,10 +250,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -271,25 +261,19 @@ def make_config():
       "arctan": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "arctan",
@@ -299,18 +283,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "0",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -335,10 +316,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -348,25 +327,19 @@ def make_config():
       "area": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "area",
@@ -376,18 +349,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "2:4|x^3",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -412,10 +382,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -425,25 +393,19 @@ def make_config():
       "cos": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "cos",
@@ -453,18 +415,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "pi",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -489,10 +448,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -502,25 +459,19 @@ def make_config():
       "derive": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "derive",
@@ -530,18 +481,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "x^2+2x",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -566,10 +514,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -579,25 +525,19 @@ def make_config():
       "factor": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "factor",
@@ -607,18 +547,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "x^2+2x",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -643,10 +580,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -656,25 +591,19 @@ def make_config():
       "integrate": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "integrate",
@@ -684,18 +613,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "x^2+2x",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -720,10 +646,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -733,25 +657,19 @@ def make_config():
       "log": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "log",
@@ -761,18 +679,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "2|8",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -797,10 +712,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -810,25 +723,19 @@ def make_config():
       "simplify": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "simplify",
@@ -838,18 +745,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "2^2+2(2)",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -874,10 +778,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -887,25 +789,19 @@ def make_config():
       "sin": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "sin",
@@ -915,18 +811,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "0",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -951,10 +844,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -964,25 +855,19 @@ def make_config():
       "tan": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "tan",
@@ -992,18 +877,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "0",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -1028,10 +910,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -1041,25 +921,19 @@ def make_config():
       "tangent": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "tangent",
@@ -1069,18 +943,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "2|x^3",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -1105,10 +976,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -1118,25 +987,19 @@ def make_config():
       "zero": {
         "fields": [
           {
-            "active": True,
             "name": "expression",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "operation",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "result",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "zero",
@@ -1146,18 +1009,15 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "params": [
                     {
-                      "active": True,
                       "example": "x^2+2x",
                       "kind": "param",
                       "name": "id",
                       "orig": "expression",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "index$": 0,
                     },
                   ],
                 },
@@ -1182,10 +1042,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {

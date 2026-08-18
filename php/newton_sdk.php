@@ -40,7 +40,7 @@ class NewtonSDK
         $utility = new NewtonUtility();
         $this->_utility = $utility;
 
-        $config = NewtonConfig::make_config();
+        $config = NewtonConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

@@ -28,7 +28,7 @@ class NewtonSDK
     utility = NewtonUtility.new
     @_utility = utility
 
-    config = NewtonConfig.make_config
+    config = NewtonConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

@@ -148,9 +148,9 @@ $abs = $client->Abs();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -202,9 +202,9 @@ $arcco = $client->Arcco();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -256,9 +256,9 @@ $arcsin = $client->Arcsin();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -310,9 +310,9 @@ $arctan = $client->Arctan();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -364,9 +364,9 @@ $area = $client->Area();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -418,9 +418,9 @@ $cos = $client->Cos();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -472,9 +472,9 @@ $derive = $client->Derive();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -526,9 +526,9 @@ $factor = $client->Factor();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -580,9 +580,9 @@ $integrate = $client->Integrate();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -634,9 +634,9 @@ $log = $client->Log();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -688,9 +688,9 @@ $simplify = $client->Simplify();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -742,9 +742,9 @@ $sin = $client->Sin();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -796,9 +796,9 @@ $tan = $client->Tan();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -850,9 +850,9 @@ $tangent = $client->Tangent();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -904,9 +904,9 @@ $zero = $client->Zero();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 

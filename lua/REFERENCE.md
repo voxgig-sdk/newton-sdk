@@ -146,9 +146,9 @@ local abs = client:Abs(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -200,9 +200,9 @@ local arcco = client:Arcco(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -254,9 +254,9 @@ local arcsin = client:Arcsin(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -308,9 +308,9 @@ local arctan = client:Arctan(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -362,9 +362,9 @@ local area = client:Area(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -416,9 +416,9 @@ local cos = client:Cos(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -470,9 +470,9 @@ local derive = client:Derive(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -524,9 +524,9 @@ local factor = client:Factor(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -578,9 +578,9 @@ local integrate = client:Integrate(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -632,9 +632,9 @@ local log = client:Log(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -686,9 +686,9 @@ local simplify = client:Simplify(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -740,9 +740,9 @@ local sin = client:Sin(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -794,9 +794,9 @@ local tan = client:Tan(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -848,9 +848,9 @@ local tangent = client:Tangent(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 
@@ -902,9 +902,9 @@ local zero = client:Zero(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `expression` | `string` | Yes |  |
-| `operation` | `string` | Yes |  |
-| `result` | `string` | Yes |  |
+| `expression` | `string` | Yes | The mathematical expression that was processed |
+| `operation` | `string` | Yes | The mathematical operation that was performed |
+| `result` | `string` | Yes | The result of the mathematical operation |
 
 ### Operations
 

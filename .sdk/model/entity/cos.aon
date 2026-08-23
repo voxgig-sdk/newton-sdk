@@ -1,0 +1,73 @@
+# Entity: cos
+
+main: kit: entity: cos: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "expression"
+      req: true
+      short: "The mathematical expression that was processed"
+      type: "`$STRING`"
+    }
+    {
+      name: "operation"
+      req: true
+      short: "The mathematical operation that was performed"
+      type: "`$STRING`"
+    }
+    {
+      name: "result"
+      req: true
+      short: "The result of the mathematical operation"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "cos"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "pi"
+                kind: "param"
+                name: "id"
+                orig: "expression"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cos/{expression}"
+          parts: [
+            "cos"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              expression: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

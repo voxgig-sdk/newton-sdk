@@ -6,7 +6,7 @@ The Golang SDK for the Newton API — an entity-oriented client using standard G
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Abs(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -272,9 +272,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -284,9 +284,9 @@ API path: `/abs/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -296,9 +296,9 @@ API path: `/arccos/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -308,9 +308,9 @@ API path: `/arcsin/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -320,9 +320,9 @@ API path: `/arctan/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -332,9 +332,9 @@ API path: `/area/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -344,9 +344,9 @@ API path: `/cos/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -356,9 +356,9 @@ API path: `/derive/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -368,9 +368,9 @@ API path: `/factor/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -380,9 +380,9 @@ API path: `/integrate/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -392,9 +392,9 @@ API path: `/log/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -404,9 +404,9 @@ API path: `/simplify/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -416,9 +416,9 @@ API path: `/sin/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -428,9 +428,9 @@ API path: `/tan/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -440,9 +440,9 @@ API path: `/tangent/{expression}`
 
 | Field | Description |
 | --- | --- |
-| `"expression"` |  |
-| `"operation"` |  |
-| `"result"` |  |
+| `"expression"` | The mathematical expression that was processed |
+| `"operation"` | The mathematical operation that was performed |
+| `"result"` | The result of the mathematical operation |
 
 Operations: Load.
 
@@ -467,9 +467,9 @@ Create an instance: `abs := client.Abs(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -496,9 +496,9 @@ Create an instance: `arcco := client.Arcco(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -525,9 +525,9 @@ Create an instance: `arcsin := client.Arcsin(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -554,9 +554,9 @@ Create an instance: `arctan := client.Arctan(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -583,9 +583,9 @@ Create an instance: `area := client.Area(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -612,9 +612,9 @@ Create an instance: `cos := client.Cos(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -641,9 +641,9 @@ Create an instance: `derive := client.Derive(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -670,9 +670,9 @@ Create an instance: `factor := client.Factor(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -699,9 +699,9 @@ Create an instance: `integrate := client.Integrate(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -728,9 +728,9 @@ Create an instance: `log := client.Log(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -757,9 +757,9 @@ Create an instance: `simplify := client.Simplify(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -786,9 +786,9 @@ Create an instance: `sin := client.Sin(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -815,9 +815,9 @@ Create an instance: `tan := client.Tan(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -844,9 +844,9 @@ Create an instance: `tangent := client.Tangent(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 
@@ -873,9 +873,9 @@ Create an instance: `zero := client.Zero(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `expression` | `string` |  |
-| `operation` | `string` |  |
-| `result` | `string` |  |
+| `expression` | `string` | The mathematical expression that was processed |
+| `operation` | `string` | The mathematical operation that was performed |
+| `result` | `string` | The result of the mathematical operation |
 
 #### Example: Load
 

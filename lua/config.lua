@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Newton",
+      slug = "newton",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -44,16 +47,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -110,16 +116,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -176,16 +185,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -242,16 +254,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -308,16 +323,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -374,16 +392,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -440,16 +461,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -506,16 +530,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -572,16 +599,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -638,16 +668,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -704,16 +737,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -770,16 +806,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -836,16 +875,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -902,16 +944,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },
@@ -968,16 +1013,19 @@ local function make_config()
           {
             ["name"] = "expression",
             ["req"] = true,
+            ["short"] = "The mathematical expression that was processed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operation",
             ["req"] = true,
+            ["short"] = "The mathematical operation that was performed",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "result",
             ["req"] = true,
+            ["short"] = "The result of the mathematical operation",
             ["type"] = "`$STRING`",
           },
         },

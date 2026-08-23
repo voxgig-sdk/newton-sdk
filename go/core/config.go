@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Newton",
+			"slug": "newton",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -48,16 +51,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -114,16 +120,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -180,16 +189,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -246,16 +258,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -312,16 +327,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -378,16 +396,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -444,16 +465,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -510,16 +534,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -576,16 +603,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -642,16 +672,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -708,16 +741,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -774,16 +810,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -840,16 +879,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -906,16 +948,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},
@@ -972,16 +1017,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "expression",
 						"req": true,
+						"short": "The mathematical expression that was processed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operation",
 						"req": true,
+						"short": "The mathematical operation that was performed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "result",
 						"req": true,
+						"short": "The result of the mathematical operation",
 						"type": "`$STRING`",
 					},
 				},

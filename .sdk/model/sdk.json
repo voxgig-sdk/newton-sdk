@@ -36,18 +36,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -111,18 +114,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -186,18 +192,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -261,18 +270,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -336,18 +348,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -411,18 +426,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -486,18 +504,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -561,18 +582,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -636,18 +660,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -711,18 +738,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -786,18 +816,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -861,18 +894,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -936,18 +972,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -1011,18 +1050,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],
@@ -1086,18 +1128,21 @@
               "active": true,
               "name": "expression",
               "req": true,
+              "short": "The mathematical expression that was processed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operation",
               "req": true,
+              "short": "The mathematical operation that was performed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "result",
               "req": true,
+              "short": "The result of the mathematical operation",
               "type": "`$STRING`"
             }
           ],

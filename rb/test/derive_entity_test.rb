@@ -41,9 +41,13 @@ class DeriveEntityTest < Minitest::Test
 
     # LOAD
     derive_ref01_ent = client.Derive(nil)
-    derive_ref01_match_dt0 = {}
+    derive_ref01_match_dt0 = {
+      "id" => derive_ref01_data["id"],
+    }
     derive_ref01_data_dt0_loaded = derive_ref01_ent.load(derive_ref01_match_dt0, nil)
-    assert !derive_ref01_data_dt0_loaded.nil?
+    derive_ref01_data_dt0_load_result = Helpers.to_map(derive_ref01_data_dt0_loaded.respond_to?(:data_get) ? derive_ref01_data_dt0_loaded.data_get : derive_ref01_data_dt0_loaded)
+    assert !derive_ref01_data_dt0_load_result.nil?
+    assert_equal derive_ref01_data_dt0_load_result["id"], derive_ref01_data["id"]
 
   end
 end

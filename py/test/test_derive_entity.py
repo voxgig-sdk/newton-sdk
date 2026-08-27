@@ -48,9 +48,13 @@ class TestDeriveEntity:
 
         # LOAD
         derive_ref01_ent = client.Derive(None)
-        derive_ref01_match_dt0 = {}
+        derive_ref01_match_dt0 = {
+            "id": derive_ref01_data["id"],
+        }
         derive_ref01_data_dt0_loaded = derive_ref01_ent.load(derive_ref01_match_dt0, None)
-        assert derive_ref01_data_dt0_loaded is not None
+        derive_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(derive_ref01_data_dt0_loaded))
+        assert derive_ref01_data_dt0_load_result is not None
+        assert derive_ref01_data_dt0_load_result["id"] == derive_ref01_data["id"]
 
 
 

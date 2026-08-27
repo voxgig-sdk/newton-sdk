@@ -48,9 +48,13 @@ class TestAreaEntity:
 
         # LOAD
         area_ref01_ent = client.Area(None)
-        area_ref01_match_dt0 = {}
+        area_ref01_match_dt0 = {
+            "id": area_ref01_data["id"],
+        }
         area_ref01_data_dt0_loaded = area_ref01_ent.load(area_ref01_match_dt0, None)
-        assert area_ref01_data_dt0_loaded is not None
+        area_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(area_ref01_data_dt0_loaded))
+        assert area_ref01_data_dt0_load_result is not None
+        assert area_ref01_data_dt0_load_result["id"] == area_ref01_data["id"]
 
 
 

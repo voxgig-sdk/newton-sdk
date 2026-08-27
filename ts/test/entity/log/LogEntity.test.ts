@@ -59,9 +59,12 @@ describe('LogEntity', async () => {
 
     let log_ref01_data = Object.values(setup.data.existing.log)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const log_ref01_ent = client.Log()
+    const log_ref01_match_dt0: any = {}
+    log_ref01_match_dt0.id = log_ref01_data.id
+    const log_ref01_data_dt0 = (await log_ref01_ent.load(log_ref01_match_dt0)).data()
+    assert(log_ref01_data_dt0.id === log_ref01_data.id)
 
 
   })

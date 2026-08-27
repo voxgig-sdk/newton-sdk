@@ -48,9 +48,13 @@ class IntegrateEntityTest extends TestCase
 
         // LOAD
         $integrate_ref01_ent = $client->Integrate(null);
-        $integrate_ref01_match_dt0 = [];
+        $integrate_ref01_match_dt0 = [
+            "id" => $integrate_ref01_data["id"],
+        ];
         $integrate_ref01_data_dt0_loaded = $integrate_ref01_ent->load($integrate_ref01_match_dt0, null);
-        $this->assertNotNull($integrate_ref01_data_dt0_loaded);
+        $integrate_ref01_data_dt0_load_result = Helpers::to_map(is_object($integrate_ref01_data_dt0_loaded) && method_exists($integrate_ref01_data_dt0_loaded, 'data_get') ? $integrate_ref01_data_dt0_loaded->data_get() : $integrate_ref01_data_dt0_loaded);
+        $this->assertNotNull($integrate_ref01_data_dt0_load_result);
+        $this->assertEquals($integrate_ref01_data_dt0_load_result["id"], $integrate_ref01_data["id"]);
 
     }
 }

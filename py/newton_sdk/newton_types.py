@@ -16,150 +16,210 @@ from __future__ import annotations
 from typing import TypedDict, Any
 
 
-class Abs(TypedDict):
+class AbsRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Abs(AbsRequired, total=False):
+    id: str
 
 
 class AbsLoadMatch(TypedDict):
     id: str
 
 
-class Arcco(TypedDict):
+class ArccoRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Arcco(ArccoRequired, total=False):
+    id: str
 
 
 class ArccoLoadMatch(TypedDict):
     id: str
 
 
-class Arcsin(TypedDict):
+class ArcsinRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Arcsin(ArcsinRequired, total=False):
+    id: str
 
 
 class ArcsinLoadMatch(TypedDict):
     id: str
 
 
-class Arctan(TypedDict):
+class ArctanRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Arctan(ArctanRequired, total=False):
+    id: str
 
 
 class ArctanLoadMatch(TypedDict):
     id: str
 
 
-class Area(TypedDict):
+class AreaRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Area(AreaRequired, total=False):
+    id: str
 
 
 class AreaLoadMatch(TypedDict):
     id: str
 
 
-class Cos(TypedDict):
+class CosRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Cos(CosRequired, total=False):
+    id: str
 
 
 class CosLoadMatch(TypedDict):
     id: str
 
 
-class Derive(TypedDict):
+class DeriveRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Derive(DeriveRequired, total=False):
+    id: str
 
 
 class DeriveLoadMatch(TypedDict):
     id: str
 
 
-class Factor(TypedDict):
+class FactorRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Factor(FactorRequired, total=False):
+    id: str
 
 
 class FactorLoadMatch(TypedDict):
     id: str
 
 
-class Integrate(TypedDict):
+class IntegrateRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Integrate(IntegrateRequired, total=False):
+    id: str
 
 
 class IntegrateLoadMatch(TypedDict):
     id: str
 
 
-class Log(TypedDict):
+class LogRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Log(LogRequired, total=False):
+    id: str
 
 
 class LogLoadMatch(TypedDict):
     id: str
 
 
-class Simplify(TypedDict):
+class SimplifyRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Simplify(SimplifyRequired, total=False):
+    id: str
 
 
 class SimplifyLoadMatch(TypedDict):
     id: str
 
 
-class Sin(TypedDict):
+class SinRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Sin(SinRequired, total=False):
+    id: str
 
 
 class SinLoadMatch(TypedDict):
     id: str
 
 
-class Tan(TypedDict):
+class TanRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Tan(TanRequired, total=False):
+    id: str
 
 
 class TanLoadMatch(TypedDict):
     id: str
 
 
-class Tangent(TypedDict):
+class TangentRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Tangent(TangentRequired, total=False):
+    id: str
 
 
 class TangentLoadMatch(TypedDict):
     id: str
 
 
-class Zero(TypedDict):
+class ZeroRequired(TypedDict):
     expression: str
     operation: str
     result: str
+
+
+class Zero(ZeroRequired, total=False):
+    id: str
 
 
 class ZeroLoadMatch(TypedDict):

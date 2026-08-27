@@ -61,13 +61,19 @@ func TestSimplifyEntity(t *testing.T) {
 
 		// LOAD
 		simplifyRef01Ent := client.Simplify(nil)
-		simplifyRef01MatchDt0 := map[string]any{}
+		simplifyRef01MatchDt0 := map[string]any{
+			"id": simplifyRef01Data["id"],
+		}
 		simplifyRef01DataDt0Loaded, err := simplifyRef01Ent.Load(simplifyRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if simplifyRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		simplifyRef01DataDt0LoadResult := core.ToMapAny(entityData(simplifyRef01DataDt0Loaded))
+		if simplifyRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if simplifyRef01DataDt0LoadResult["id"] != simplifyRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

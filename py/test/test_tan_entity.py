@@ -48,9 +48,13 @@ class TestTanEntity:
 
         # LOAD
         tan_ref01_ent = client.Tan(None)
-        tan_ref01_match_dt0 = {}
+        tan_ref01_match_dt0 = {
+            "id": tan_ref01_data["id"],
+        }
         tan_ref01_data_dt0_loaded = tan_ref01_ent.load(tan_ref01_match_dt0, None)
-        assert tan_ref01_data_dt0_loaded is not None
+        tan_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(tan_ref01_data_dt0_loaded))
+        assert tan_ref01_data_dt0_load_result is not None
+        assert tan_ref01_data_dt0_load_result["id"] == tan_ref01_data["id"]
 
 
 

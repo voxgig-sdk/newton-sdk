@@ -61,13 +61,19 @@ func TestIntegrateEntity(t *testing.T) {
 
 		// LOAD
 		integrateRef01Ent := client.Integrate(nil)
-		integrateRef01MatchDt0 := map[string]any{}
+		integrateRef01MatchDt0 := map[string]any{
+			"id": integrateRef01Data["id"],
+		}
 		integrateRef01DataDt0Loaded, err := integrateRef01Ent.Load(integrateRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if integrateRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		integrateRef01DataDt0LoadResult := core.ToMapAny(entityData(integrateRef01DataDt0Loaded))
+		if integrateRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if integrateRef01DataDt0LoadResult["id"] != integrateRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

@@ -12,6 +12,11 @@ main: kit: entity: arctan: {
       type: "`$STRING`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "operation"
       req: true
       short: "The mathematical operation that was performed"
@@ -24,6 +29,11 @@ main: kit: entity: arctan: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "arctan"
   op: {

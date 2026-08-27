@@ -59,9 +59,12 @@ describe('CosEntity', async () => {
 
     let cos_ref01_data = Object.values(setup.data.existing.cos)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const cos_ref01_ent = client.Cos()
+    const cos_ref01_match_dt0: any = {}
+    cos_ref01_match_dt0.id = cos_ref01_data.id
+    const cos_ref01_data_dt0 = (await cos_ref01_ent.load(cos_ref01_match_dt0)).data()
+    assert(cos_ref01_data_dt0.id === cos_ref01_data.id)
 
 
   })

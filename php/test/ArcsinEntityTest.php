@@ -48,9 +48,13 @@ class ArcsinEntityTest extends TestCase
 
         // LOAD
         $arcsin_ref01_ent = $client->Arcsin(null);
-        $arcsin_ref01_match_dt0 = [];
+        $arcsin_ref01_match_dt0 = [
+            "id" => $arcsin_ref01_data["id"],
+        ];
         $arcsin_ref01_data_dt0_loaded = $arcsin_ref01_ent->load($arcsin_ref01_match_dt0, null);
-        $this->assertNotNull($arcsin_ref01_data_dt0_loaded);
+        $arcsin_ref01_data_dt0_load_result = Helpers::to_map(is_object($arcsin_ref01_data_dt0_loaded) && method_exists($arcsin_ref01_data_dt0_loaded, 'data_get') ? $arcsin_ref01_data_dt0_loaded->data_get() : $arcsin_ref01_data_dt0_loaded);
+        $this->assertNotNull($arcsin_ref01_data_dt0_load_result);
+        $this->assertEquals($arcsin_ref01_data_dt0_load_result["id"], $arcsin_ref01_data["id"]);
 
     }
 }

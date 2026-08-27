@@ -59,9 +59,12 @@ describe('ZeroEntity', async () => {
 
     let zero_ref01_data = Object.values(setup.data.existing.zero)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const zero_ref01_ent = client.Zero()
+    const zero_ref01_match_dt0: any = {}
+    zero_ref01_match_dt0.id = zero_ref01_data.id
+    const zero_ref01_data_dt0 = (await zero_ref01_ent.load(zero_ref01_match_dt0)).data()
+    assert(zero_ref01_data_dt0.id === zero_ref01_data.id)
 
 
   })

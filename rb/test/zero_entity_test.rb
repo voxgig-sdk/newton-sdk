@@ -41,9 +41,13 @@ class ZeroEntityTest < Minitest::Test
 
     # LOAD
     zero_ref01_ent = client.Zero(nil)
-    zero_ref01_match_dt0 = {}
+    zero_ref01_match_dt0 = {
+      "id" => zero_ref01_data["id"],
+    }
     zero_ref01_data_dt0_loaded = zero_ref01_ent.load(zero_ref01_match_dt0, nil)
-    assert !zero_ref01_data_dt0_loaded.nil?
+    zero_ref01_data_dt0_load_result = Helpers.to_map(zero_ref01_data_dt0_loaded.respond_to?(:data_get) ? zero_ref01_data_dt0_loaded.data_get : zero_ref01_data_dt0_loaded)
+    assert !zero_ref01_data_dt0_load_result.nil?
+    assert_equal zero_ref01_data_dt0_load_result["id"], zero_ref01_data["id"]
 
   end
 end

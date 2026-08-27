@@ -61,13 +61,19 @@ func TestArctanEntity(t *testing.T) {
 
 		// LOAD
 		arctanRef01Ent := client.Arctan(nil)
-		arctanRef01MatchDt0 := map[string]any{}
+		arctanRef01MatchDt0 := map[string]any{
+			"id": arctanRef01Data["id"],
+		}
 		arctanRef01DataDt0Loaded, err := arctanRef01Ent.Load(arctanRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if arctanRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		arctanRef01DataDt0LoadResult := core.ToMapAny(entityData(arctanRef01DataDt0Loaded))
+		if arctanRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if arctanRef01DataDt0LoadResult["id"] != arctanRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

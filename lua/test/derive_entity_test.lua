@@ -44,10 +44,14 @@ describe("DeriveEntity", function()
 
     -- LOAD
     local derive_ref01_ent = client:Derive(nil)
-    local derive_ref01_match_dt0 = {}
+    local derive_ref01_match_dt0 = {
+      id = derive_ref01_data["id"],
+    }
     local derive_ref01_data_dt0_loaded, err = derive_ref01_ent:load(derive_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(derive_ref01_data_dt0_loaded)
+    local derive_ref01_data_dt0_load_result = helpers.to_map(type(derive_ref01_data_dt0_loaded) == 'table' and derive_ref01_data_dt0_loaded.data_get and derive_ref01_data_dt0_loaded:data_get() or derive_ref01_data_dt0_loaded)
+    assert.is_not_nil(derive_ref01_data_dt0_load_result)
+    assert.are.equal(derive_ref01_data_dt0_load_result["id"], derive_ref01_data["id"])
 
   end)
 end)

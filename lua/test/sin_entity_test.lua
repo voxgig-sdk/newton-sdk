@@ -44,10 +44,14 @@ describe("SinEntity", function()
 
     -- LOAD
     local sin_ref01_ent = client:Sin(nil)
-    local sin_ref01_match_dt0 = {}
+    local sin_ref01_match_dt0 = {
+      id = sin_ref01_data["id"],
+    }
     local sin_ref01_data_dt0_loaded, err = sin_ref01_ent:load(sin_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(sin_ref01_data_dt0_loaded)
+    local sin_ref01_data_dt0_load_result = helpers.to_map(type(sin_ref01_data_dt0_loaded) == 'table' and sin_ref01_data_dt0_loaded.data_get and sin_ref01_data_dt0_loaded:data_get() or sin_ref01_data_dt0_loaded)
+    assert.is_not_nil(sin_ref01_data_dt0_load_result)
+    assert.are.equal(sin_ref01_data_dt0_load_result["id"], sin_ref01_data["id"])
 
   end)
 end)

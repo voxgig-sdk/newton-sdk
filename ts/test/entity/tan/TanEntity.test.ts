@@ -59,9 +59,12 @@ describe('TanEntity', async () => {
 
     let tan_ref01_data = Object.values(setup.data.existing.tan)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const tan_ref01_ent = client.Tan()
+    const tan_ref01_match_dt0: any = {}
+    tan_ref01_match_dt0.id = tan_ref01_data.id
+    const tan_ref01_data_dt0 = (await tan_ref01_ent.load(tan_ref01_match_dt0)).data()
+    assert(tan_ref01_data_dt0.id === tan_ref01_data.id)
 
 
   })

@@ -48,9 +48,13 @@ class TestAbsEntity:
 
         # LOAD
         abs_ref01_ent = client.Abs(None)
-        abs_ref01_match_dt0 = {}
+        abs_ref01_match_dt0 = {
+            "id": abs_ref01_data["id"],
+        }
         abs_ref01_data_dt0_loaded = abs_ref01_ent.load(abs_ref01_match_dt0, None)
-        assert abs_ref01_data_dt0_loaded is not None
+        abs_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(abs_ref01_data_dt0_loaded))
+        assert abs_ref01_data_dt0_load_result is not None
+        assert abs_ref01_data_dt0_load_result["id"] == abs_ref01_data["id"]
 
 
 

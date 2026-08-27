@@ -48,9 +48,13 @@ class AbsEntityTest extends TestCase
 
         // LOAD
         $abs_ref01_ent = $client->Abs(null);
-        $abs_ref01_match_dt0 = [];
+        $abs_ref01_match_dt0 = [
+            "id" => $abs_ref01_data["id"],
+        ];
         $abs_ref01_data_dt0_loaded = $abs_ref01_ent->load($abs_ref01_match_dt0, null);
-        $this->assertNotNull($abs_ref01_data_dt0_loaded);
+        $abs_ref01_data_dt0_load_result = Helpers::to_map(is_object($abs_ref01_data_dt0_loaded) && method_exists($abs_ref01_data_dt0_loaded, 'data_get') ? $abs_ref01_data_dt0_loaded->data_get() : $abs_ref01_data_dt0_loaded);
+        $this->assertNotNull($abs_ref01_data_dt0_load_result);
+        $this->assertEquals($abs_ref01_data_dt0_load_result["id"], $abs_ref01_data["id"]);
 
     }
 }

@@ -44,10 +44,14 @@ describe("TanEntity", function()
 
     -- LOAD
     local tan_ref01_ent = client:Tan(nil)
-    local tan_ref01_match_dt0 = {}
+    local tan_ref01_match_dt0 = {
+      id = tan_ref01_data["id"],
+    }
     local tan_ref01_data_dt0_loaded, err = tan_ref01_ent:load(tan_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(tan_ref01_data_dt0_loaded)
+    local tan_ref01_data_dt0_load_result = helpers.to_map(type(tan_ref01_data_dt0_loaded) == 'table' and tan_ref01_data_dt0_loaded.data_get and tan_ref01_data_dt0_loaded:data_get() or tan_ref01_data_dt0_loaded)
+    assert.is_not_nil(tan_ref01_data_dt0_load_result)
+    assert.are.equal(tan_ref01_data_dt0_load_result["id"], tan_ref01_data["id"])
 
   end)
 end)

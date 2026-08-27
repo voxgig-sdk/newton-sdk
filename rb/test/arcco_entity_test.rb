@@ -41,9 +41,13 @@ class ArccoEntityTest < Minitest::Test
 
     # LOAD
     arcco_ref01_ent = client.Arcco(nil)
-    arcco_ref01_match_dt0 = {}
+    arcco_ref01_match_dt0 = {
+      "id" => arcco_ref01_data["id"],
+    }
     arcco_ref01_data_dt0_loaded = arcco_ref01_ent.load(arcco_ref01_match_dt0, nil)
-    assert !arcco_ref01_data_dt0_loaded.nil?
+    arcco_ref01_data_dt0_load_result = Helpers.to_map(arcco_ref01_data_dt0_loaded.respond_to?(:data_get) ? arcco_ref01_data_dt0_loaded.data_get : arcco_ref01_data_dt0_loaded)
+    assert !arcco_ref01_data_dt0_load_result.nil?
+    assert_equal arcco_ref01_data_dt0_load_result["id"], arcco_ref01_data["id"]
 
   end
 end

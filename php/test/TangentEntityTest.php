@@ -48,9 +48,13 @@ class TangentEntityTest extends TestCase
 
         // LOAD
         $tangent_ref01_ent = $client->Tangent(null);
-        $tangent_ref01_match_dt0 = [];
+        $tangent_ref01_match_dt0 = [
+            "id" => $tangent_ref01_data["id"],
+        ];
         $tangent_ref01_data_dt0_loaded = $tangent_ref01_ent->load($tangent_ref01_match_dt0, null);
-        $this->assertNotNull($tangent_ref01_data_dt0_loaded);
+        $tangent_ref01_data_dt0_load_result = Helpers::to_map(is_object($tangent_ref01_data_dt0_loaded) && method_exists($tangent_ref01_data_dt0_loaded, 'data_get') ? $tangent_ref01_data_dt0_loaded->data_get() : $tangent_ref01_data_dt0_loaded);
+        $this->assertNotNull($tangent_ref01_data_dt0_load_result);
+        $this->assertEquals($tangent_ref01_data_dt0_load_result["id"], $tangent_ref01_data["id"]);
 
     }
 }

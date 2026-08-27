@@ -44,10 +44,14 @@ describe("ArccoEntity", function()
 
     -- LOAD
     local arcco_ref01_ent = client:Arcco(nil)
-    local arcco_ref01_match_dt0 = {}
+    local arcco_ref01_match_dt0 = {
+      id = arcco_ref01_data["id"],
+    }
     local arcco_ref01_data_dt0_loaded, err = arcco_ref01_ent:load(arcco_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(arcco_ref01_data_dt0_loaded)
+    local arcco_ref01_data_dt0_load_result = helpers.to_map(type(arcco_ref01_data_dt0_loaded) == 'table' and arcco_ref01_data_dt0_loaded.data_get and arcco_ref01_data_dt0_loaded:data_get() or arcco_ref01_data_dt0_loaded)
+    assert.is_not_nil(arcco_ref01_data_dt0_load_result)
+    assert.are.equal(arcco_ref01_data_dt0_load_result["id"], arcco_ref01_data["id"])
 
   end)
 end)

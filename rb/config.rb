@@ -28,6 +28,7 @@ module NewtonConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -60,6 +61,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -132,6 +137,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -198,6 +207,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -270,6 +283,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -336,6 +353,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -408,6 +429,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -474,6 +499,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -546,6 +575,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -612,6 +645,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -684,6 +721,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -750,6 +791,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -822,6 +867,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -888,6 +937,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -960,6 +1013,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "operation",
               "req" => true,
               "short" => "The mathematical operation that was performed",
@@ -1026,6 +1083,10 @@ module NewtonConfig
               "name" => "expression",
               "req" => true,
               "short" => "The mathematical expression that was processed",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {

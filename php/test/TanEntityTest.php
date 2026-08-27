@@ -48,9 +48,13 @@ class TanEntityTest extends TestCase
 
         // LOAD
         $tan_ref01_ent = $client->Tan(null);
-        $tan_ref01_match_dt0 = [];
+        $tan_ref01_match_dt0 = [
+            "id" => $tan_ref01_data["id"],
+        ];
         $tan_ref01_data_dt0_loaded = $tan_ref01_ent->load($tan_ref01_match_dt0, null);
-        $this->assertNotNull($tan_ref01_data_dt0_loaded);
+        $tan_ref01_data_dt0_load_result = Helpers::to_map(is_object($tan_ref01_data_dt0_loaded) && method_exists($tan_ref01_data_dt0_loaded, 'data_get') ? $tan_ref01_data_dt0_loaded->data_get() : $tan_ref01_data_dt0_loaded);
+        $this->assertNotNull($tan_ref01_data_dt0_load_result);
+        $this->assertEquals($tan_ref01_data_dt0_load_result["id"], $tan_ref01_data["id"]);
 
     }
 }

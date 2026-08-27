@@ -41,9 +41,13 @@ class TanEntityTest < Minitest::Test
 
     # LOAD
     tan_ref01_ent = client.Tan(nil)
-    tan_ref01_match_dt0 = {}
+    tan_ref01_match_dt0 = {
+      "id" => tan_ref01_data["id"],
+    }
     tan_ref01_data_dt0_loaded = tan_ref01_ent.load(tan_ref01_match_dt0, nil)
-    assert !tan_ref01_data_dt0_loaded.nil?
+    tan_ref01_data_dt0_load_result = Helpers.to_map(tan_ref01_data_dt0_loaded.respond_to?(:data_get) ? tan_ref01_data_dt0_loaded.data_get : tan_ref01_data_dt0_loaded)
+    assert !tan_ref01_data_dt0_load_result.nil?
+    assert_equal tan_ref01_data_dt0_load_result["id"], tan_ref01_data["id"]
 
   end
 end

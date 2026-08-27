@@ -59,9 +59,12 @@ describe('TangentEntity', async () => {
 
     let tangent_ref01_data = Object.values(setup.data.existing.tangent)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const tangent_ref01_ent = client.Tangent()
+    const tangent_ref01_match_dt0: any = {}
+    tangent_ref01_match_dt0.id = tangent_ref01_data.id
+    const tangent_ref01_data_dt0 = (await tangent_ref01_ent.load(tangent_ref01_match_dt0)).data()
+    assert(tangent_ref01_data_dt0.id === tangent_ref01_data.id)
 
 
   })

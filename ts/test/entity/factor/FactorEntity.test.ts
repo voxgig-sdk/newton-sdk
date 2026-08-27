@@ -59,9 +59,12 @@ describe('FactorEntity', async () => {
 
     let factor_ref01_data = Object.values(setup.data.existing.factor)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const factor_ref01_ent = client.Factor()
+    const factor_ref01_match_dt0: any = {}
+    factor_ref01_match_dt0.id = factor_ref01_data.id
+    const factor_ref01_data_dt0 = (await factor_ref01_ent.load(factor_ref01_match_dt0)).data()
+    assert(factor_ref01_data_dt0.id === factor_ref01_data.id)
 
 
   })

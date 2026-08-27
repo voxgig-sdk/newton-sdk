@@ -48,9 +48,13 @@ class TestLogEntity:
 
         # LOAD
         log_ref01_ent = client.Log(None)
-        log_ref01_match_dt0 = {}
+        log_ref01_match_dt0 = {
+            "id": log_ref01_data["id"],
+        }
         log_ref01_data_dt0_loaded = log_ref01_ent.load(log_ref01_match_dt0, None)
-        assert log_ref01_data_dt0_loaded is not None
+        log_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(log_ref01_data_dt0_loaded))
+        assert log_ref01_data_dt0_load_result is not None
+        assert log_ref01_data_dt0_load_result["id"] == log_ref01_data["id"]
 
 
 

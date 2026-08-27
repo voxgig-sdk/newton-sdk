@@ -41,9 +41,13 @@ class ArcsinEntityTest < Minitest::Test
 
     # LOAD
     arcsin_ref01_ent = client.Arcsin(nil)
-    arcsin_ref01_match_dt0 = {}
+    arcsin_ref01_match_dt0 = {
+      "id" => arcsin_ref01_data["id"],
+    }
     arcsin_ref01_data_dt0_loaded = arcsin_ref01_ent.load(arcsin_ref01_match_dt0, nil)
-    assert !arcsin_ref01_data_dt0_loaded.nil?
+    arcsin_ref01_data_dt0_load_result = Helpers.to_map(arcsin_ref01_data_dt0_loaded.respond_to?(:data_get) ? arcsin_ref01_data_dt0_loaded.data_get : arcsin_ref01_data_dt0_loaded)
+    assert !arcsin_ref01_data_dt0_load_result.nil?
+    assert_equal arcsin_ref01_data_dt0_load_result["id"], arcsin_ref01_data["id"]
 
   end
 end

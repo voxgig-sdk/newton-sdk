@@ -44,10 +44,14 @@ describe("TangentEntity", function()
 
     -- LOAD
     local tangent_ref01_ent = client:Tangent(nil)
-    local tangent_ref01_match_dt0 = {}
+    local tangent_ref01_match_dt0 = {
+      id = tangent_ref01_data["id"],
+    }
     local tangent_ref01_data_dt0_loaded, err = tangent_ref01_ent:load(tangent_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(tangent_ref01_data_dt0_loaded)
+    local tangent_ref01_data_dt0_load_result = helpers.to_map(type(tangent_ref01_data_dt0_loaded) == 'table' and tangent_ref01_data_dt0_loaded.data_get and tangent_ref01_data_dt0_loaded:data_get() or tangent_ref01_data_dt0_loaded)
+    assert.is_not_nil(tangent_ref01_data_dt0_load_result)
+    assert.are.equal(tangent_ref01_data_dt0_load_result["id"], tangent_ref01_data["id"])
 
   end)
 end)

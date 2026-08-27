@@ -13,6 +13,9 @@
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -20,6 +23,7 @@
 #   @return [String]
 Abs = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -39,6 +43,9 @@ AbsLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -46,6 +53,7 @@ AbsLoadMatch = Struct.new(
 #   @return [String]
 Arcco = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -65,6 +73,9 @@ ArccoLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -72,6 +83,7 @@ ArccoLoadMatch = Struct.new(
 #   @return [String]
 Arcsin = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -91,6 +103,9 @@ ArcsinLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -98,6 +113,7 @@ ArcsinLoadMatch = Struct.new(
 #   @return [String]
 Arctan = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -117,6 +133,9 @@ ArctanLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -124,6 +143,7 @@ ArctanLoadMatch = Struct.new(
 #   @return [String]
 Area = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -143,6 +163,9 @@ AreaLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -150,6 +173,7 @@ AreaLoadMatch = Struct.new(
 #   @return [String]
 Cos = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -169,6 +193,9 @@ CosLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -176,6 +203,7 @@ CosLoadMatch = Struct.new(
 #   @return [String]
 Derive = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -195,6 +223,9 @@ DeriveLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -202,6 +233,7 @@ DeriveLoadMatch = Struct.new(
 #   @return [String]
 Factor = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -221,6 +253,9 @@ FactorLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -228,6 +263,7 @@ FactorLoadMatch = Struct.new(
 #   @return [String]
 Integrate = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -247,6 +283,9 @@ IntegrateLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -254,6 +293,7 @@ IntegrateLoadMatch = Struct.new(
 #   @return [String]
 Log = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -273,6 +313,9 @@ LogLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -280,6 +323,7 @@ LogLoadMatch = Struct.new(
 #   @return [String]
 Simplify = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -299,6 +343,9 @@ SimplifyLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -306,6 +353,7 @@ SimplifyLoadMatch = Struct.new(
 #   @return [String]
 Sin = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -325,6 +373,9 @@ SinLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -332,6 +383,7 @@ SinLoadMatch = Struct.new(
 #   @return [String]
 Tan = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -351,6 +403,9 @@ TanLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -358,6 +413,7 @@ TanLoadMatch = Struct.new(
 #   @return [String]
 Tangent = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true
@@ -377,6 +433,9 @@ TangentLoadMatch = Struct.new(
 # @!attribute [rw] expression
 #   @return [String]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] operation
 #   @return [String]
 #
@@ -384,6 +443,7 @@ TangentLoadMatch = Struct.new(
 #   @return [String]
 Zero = Struct.new(
   :expression,
+  :id,
   :operation,
   :result,
   keyword_init: true

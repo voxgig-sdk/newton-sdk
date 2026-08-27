@@ -59,9 +59,12 @@ describe('ArcsinEntity', async () => {
 
     let arcsin_ref01_data = Object.values(setup.data.existing.arcsin)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const arcsin_ref01_ent = client.Arcsin()
+    const arcsin_ref01_match_dt0: any = {}
+    arcsin_ref01_match_dt0.id = arcsin_ref01_data.id
+    const arcsin_ref01_data_dt0 = (await arcsin_ref01_ent.load(arcsin_ref01_match_dt0)).data()
+    assert(arcsin_ref01_data_dt0.id === arcsin_ref01_data.id)
 
 
   })

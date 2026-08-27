@@ -61,13 +61,19 @@ func TestZeroEntity(t *testing.T) {
 
 		// LOAD
 		zeroRef01Ent := client.Zero(nil)
-		zeroRef01MatchDt0 := map[string]any{}
+		zeroRef01MatchDt0 := map[string]any{
+			"id": zeroRef01Data["id"],
+		}
 		zeroRef01DataDt0Loaded, err := zeroRef01Ent.Load(zeroRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if zeroRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		zeroRef01DataDt0LoadResult := core.ToMapAny(entityData(zeroRef01DataDt0Loaded))
+		if zeroRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if zeroRef01DataDt0LoadResult["id"] != zeroRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

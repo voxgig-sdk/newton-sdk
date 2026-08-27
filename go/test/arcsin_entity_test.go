@@ -61,13 +61,19 @@ func TestArcsinEntity(t *testing.T) {
 
 		// LOAD
 		arcsinRef01Ent := client.Arcsin(nil)
-		arcsinRef01MatchDt0 := map[string]any{}
+		arcsinRef01MatchDt0 := map[string]any{
+			"id": arcsinRef01Data["id"],
+		}
 		arcsinRef01DataDt0Loaded, err := arcsinRef01Ent.Load(arcsinRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if arcsinRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		arcsinRef01DataDt0LoadResult := core.ToMapAny(entityData(arcsinRef01DataDt0Loaded))
+		if arcsinRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if arcsinRef01DataDt0LoadResult["id"] != arcsinRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

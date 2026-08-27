@@ -61,13 +61,19 @@ func TestSinEntity(t *testing.T) {
 
 		// LOAD
 		sinRef01Ent := client.Sin(nil)
-		sinRef01MatchDt0 := map[string]any{}
+		sinRef01MatchDt0 := map[string]any{
+			"id": sinRef01Data["id"],
+		}
 		sinRef01DataDt0Loaded, err := sinRef01Ent.Load(sinRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if sinRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		sinRef01DataDt0LoadResult := core.ToMapAny(entityData(sinRef01DataDt0Loaded))
+		if sinRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if sinRef01DataDt0LoadResult["id"] != sinRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

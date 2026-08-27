@@ -59,9 +59,12 @@ describe('SinEntity', async () => {
 
     let sin_ref01_data = Object.values(setup.data.existing.sin)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const sin_ref01_ent = client.Sin()
+    const sin_ref01_match_dt0: any = {}
+    sin_ref01_match_dt0.id = sin_ref01_data.id
+    const sin_ref01_data_dt0 = (await sin_ref01_ent.load(sin_ref01_match_dt0)).data()
+    assert(sin_ref01_data_dt0.id === sin_ref01_data.id)
 
 
   })

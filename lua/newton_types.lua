@@ -8,6 +8,7 @@
 
 ---@class Abs
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -16,6 +17,7 @@
 
 ---@class Arcco
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -24,6 +26,7 @@
 
 ---@class Arcsin
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -32,6 +35,7 @@
 
 ---@class Arctan
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -40,6 +44,7 @@
 
 ---@class Area
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -48,6 +53,7 @@
 
 ---@class Cos
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -56,6 +62,7 @@
 
 ---@class Derive
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -64,6 +71,7 @@
 
 ---@class Factor
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -72,6 +80,7 @@
 
 ---@class Integrate
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -80,6 +89,7 @@
 
 ---@class Log
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -88,6 +98,7 @@
 
 ---@class Simplify
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -96,6 +107,7 @@
 
 ---@class Sin
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -104,6 +116,7 @@
 
 ---@class Tan
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -112,6 +125,7 @@
 
 ---@class Tangent
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 
@@ -120,6 +134,7 @@
 
 ---@class Zero
 ---@field expression string
+---@field id? string
 ---@field operation string
 ---@field result string
 

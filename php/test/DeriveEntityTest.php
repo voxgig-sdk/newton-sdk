@@ -48,9 +48,13 @@ class DeriveEntityTest extends TestCase
 
         // LOAD
         $derive_ref01_ent = $client->Derive(null);
-        $derive_ref01_match_dt0 = [];
+        $derive_ref01_match_dt0 = [
+            "id" => $derive_ref01_data["id"],
+        ];
         $derive_ref01_data_dt0_loaded = $derive_ref01_ent->load($derive_ref01_match_dt0, null);
-        $this->assertNotNull($derive_ref01_data_dt0_loaded);
+        $derive_ref01_data_dt0_load_result = Helpers::to_map(is_object($derive_ref01_data_dt0_loaded) && method_exists($derive_ref01_data_dt0_loaded, 'data_get') ? $derive_ref01_data_dt0_loaded->data_get() : $derive_ref01_data_dt0_loaded);
+        $this->assertNotNull($derive_ref01_data_dt0_load_result);
+        $this->assertEquals($derive_ref01_data_dt0_load_result["id"], $derive_ref01_data["id"]);
 
     }
 }

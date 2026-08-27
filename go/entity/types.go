@@ -15,6 +15,7 @@ import (
 // Abs is the typed data model for the abs entity.
 type Abs struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -27,6 +28,7 @@ type AbsLoadMatch struct {
 // Arcco is the typed data model for the arcco entity.
 type Arcco struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -39,6 +41,7 @@ type ArccoLoadMatch struct {
 // Arcsin is the typed data model for the arcsin entity.
 type Arcsin struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -51,6 +54,7 @@ type ArcsinLoadMatch struct {
 // Arctan is the typed data model for the arctan entity.
 type Arctan struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -63,6 +67,7 @@ type ArctanLoadMatch struct {
 // Area is the typed data model for the area entity.
 type Area struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -75,6 +80,7 @@ type AreaLoadMatch struct {
 // Cos is the typed data model for the cos entity.
 type Cos struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -87,6 +93,7 @@ type CosLoadMatch struct {
 // Derive is the typed data model for the derive entity.
 type Derive struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -99,6 +106,7 @@ type DeriveLoadMatch struct {
 // Factor is the typed data model for the factor entity.
 type Factor struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -111,6 +119,7 @@ type FactorLoadMatch struct {
 // Integrate is the typed data model for the integrate entity.
 type Integrate struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -123,6 +132,7 @@ type IntegrateLoadMatch struct {
 // Log is the typed data model for the log entity.
 type Log struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -135,6 +145,7 @@ type LogLoadMatch struct {
 // Simplify is the typed data model for the simplify entity.
 type Simplify struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -147,6 +158,7 @@ type SimplifyLoadMatch struct {
 // Sin is the typed data model for the sin entity.
 type Sin struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -159,6 +171,7 @@ type SinLoadMatch struct {
 // Tan is the typed data model for the tan entity.
 type Tan struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -171,6 +184,7 @@ type TanLoadMatch struct {
 // Tangent is the typed data model for the tangent entity.
 type Tangent struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }
@@ -183,6 +197,7 @@ type TangentLoadMatch struct {
 // Zero is the typed data model for the zero entity.
 type Zero struct {
 	Expression string `json:"expression"`
+	Id *string `json:"id,omitempty"`
 	Operation string `json:"operation"`
 	Result string `json:"result"`
 }

@@ -61,13 +61,19 @@ func TestTangentEntity(t *testing.T) {
 
 		// LOAD
 		tangentRef01Ent := client.Tangent(nil)
-		tangentRef01MatchDt0 := map[string]any{}
+		tangentRef01MatchDt0 := map[string]any{
+			"id": tangentRef01Data["id"],
+		}
 		tangentRef01DataDt0Loaded, err := tangentRef01Ent.Load(tangentRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if tangentRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		tangentRef01DataDt0LoadResult := core.ToMapAny(entityData(tangentRef01DataDt0Loaded))
+		if tangentRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if tangentRef01DataDt0LoadResult["id"] != tangentRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

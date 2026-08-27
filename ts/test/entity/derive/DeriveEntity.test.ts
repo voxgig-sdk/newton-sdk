@@ -59,9 +59,12 @@ describe('DeriveEntity', async () => {
 
     let derive_ref01_data = Object.values(setup.data.existing.derive)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const derive_ref01_ent = client.Derive()
+    const derive_ref01_match_dt0: any = {}
+    derive_ref01_match_dt0.id = derive_ref01_data.id
+    const derive_ref01_data_dt0 = (await derive_ref01_ent.load(derive_ref01_match_dt0)).data()
+    assert(derive_ref01_data_dt0.id === derive_ref01_data.id)
 
 
   })

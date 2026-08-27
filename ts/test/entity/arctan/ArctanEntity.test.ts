@@ -59,9 +59,12 @@ describe('ArctanEntity', async () => {
 
     let arctan_ref01_data = Object.values(setup.data.existing.arctan)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const arctan_ref01_ent = client.Arctan()
+    const arctan_ref01_match_dt0: any = {}
+    arctan_ref01_match_dt0.id = arctan_ref01_data.id
+    const arctan_ref01_data_dt0 = (await arctan_ref01_ent.load(arctan_ref01_match_dt0)).data()
+    assert(arctan_ref01_data_dt0.id === arctan_ref01_data.id)
 
 
   })

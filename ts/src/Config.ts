@@ -40,7 +40,8 @@ class Config {
      test:     {
       "options": {
         "active": false
-      }
+      },
+      "transport": "base"
     },
 
   }
@@ -114,6 +115,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -180,6 +185,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -252,6 +261,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -318,6 +331,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -390,6 +407,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -456,6 +477,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -528,6 +553,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -594,6 +623,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -666,6 +699,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -732,6 +769,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -804,6 +845,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -870,6 +915,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -942,6 +991,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -1011,6 +1064,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "operation",
           "req": true,
           "short": "The mathematical operation that was performed",
@@ -1077,6 +1134,10 @@ class Config {
           "name": "expression",
           "req": true,
           "short": "The mathematical expression that was processed",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {

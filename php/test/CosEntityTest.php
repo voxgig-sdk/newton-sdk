@@ -48,9 +48,13 @@ class CosEntityTest extends TestCase
 
         // LOAD
         $cos_ref01_ent = $client->Cos(null);
-        $cos_ref01_match_dt0 = [];
+        $cos_ref01_match_dt0 = [
+            "id" => $cos_ref01_data["id"],
+        ];
         $cos_ref01_data_dt0_loaded = $cos_ref01_ent->load($cos_ref01_match_dt0, null);
-        $this->assertNotNull($cos_ref01_data_dt0_loaded);
+        $cos_ref01_data_dt0_load_result = Helpers::to_map(is_object($cos_ref01_data_dt0_loaded) && method_exists($cos_ref01_data_dt0_loaded, 'data_get') ? $cos_ref01_data_dt0_loaded->data_get() : $cos_ref01_data_dt0_loaded);
+        $this->assertNotNull($cos_ref01_data_dt0_load_result);
+        $this->assertEquals($cos_ref01_data_dt0_load_result["id"], $cos_ref01_data["id"]);
 
     }
 }

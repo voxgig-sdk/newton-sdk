@@ -48,9 +48,13 @@ class TestSinEntity:
 
         # LOAD
         sin_ref01_ent = client.Sin(None)
-        sin_ref01_match_dt0 = {}
+        sin_ref01_match_dt0 = {
+            "id": sin_ref01_data["id"],
+        }
         sin_ref01_data_dt0_loaded = sin_ref01_ent.load(sin_ref01_match_dt0, None)
-        assert sin_ref01_data_dt0_loaded is not None
+        sin_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(sin_ref01_data_dt0_loaded))
+        assert sin_ref01_data_dt0_load_result is not None
+        assert sin_ref01_data_dt0_load_result["id"] == sin_ref01_data["id"]
 
 
 

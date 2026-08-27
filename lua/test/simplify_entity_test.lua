@@ -44,10 +44,14 @@ describe("SimplifyEntity", function()
 
     -- LOAD
     local simplify_ref01_ent = client:Simplify(nil)
-    local simplify_ref01_match_dt0 = {}
+    local simplify_ref01_match_dt0 = {
+      id = simplify_ref01_data["id"],
+    }
     local simplify_ref01_data_dt0_loaded, err = simplify_ref01_ent:load(simplify_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(simplify_ref01_data_dt0_loaded)
+    local simplify_ref01_data_dt0_load_result = helpers.to_map(type(simplify_ref01_data_dt0_loaded) == 'table' and simplify_ref01_data_dt0_loaded.data_get and simplify_ref01_data_dt0_loaded:data_get() or simplify_ref01_data_dt0_loaded)
+    assert.is_not_nil(simplify_ref01_data_dt0_load_result)
+    assert.are.equal(simplify_ref01_data_dt0_load_result["id"], simplify_ref01_data["id"])
 
   end)
 end)

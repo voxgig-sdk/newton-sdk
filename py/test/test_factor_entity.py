@@ -48,9 +48,13 @@ class TestFactorEntity:
 
         # LOAD
         factor_ref01_ent = client.Factor(None)
-        factor_ref01_match_dt0 = {}
+        factor_ref01_match_dt0 = {
+            "id": factor_ref01_data["id"],
+        }
         factor_ref01_data_dt0_loaded = factor_ref01_ent.load(factor_ref01_match_dt0, None)
-        assert factor_ref01_data_dt0_loaded is not None
+        factor_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(factor_ref01_data_dt0_loaded))
+        assert factor_ref01_data_dt0_load_result is not None
+        assert factor_ref01_data_dt0_load_result["id"] == factor_ref01_data["id"]
 
 
 

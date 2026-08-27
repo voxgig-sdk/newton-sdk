@@ -59,9 +59,12 @@ describe('AreaEntity', async () => {
 
     let area_ref01_data = Object.values(setup.data.existing.area)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const area_ref01_ent = client.Area()
+    const area_ref01_match_dt0: any = {}
+    area_ref01_match_dt0.id = area_ref01_data.id
+    const area_ref01_data_dt0 = (await area_ref01_ent.load(area_ref01_match_dt0)).data()
+    assert(area_ref01_data_dt0.id === area_ref01_data.id)
 
 
   })

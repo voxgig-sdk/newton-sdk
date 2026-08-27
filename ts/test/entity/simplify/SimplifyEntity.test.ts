@@ -59,9 +59,12 @@ describe('SimplifyEntity', async () => {
 
     let simplify_ref01_data = Object.values(setup.data.existing.simplify)[0] as any
 
-    // LOAD: skipped — no entity id field and load requires path params.
-    // Entity-var is declared here so later flow steps still compile.
+    // LOAD
     const simplify_ref01_ent = client.Simplify()
+    const simplify_ref01_match_dt0: any = {}
+    simplify_ref01_match_dt0.id = simplify_ref01_data.id
+    const simplify_ref01_data_dt0 = (await simplify_ref01_ent.load(simplify_ref01_match_dt0)).data()
+    assert(simplify_ref01_data_dt0.id === simplify_ref01_data.id)
 
 
   })

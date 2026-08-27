@@ -285,6 +285,7 @@ const abs = client.Abs()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -337,6 +338,7 @@ const arcco = client.Arcco()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -389,6 +391,7 @@ const arcsin = client.Arcsin()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -441,6 +444,7 @@ const arctan = client.Arctan()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -493,6 +497,7 @@ const area = client.Area()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -545,6 +550,7 @@ const cos = client.Cos()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -597,6 +603,7 @@ const derive = client.Derive()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -649,6 +656,7 @@ const factor = client.Factor()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -701,6 +709,7 @@ const integrate = client.Integrate()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -753,6 +762,7 @@ const log = client.Log()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -805,6 +815,7 @@ const simplify = client.Simplify()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -857,6 +868,7 @@ const sin = client.Sin()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -909,6 +921,7 @@ const tan = client.Tan()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -961,6 +974,7 @@ const tangent = client.Tangent()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -1013,6 +1027,7 @@ const zero = client.Zero()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 

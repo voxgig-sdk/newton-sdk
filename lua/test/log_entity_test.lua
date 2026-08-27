@@ -44,10 +44,14 @@ describe("LogEntity", function()
 
     -- LOAD
     local log_ref01_ent = client:Log(nil)
-    local log_ref01_match_dt0 = {}
+    local log_ref01_match_dt0 = {
+      id = log_ref01_data["id"],
+    }
     local log_ref01_data_dt0_loaded, err = log_ref01_ent:load(log_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(log_ref01_data_dt0_loaded)
+    local log_ref01_data_dt0_load_result = helpers.to_map(type(log_ref01_data_dt0_loaded) == 'table' and log_ref01_data_dt0_loaded.data_get and log_ref01_data_dt0_loaded:data_get() or log_ref01_data_dt0_loaded)
+    assert.is_not_nil(log_ref01_data_dt0_load_result)
+    assert.are.equal(log_ref01_data_dt0_load_result["id"], log_ref01_data["id"])
 
   end)
 end)

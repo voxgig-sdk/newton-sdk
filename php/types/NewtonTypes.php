@@ -16,6 +16,7 @@ declare(strict_types=1);
 class Abs
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -30,6 +31,7 @@ class AbsLoadMatch
 class Arcco
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -44,6 +46,7 @@ class ArccoLoadMatch
 class Arcsin
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -58,6 +61,7 @@ class ArcsinLoadMatch
 class Arctan
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -72,6 +76,7 @@ class ArctanLoadMatch
 class Area
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -86,6 +91,7 @@ class AreaLoadMatch
 class Cos
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -100,6 +106,7 @@ class CosLoadMatch
 class Derive
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -114,6 +121,7 @@ class DeriveLoadMatch
 class Factor
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -128,6 +136,7 @@ class FactorLoadMatch
 class Integrate
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -142,6 +151,7 @@ class IntegrateLoadMatch
 class Log
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -156,6 +166,7 @@ class LogLoadMatch
 class Simplify
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -170,6 +181,7 @@ class SimplifyLoadMatch
 class Sin
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -184,6 +196,7 @@ class SinLoadMatch
 class Tan
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -198,6 +211,7 @@ class TanLoadMatch
 class Tangent
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }
@@ -212,6 +226,7 @@ class TangentLoadMatch
 class Zero
 {
     public string $expression;
+    public ?string $id = null;
     public string $operation;
     public string $result;
 }

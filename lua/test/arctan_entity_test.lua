@@ -44,10 +44,14 @@ describe("ArctanEntity", function()
 
     -- LOAD
     local arctan_ref01_ent = client:Arctan(nil)
-    local arctan_ref01_match_dt0 = {}
+    local arctan_ref01_match_dt0 = {
+      id = arctan_ref01_data["id"],
+    }
     local arctan_ref01_data_dt0_loaded, err = arctan_ref01_ent:load(arctan_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(arctan_ref01_data_dt0_loaded)
+    local arctan_ref01_data_dt0_load_result = helpers.to_map(type(arctan_ref01_data_dt0_loaded) == 'table' and arctan_ref01_data_dt0_loaded.data_get and arctan_ref01_data_dt0_loaded:data_get() or arctan_ref01_data_dt0_loaded)
+    assert.is_not_nil(arctan_ref01_data_dt0_load_result)
+    assert.are.equal(arctan_ref01_data_dt0_load_result["id"], arctan_ref01_data["id"])
 
   end)
 end)

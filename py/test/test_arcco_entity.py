@@ -48,9 +48,13 @@ class TestArccoEntity:
 
         # LOAD
         arcco_ref01_ent = client.Arcco(None)
-        arcco_ref01_match_dt0 = {}
+        arcco_ref01_match_dt0 = {
+            "id": arcco_ref01_data["id"],
+        }
         arcco_ref01_data_dt0_loaded = arcco_ref01_ent.load(arcco_ref01_match_dt0, None)
-        assert arcco_ref01_data_dt0_loaded is not None
+        arcco_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(arcco_ref01_data_dt0_loaded))
+        assert arcco_ref01_data_dt0_load_result is not None
+        assert arcco_ref01_data_dt0_load_result["id"] == arcco_ref01_data["id"]
 
 
 

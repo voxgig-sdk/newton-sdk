@@ -273,6 +273,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -285,6 +286,7 @@ API path: `/abs/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -297,6 +299,7 @@ API path: `/arccos/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -309,6 +312,7 @@ API path: `/arcsin/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -321,6 +325,7 @@ API path: `/arctan/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -333,6 +338,7 @@ API path: `/area/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -345,6 +351,7 @@ API path: `/cos/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -357,6 +364,7 @@ API path: `/derive/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -369,6 +377,7 @@ API path: `/factor/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -381,6 +390,7 @@ API path: `/integrate/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -393,6 +403,7 @@ API path: `/log/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -405,6 +416,7 @@ API path: `/simplify/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -417,6 +429,7 @@ API path: `/sin/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -429,6 +442,7 @@ API path: `/tan/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -441,6 +455,7 @@ API path: `/tangent/{expression}`
 | Field | Description |
 | --- | --- |
 | `"expression"` | The mathematical expression that was processed |
+| `"id"` |  |
 | `"operation"` | The mathematical operation that was performed |
 | `"result"` | The result of the mathematical operation |
 
@@ -468,6 +483,7 @@ Create an instance: `abs := client.Abs(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -497,6 +513,7 @@ Create an instance: `arcco := client.Arcco(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -526,6 +543,7 @@ Create an instance: `arcsin := client.Arcsin(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -555,6 +573,7 @@ Create an instance: `arctan := client.Arctan(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -584,6 +603,7 @@ Create an instance: `area := client.Area(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -613,6 +633,7 @@ Create an instance: `cos := client.Cos(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -642,6 +663,7 @@ Create an instance: `derive := client.Derive(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -671,6 +693,7 @@ Create an instance: `factor := client.Factor(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -700,6 +723,7 @@ Create an instance: `integrate := client.Integrate(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -729,6 +753,7 @@ Create an instance: `log := client.Log(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -758,6 +783,7 @@ Create an instance: `simplify := client.Simplify(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -787,6 +813,7 @@ Create an instance: `sin := client.Sin(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -816,6 +843,7 @@ Create an instance: `tan := client.Tan(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -845,6 +873,7 @@ Create an instance: `tangent := client.Tangent(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -874,6 +903,7 @@ Create an instance: `zero := client.Zero(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 

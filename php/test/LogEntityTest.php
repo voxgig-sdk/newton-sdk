@@ -48,9 +48,13 @@ class LogEntityTest extends TestCase
 
         // LOAD
         $log_ref01_ent = $client->Log(null);
-        $log_ref01_match_dt0 = [];
+        $log_ref01_match_dt0 = [
+            "id" => $log_ref01_data["id"],
+        ];
         $log_ref01_data_dt0_loaded = $log_ref01_ent->load($log_ref01_match_dt0, null);
-        $this->assertNotNull($log_ref01_data_dt0_loaded);
+        $log_ref01_data_dt0_load_result = Helpers::to_map(is_object($log_ref01_data_dt0_loaded) && method_exists($log_ref01_data_dt0_loaded, 'data_get') ? $log_ref01_data_dt0_loaded->data_get() : $log_ref01_data_dt0_loaded);
+        $this->assertNotNull($log_ref01_data_dt0_load_result);
+        $this->assertEquals($log_ref01_data_dt0_load_result["id"], $log_ref01_data["id"]);
 
     }
 }

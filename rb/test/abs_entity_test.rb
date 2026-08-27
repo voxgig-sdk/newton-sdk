@@ -41,9 +41,13 @@ class AbsEntityTest < Minitest::Test
 
     # LOAD
     abs_ref01_ent = client.Abs(nil)
-    abs_ref01_match_dt0 = {}
+    abs_ref01_match_dt0 = {
+      "id" => abs_ref01_data["id"],
+    }
     abs_ref01_data_dt0_loaded = abs_ref01_ent.load(abs_ref01_match_dt0, nil)
-    assert !abs_ref01_data_dt0_loaded.nil?
+    abs_ref01_data_dt0_load_result = Helpers.to_map(abs_ref01_data_dt0_loaded.respond_to?(:data_get) ? abs_ref01_data_dt0_loaded.data_get : abs_ref01_data_dt0_loaded)
+    assert !abs_ref01_data_dt0_load_result.nil?
+    assert_equal abs_ref01_data_dt0_load_result["id"], abs_ref01_data["id"]
 
   end
 end

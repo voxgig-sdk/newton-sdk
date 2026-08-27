@@ -7,6 +7,7 @@
 
 export interface Abs {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -17,6 +18,7 @@ export interface AbsLoadMatch {
 
 export interface Arcco {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -27,6 +29,7 @@ export interface ArccoLoadMatch {
 
 export interface Arcsin {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -37,6 +40,7 @@ export interface ArcsinLoadMatch {
 
 export interface Arctan {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -47,6 +51,7 @@ export interface ArctanLoadMatch {
 
 export interface Area {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -57,6 +62,7 @@ export interface AreaLoadMatch {
 
 export interface Cos {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -67,6 +73,7 @@ export interface CosLoadMatch {
 
 export interface Derive {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -77,6 +84,7 @@ export interface DeriveLoadMatch {
 
 export interface Factor {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -87,6 +95,7 @@ export interface FactorLoadMatch {
 
 export interface Integrate {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -97,6 +106,7 @@ export interface IntegrateLoadMatch {
 
 export interface Log {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -107,6 +117,7 @@ export interface LogLoadMatch {
 
 export interface Simplify {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -117,6 +128,7 @@ export interface SimplifyLoadMatch {
 
 export interface Sin {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -127,6 +139,7 @@ export interface SinLoadMatch {
 
 export interface Tan {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -137,6 +150,7 @@ export interface TanLoadMatch {
 
 export interface Tangent {
   expression: string
+  id?: string
   operation: string
   result: string
 }
@@ -147,6 +161,7 @@ export interface TangentLoadMatch {
 
 export interface Zero {
   expression: string
+  id?: string
   operation: string
   result: string
 }

@@ -41,9 +41,13 @@ class LogEntityTest < Minitest::Test
 
     # LOAD
     log_ref01_ent = client.Log(nil)
-    log_ref01_match_dt0 = {}
+    log_ref01_match_dt0 = {
+      "id" => log_ref01_data["id"],
+    }
     log_ref01_data_dt0_loaded = log_ref01_ent.load(log_ref01_match_dt0, nil)
-    assert !log_ref01_data_dt0_loaded.nil?
+    log_ref01_data_dt0_load_result = Helpers.to_map(log_ref01_data_dt0_loaded.respond_to?(:data_get) ? log_ref01_data_dt0_loaded.data_get : log_ref01_data_dt0_loaded)
+    assert !log_ref01_data_dt0_load_result.nil?
+    assert_equal log_ref01_data_dt0_load_result["id"], log_ref01_data["id"]
 
   end
 end

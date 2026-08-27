@@ -48,9 +48,13 @@ class TestSimplifyEntity:
 
         # LOAD
         simplify_ref01_ent = client.Simplify(None)
-        simplify_ref01_match_dt0 = {}
+        simplify_ref01_match_dt0 = {
+            "id": simplify_ref01_data["id"],
+        }
         simplify_ref01_data_dt0_loaded = simplify_ref01_ent.load(simplify_ref01_match_dt0, None)
-        assert simplify_ref01_data_dt0_loaded is not None
+        simplify_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(simplify_ref01_data_dt0_loaded))
+        assert simplify_ref01_data_dt0_load_result is not None
+        assert simplify_ref01_data_dt0_load_result["id"] == simplify_ref01_data["id"]
 
 
 

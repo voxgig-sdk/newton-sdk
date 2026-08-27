@@ -44,10 +44,14 @@ describe("AbsEntity", function()
 
     -- LOAD
     local abs_ref01_ent = client:Abs(nil)
-    local abs_ref01_match_dt0 = {}
+    local abs_ref01_match_dt0 = {
+      id = abs_ref01_data["id"],
+    }
     local abs_ref01_data_dt0_loaded, err = abs_ref01_ent:load(abs_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(abs_ref01_data_dt0_loaded)
+    local abs_ref01_data_dt0_load_result = helpers.to_map(type(abs_ref01_data_dt0_loaded) == 'table' and abs_ref01_data_dt0_loaded.data_get and abs_ref01_data_dt0_loaded:data_get() or abs_ref01_data_dt0_loaded)
+    assert.is_not_nil(abs_ref01_data_dt0_load_result)
+    assert.are.equal(abs_ref01_data_dt0_load_result["id"], abs_ref01_data["id"])
 
   end)
 end)

@@ -2,31 +2,31 @@
   "existing": {
     "abs": {
       "ABS00": {
-        "expression": "s1e",
-        "operation": "s1f",
-        "result": "s20",
-        "id": "ABS00"
+        "expression": "s28",
+        "id": "ABS00",
+        "operation": "s2a",
+        "result": "s2b"
       },
       "ABS01": {
-        "expression": "s3c",
-        "operation": "s3d",
-        "result": "s3e",
-        "id": "ABS01"
+        "expression": "s50",
+        "id": "ABS01",
+        "operation": "s52",
+        "result": "s53"
       },
       "ABS02": {
-        "expression": "s5a",
-        "operation": "s5b",
-        "result": "s5c",
-        "id": "ABS02"
+        "expression": "s78",
+        "id": "ABS02",
+        "operation": "s7a",
+        "result": "s7b"
       }
     }
   },
   "new": {
     "abs": {
       "abs_ref01": {
-        "expression": "s78",
-        "operation": "s79",
-        "result": "s7a"
+        "expression": "sa0",
+        "operation": "sa2",
+        "result": "sa3"
       }
     }
   }

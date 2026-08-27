@@ -41,9 +41,13 @@ class IntegrateEntityTest < Minitest::Test
 
     # LOAD
     integrate_ref01_ent = client.Integrate(nil)
-    integrate_ref01_match_dt0 = {}
+    integrate_ref01_match_dt0 = {
+      "id" => integrate_ref01_data["id"],
+    }
     integrate_ref01_data_dt0_loaded = integrate_ref01_ent.load(integrate_ref01_match_dt0, nil)
-    assert !integrate_ref01_data_dt0_loaded.nil?
+    integrate_ref01_data_dt0_load_result = Helpers.to_map(integrate_ref01_data_dt0_loaded.respond_to?(:data_get) ? integrate_ref01_data_dt0_loaded.data_get : integrate_ref01_data_dt0_loaded)
+    assert !integrate_ref01_data_dt0_load_result.nil?
+    assert_equal integrate_ref01_data_dt0_load_result["id"], integrate_ref01_data["id"]
 
   end
 end

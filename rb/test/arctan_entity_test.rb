@@ -41,9 +41,13 @@ class ArctanEntityTest < Minitest::Test
 
     # LOAD
     arctan_ref01_ent = client.Arctan(nil)
-    arctan_ref01_match_dt0 = {}
+    arctan_ref01_match_dt0 = {
+      "id" => arctan_ref01_data["id"],
+    }
     arctan_ref01_data_dt0_loaded = arctan_ref01_ent.load(arctan_ref01_match_dt0, nil)
-    assert !arctan_ref01_data_dt0_loaded.nil?
+    arctan_ref01_data_dt0_load_result = Helpers.to_map(arctan_ref01_data_dt0_loaded.respond_to?(:data_get) ? arctan_ref01_data_dt0_loaded.data_get : arctan_ref01_data_dt0_loaded)
+    assert !arctan_ref01_data_dt0_load_result.nil?
+    assert_equal arctan_ref01_data_dt0_load_result["id"], arctan_ref01_data["id"]
 
   end
 end

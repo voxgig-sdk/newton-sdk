@@ -61,13 +61,19 @@ func TestDeriveEntity(t *testing.T) {
 
 		// LOAD
 		deriveRef01Ent := client.Derive(nil)
-		deriveRef01MatchDt0 := map[string]any{}
+		deriveRef01MatchDt0 := map[string]any{
+			"id": deriveRef01Data["id"],
+		}
 		deriveRef01DataDt0Loaded, err := deriveRef01Ent.Load(deriveRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if deriveRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		deriveRef01DataDt0LoadResult := core.ToMapAny(entityData(deriveRef01DataDt0Loaded))
+		if deriveRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if deriveRef01DataDt0LoadResult["id"] != deriveRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

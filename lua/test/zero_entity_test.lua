@@ -44,10 +44,14 @@ describe("ZeroEntity", function()
 
     -- LOAD
     local zero_ref01_ent = client:Zero(nil)
-    local zero_ref01_match_dt0 = {}
+    local zero_ref01_match_dt0 = {
+      id = zero_ref01_data["id"],
+    }
     local zero_ref01_data_dt0_loaded, err = zero_ref01_ent:load(zero_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(zero_ref01_data_dt0_loaded)
+    local zero_ref01_data_dt0_load_result = helpers.to_map(type(zero_ref01_data_dt0_loaded) == 'table' and zero_ref01_data_dt0_loaded.data_get and zero_ref01_data_dt0_loaded:data_get() or zero_ref01_data_dt0_loaded)
+    assert.is_not_nil(zero_ref01_data_dt0_load_result)
+    assert.are.equal(zero_ref01_data_dt0_load_result["id"], zero_ref01_data["id"])
 
   end)
 end)

@@ -37,6 +37,7 @@ def make_config():
         "options": {
           "active": False,
         },
+        "transport": "base",
       },
         },
         "options": {
@@ -69,6 +70,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -141,6 +146,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -207,6 +216,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -279,6 +292,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -345,6 +362,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -417,6 +438,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -483,6 +508,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -555,6 +584,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -621,6 +654,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -693,6 +730,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -759,6 +800,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -831,6 +876,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -897,6 +946,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -969,6 +1022,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "operation",
             "req": True,
             "short": "The mathematical operation that was performed",
@@ -1035,6 +1092,10 @@ def make_config():
             "name": "expression",
             "req": True,
             "short": "The mathematical expression that was processed",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {

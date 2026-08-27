@@ -48,9 +48,13 @@ class FactorEntityTest extends TestCase
 
         // LOAD
         $factor_ref01_ent = $client->Factor(null);
-        $factor_ref01_match_dt0 = [];
+        $factor_ref01_match_dt0 = [
+            "id" => $factor_ref01_data["id"],
+        ];
         $factor_ref01_data_dt0_loaded = $factor_ref01_ent->load($factor_ref01_match_dt0, null);
-        $this->assertNotNull($factor_ref01_data_dt0_loaded);
+        $factor_ref01_data_dt0_load_result = Helpers::to_map(is_object($factor_ref01_data_dt0_loaded) && method_exists($factor_ref01_data_dt0_loaded, 'data_get') ? $factor_ref01_data_dt0_loaded->data_get() : $factor_ref01_data_dt0_loaded);
+        $this->assertNotNull($factor_ref01_data_dt0_load_result);
+        $this->assertEquals($factor_ref01_data_dt0_load_result["id"], $factor_ref01_data["id"]);
 
     }
 }

@@ -48,9 +48,13 @@ class TestCosEntity:
 
         # LOAD
         cos_ref01_ent = client.Cos(None)
-        cos_ref01_match_dt0 = {}
+        cos_ref01_match_dt0 = {
+            "id": cos_ref01_data["id"],
+        }
         cos_ref01_data_dt0_loaded = cos_ref01_ent.load(cos_ref01_match_dt0, None)
-        assert cos_ref01_data_dt0_loaded is not None
+        cos_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(cos_ref01_data_dt0_loaded))
+        assert cos_ref01_data_dt0_load_result is not None
+        assert cos_ref01_data_dt0_load_result["id"] == cos_ref01_data["id"]
 
 
 

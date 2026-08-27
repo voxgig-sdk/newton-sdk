@@ -61,13 +61,19 @@ func TestArccoEntity(t *testing.T) {
 
 		// LOAD
 		arccoRef01Ent := client.Arcco(nil)
-		arccoRef01MatchDt0 := map[string]any{}
+		arccoRef01MatchDt0 := map[string]any{
+			"id": arccoRef01Data["id"],
+		}
 		arccoRef01DataDt0Loaded, err := arccoRef01Ent.Load(arccoRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if arccoRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		arccoRef01DataDt0LoadResult := core.ToMapAny(entityData(arccoRef01DataDt0Loaded))
+		if arccoRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if arccoRef01DataDt0LoadResult["id"] != arccoRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

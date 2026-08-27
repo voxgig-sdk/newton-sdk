@@ -48,9 +48,13 @@ class TestTangentEntity:
 
         # LOAD
         tangent_ref01_ent = client.Tangent(None)
-        tangent_ref01_match_dt0 = {}
+        tangent_ref01_match_dt0 = {
+            "id": tangent_ref01_data["id"],
+        }
         tangent_ref01_data_dt0_loaded = tangent_ref01_ent.load(tangent_ref01_match_dt0, None)
-        assert tangent_ref01_data_dt0_loaded is not None
+        tangent_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(tangent_ref01_data_dt0_loaded))
+        assert tangent_ref01_data_dt0_load_result is not None
+        assert tangent_ref01_data_dt0_load_result["id"] == tangent_ref01_data["id"]
 
 
 

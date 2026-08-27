@@ -41,9 +41,13 @@ class TangentEntityTest < Minitest::Test
 
     # LOAD
     tangent_ref01_ent = client.Tangent(nil)
-    tangent_ref01_match_dt0 = {}
+    tangent_ref01_match_dt0 = {
+      "id" => tangent_ref01_data["id"],
+    }
     tangent_ref01_data_dt0_loaded = tangent_ref01_ent.load(tangent_ref01_match_dt0, nil)
-    assert !tangent_ref01_data_dt0_loaded.nil?
+    tangent_ref01_data_dt0_load_result = Helpers.to_map(tangent_ref01_data_dt0_loaded.respond_to?(:data_get) ? tangent_ref01_data_dt0_loaded.data_get : tangent_ref01_data_dt0_loaded)
+    assert !tangent_ref01_data_dt0_load_result.nil?
+    assert_equal tangent_ref01_data_dt0_load_result["id"], tangent_ref01_data["id"]
 
   end
 end

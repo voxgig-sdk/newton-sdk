@@ -48,9 +48,13 @@ class ZeroEntityTest extends TestCase
 
         // LOAD
         $zero_ref01_ent = $client->Zero(null);
-        $zero_ref01_match_dt0 = [];
+        $zero_ref01_match_dt0 = [
+            "id" => $zero_ref01_data["id"],
+        ];
         $zero_ref01_data_dt0_loaded = $zero_ref01_ent->load($zero_ref01_match_dt0, null);
-        $this->assertNotNull($zero_ref01_data_dt0_loaded);
+        $zero_ref01_data_dt0_load_result = Helpers::to_map(is_object($zero_ref01_data_dt0_loaded) && method_exists($zero_ref01_data_dt0_loaded, 'data_get') ? $zero_ref01_data_dt0_loaded->data_get() : $zero_ref01_data_dt0_loaded);
+        $this->assertNotNull($zero_ref01_data_dt0_load_result);
+        $this->assertEquals($zero_ref01_data_dt0_load_result["id"], $zero_ref01_data["id"]);
 
     }
 }

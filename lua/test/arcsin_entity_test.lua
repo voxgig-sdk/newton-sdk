@@ -44,10 +44,14 @@ describe("ArcsinEntity", function()
 
     -- LOAD
     local arcsin_ref01_ent = client:Arcsin(nil)
-    local arcsin_ref01_match_dt0 = {}
+    local arcsin_ref01_match_dt0 = {
+      id = arcsin_ref01_data["id"],
+    }
     local arcsin_ref01_data_dt0_loaded, err = arcsin_ref01_ent:load(arcsin_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(arcsin_ref01_data_dt0_loaded)
+    local arcsin_ref01_data_dt0_load_result = helpers.to_map(type(arcsin_ref01_data_dt0_loaded) == 'table' and arcsin_ref01_data_dt0_loaded.data_get and arcsin_ref01_data_dt0_loaded:data_get() or arcsin_ref01_data_dt0_loaded)
+    assert.is_not_nil(arcsin_ref01_data_dt0_load_result)
+    assert.are.equal(arcsin_ref01_data_dt0_load_result["id"], arcsin_ref01_data["id"])
 
   end)
 end)

@@ -48,9 +48,13 @@ class TestIntegrateEntity:
 
         # LOAD
         integrate_ref01_ent = client.Integrate(None)
-        integrate_ref01_match_dt0 = {}
+        integrate_ref01_match_dt0 = {
+            "id": integrate_ref01_data["id"],
+        }
         integrate_ref01_data_dt0_loaded = integrate_ref01_ent.load(integrate_ref01_match_dt0, None)
-        assert integrate_ref01_data_dt0_loaded is not None
+        integrate_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(integrate_ref01_data_dt0_loaded))
+        assert integrate_ref01_data_dt0_load_result is not None
+        assert integrate_ref01_data_dt0_load_result["id"] == integrate_ref01_data["id"]
 
 
 

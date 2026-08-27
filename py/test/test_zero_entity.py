@@ -48,9 +48,13 @@ class TestZeroEntity:
 
         # LOAD
         zero_ref01_ent = client.Zero(None)
-        zero_ref01_match_dt0 = {}
+        zero_ref01_match_dt0 = {
+            "id": zero_ref01_data["id"],
+        }
         zero_ref01_data_dt0_loaded = zero_ref01_ent.load(zero_ref01_match_dt0, None)
-        assert zero_ref01_data_dt0_loaded is not None
+        zero_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(zero_ref01_data_dt0_loaded))
+        assert zero_ref01_data_dt0_load_result is not None
+        assert zero_ref01_data_dt0_load_result["id"] == zero_ref01_data["id"]
 
 
 

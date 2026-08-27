@@ -41,9 +41,13 @@ class CosEntityTest < Minitest::Test
 
     # LOAD
     cos_ref01_ent = client.Cos(nil)
-    cos_ref01_match_dt0 = {}
+    cos_ref01_match_dt0 = {
+      "id" => cos_ref01_data["id"],
+    }
     cos_ref01_data_dt0_loaded = cos_ref01_ent.load(cos_ref01_match_dt0, nil)
-    assert !cos_ref01_data_dt0_loaded.nil?
+    cos_ref01_data_dt0_load_result = Helpers.to_map(cos_ref01_data_dt0_loaded.respond_to?(:data_get) ? cos_ref01_data_dt0_loaded.data_get : cos_ref01_data_dt0_loaded)
+    assert !cos_ref01_data_dt0_load_result.nil?
+    assert_equal cos_ref01_data_dt0_load_result["id"], cos_ref01_data["id"]
 
   end
 end

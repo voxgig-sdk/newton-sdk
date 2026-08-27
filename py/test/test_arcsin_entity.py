@@ -48,9 +48,13 @@ class TestArcsinEntity:
 
         # LOAD
         arcsin_ref01_ent = client.Arcsin(None)
-        arcsin_ref01_match_dt0 = {}
+        arcsin_ref01_match_dt0 = {
+            "id": arcsin_ref01_data["id"],
+        }
         arcsin_ref01_data_dt0_loaded = arcsin_ref01_ent.load(arcsin_ref01_match_dt0, None)
-        assert arcsin_ref01_data_dt0_loaded is not None
+        arcsin_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(arcsin_ref01_data_dt0_loaded))
+        assert arcsin_ref01_data_dt0_load_result is not None
+        assert arcsin_ref01_data_dt0_load_result["id"] == arcsin_ref01_data["id"]
 
 
 

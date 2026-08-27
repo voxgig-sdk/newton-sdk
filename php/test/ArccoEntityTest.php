@@ -48,9 +48,13 @@ class ArccoEntityTest extends TestCase
 
         // LOAD
         $arcco_ref01_ent = $client->Arcco(null);
-        $arcco_ref01_match_dt0 = [];
+        $arcco_ref01_match_dt0 = [
+            "id" => $arcco_ref01_data["id"],
+        ];
         $arcco_ref01_data_dt0_loaded = $arcco_ref01_ent->load($arcco_ref01_match_dt0, null);
-        $this->assertNotNull($arcco_ref01_data_dt0_loaded);
+        $arcco_ref01_data_dt0_load_result = Helpers::to_map(is_object($arcco_ref01_data_dt0_loaded) && method_exists($arcco_ref01_data_dt0_loaded, 'data_get') ? $arcco_ref01_data_dt0_loaded->data_get() : $arcco_ref01_data_dt0_loaded);
+        $this->assertNotNull($arcco_ref01_data_dt0_load_result);
+        $this->assertEquals($arcco_ref01_data_dt0_load_result["id"], $arcco_ref01_data["id"]);
 
     }
 }

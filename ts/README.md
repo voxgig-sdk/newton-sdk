@@ -145,7 +145,7 @@ await entity.load({ id: 'example' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data)
+console.log(data.id)
 ```
 
 ### Add custom middleware
@@ -300,6 +300,7 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -312,6 +313,7 @@ API path: `/abs/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -324,6 +326,7 @@ API path: `/arccos/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -336,6 +339,7 @@ API path: `/arcsin/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -348,6 +352,7 @@ API path: `/arctan/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -360,6 +365,7 @@ API path: `/area/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -372,6 +378,7 @@ API path: `/cos/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -384,6 +391,7 @@ API path: `/derive/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -396,6 +404,7 @@ API path: `/factor/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -408,6 +417,7 @@ API path: `/integrate/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -420,6 +430,7 @@ API path: `/log/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -432,6 +443,7 @@ API path: `/simplify/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -444,6 +456,7 @@ API path: `/sin/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -456,6 +469,7 @@ API path: `/tan/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -468,6 +482,7 @@ API path: `/tangent/{expression}`
 | Field | Description |
 | --- | --- |
 | `expression` | The mathematical expression that was processed |
+| `id` |  |
 | `operation` | The mathematical operation that was performed |
 | `result` | The result of the mathematical operation |
 
@@ -495,6 +510,7 @@ Create an instance: `const abs = client.Abs()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -520,6 +536,7 @@ Create an instance: `const arcco = client.Arcco()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -545,6 +562,7 @@ Create an instance: `const arcsin = client.Arcsin()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -570,6 +588,7 @@ Create an instance: `const arctan = client.Arctan()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -595,6 +614,7 @@ Create an instance: `const area = client.Area()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -620,6 +640,7 @@ Create an instance: `const cos = client.Cos()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -645,6 +666,7 @@ Create an instance: `const derive = client.Derive()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -670,6 +692,7 @@ Create an instance: `const factor = client.Factor()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -695,6 +718,7 @@ Create an instance: `const integrate = client.Integrate()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -720,6 +744,7 @@ Create an instance: `const log = client.Log()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -745,6 +770,7 @@ Create an instance: `const simplify = client.Simplify()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -770,6 +796,7 @@ Create an instance: `const sin = client.Sin()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -795,6 +822,7 @@ Create an instance: `const tan = client.Tan()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -820,6 +848,7 @@ Create an instance: `const tangent = client.Tangent()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 
@@ -845,6 +874,7 @@ Create an instance: `const zero = client.Zero()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `expression` | `string` | The mathematical expression that was processed |
+| `id` | `string` |  |
 | `operation` | `string` | The mathematical operation that was performed |
 | `result` | `string` | The result of the mathematical operation |
 

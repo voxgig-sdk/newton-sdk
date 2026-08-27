@@ -44,10 +44,14 @@ describe("CosEntity", function()
 
     -- LOAD
     local cos_ref01_ent = client:Cos(nil)
-    local cos_ref01_match_dt0 = {}
+    local cos_ref01_match_dt0 = {
+      id = cos_ref01_data["id"],
+    }
     local cos_ref01_data_dt0_loaded, err = cos_ref01_ent:load(cos_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(cos_ref01_data_dt0_loaded)
+    local cos_ref01_data_dt0_load_result = helpers.to_map(type(cos_ref01_data_dt0_loaded) == 'table' and cos_ref01_data_dt0_loaded.data_get and cos_ref01_data_dt0_loaded:data_get() or cos_ref01_data_dt0_loaded)
+    assert.is_not_nil(cos_ref01_data_dt0_load_result)
+    assert.are.equal(cos_ref01_data_dt0_load_result["id"], cos_ref01_data["id"])
 
   end)
 end)

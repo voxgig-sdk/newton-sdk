@@ -48,9 +48,13 @@ class ArctanEntityTest extends TestCase
 
         // LOAD
         $arctan_ref01_ent = $client->Arctan(null);
-        $arctan_ref01_match_dt0 = [];
+        $arctan_ref01_match_dt0 = [
+            "id" => $arctan_ref01_data["id"],
+        ];
         $arctan_ref01_data_dt0_loaded = $arctan_ref01_ent->load($arctan_ref01_match_dt0, null);
-        $this->assertNotNull($arctan_ref01_data_dt0_loaded);
+        $arctan_ref01_data_dt0_load_result = Helpers::to_map(is_object($arctan_ref01_data_dt0_loaded) && method_exists($arctan_ref01_data_dt0_loaded, 'data_get') ? $arctan_ref01_data_dt0_loaded->data_get() : $arctan_ref01_data_dt0_loaded);
+        $this->assertNotNull($arctan_ref01_data_dt0_load_result);
+        $this->assertEquals($arctan_ref01_data_dt0_load_result["id"], $arctan_ref01_data["id"]);
 
     }
 }

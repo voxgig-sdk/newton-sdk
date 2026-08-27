@@ -44,10 +44,14 @@ describe("IntegrateEntity", function()
 
     -- LOAD
     local integrate_ref01_ent = client:Integrate(nil)
-    local integrate_ref01_match_dt0 = {}
+    local integrate_ref01_match_dt0 = {
+      id = integrate_ref01_data["id"],
+    }
     local integrate_ref01_data_dt0_loaded, err = integrate_ref01_ent:load(integrate_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(integrate_ref01_data_dt0_loaded)
+    local integrate_ref01_data_dt0_load_result = helpers.to_map(type(integrate_ref01_data_dt0_loaded) == 'table' and integrate_ref01_data_dt0_loaded.data_get and integrate_ref01_data_dt0_loaded:data_get() or integrate_ref01_data_dt0_loaded)
+    assert.is_not_nil(integrate_ref01_data_dt0_load_result)
+    assert.are.equal(integrate_ref01_data_dt0_load_result["id"], integrate_ref01_data["id"])
 
   end)
 end)

@@ -48,9 +48,13 @@ class SinEntityTest extends TestCase
 
         // LOAD
         $sin_ref01_ent = $client->Sin(null);
-        $sin_ref01_match_dt0 = [];
+        $sin_ref01_match_dt0 = [
+            "id" => $sin_ref01_data["id"],
+        ];
         $sin_ref01_data_dt0_loaded = $sin_ref01_ent->load($sin_ref01_match_dt0, null);
-        $this->assertNotNull($sin_ref01_data_dt0_loaded);
+        $sin_ref01_data_dt0_load_result = Helpers::to_map(is_object($sin_ref01_data_dt0_loaded) && method_exists($sin_ref01_data_dt0_loaded, 'data_get') ? $sin_ref01_data_dt0_loaded->data_get() : $sin_ref01_data_dt0_loaded);
+        $this->assertNotNull($sin_ref01_data_dt0_load_result);
+        $this->assertEquals($sin_ref01_data_dt0_load_result["id"], $sin_ref01_data["id"]);
 
     }
 }

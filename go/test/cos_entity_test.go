@@ -61,13 +61,19 @@ func TestCosEntity(t *testing.T) {
 
 		// LOAD
 		cosRef01Ent := client.Cos(nil)
-		cosRef01MatchDt0 := map[string]any{}
+		cosRef01MatchDt0 := map[string]any{
+			"id": cosRef01Data["id"],
+		}
 		cosRef01DataDt0Loaded, err := cosRef01Ent.Load(cosRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if cosRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		cosRef01DataDt0LoadResult := core.ToMapAny(entityData(cosRef01DataDt0Loaded))
+		if cosRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if cosRef01DataDt0LoadResult["id"] != cosRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

@@ -155,6 +155,7 @@ fmt.Println(abs.GetName()) // "abs"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -208,6 +209,7 @@ fmt.Println(arcco.GetName()) // "arcco"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -261,6 +263,7 @@ fmt.Println(arcsin.GetName()) // "arcsin"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -314,6 +317,7 @@ fmt.Println(arctan.GetName()) // "arctan"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -367,6 +371,7 @@ fmt.Println(area.GetName()) // "area"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -420,6 +425,7 @@ fmt.Println(cos.GetName()) // "cos"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -473,6 +479,7 @@ fmt.Println(derive.GetName()) // "derive"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -526,6 +533,7 @@ fmt.Println(factor.GetName()) // "factor"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -579,6 +587,7 @@ fmt.Println(integrate.GetName()) // "integrate"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -632,6 +641,7 @@ fmt.Println(log.GetName()) // "log"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -685,6 +695,7 @@ fmt.Println(simplify.GetName()) // "simplify"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -738,6 +749,7 @@ fmt.Println(sin.GetName()) // "sin"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -791,6 +803,7 @@ fmt.Println(tan.GetName()) // "tan"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -844,6 +857,7 @@ fmt.Println(tangent.GetName()) // "tangent"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 
@@ -897,6 +911,7 @@ fmt.Println(zero.GetName()) // "zero"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `expression` | `string` | Yes | The mathematical expression that was processed |
+| `id` | `string` | No |  |
 | `operation` | `string` | Yes | The mathematical operation that was performed |
 | `result` | `string` | Yes | The result of the mathematical operation |
 

@@ -48,9 +48,13 @@ class TestArctanEntity:
 
         # LOAD
         arctan_ref01_ent = client.Arctan(None)
-        arctan_ref01_match_dt0 = {}
+        arctan_ref01_match_dt0 = {
+            "id": arctan_ref01_data["id"],
+        }
         arctan_ref01_data_dt0_loaded = arctan_ref01_ent.load(arctan_ref01_match_dt0, None)
-        assert arctan_ref01_data_dt0_loaded is not None
+        arctan_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(arctan_ref01_data_dt0_loaded))
+        assert arctan_ref01_data_dt0_load_result is not None
+        assert arctan_ref01_data_dt0_load_result["id"] == arctan_ref01_data["id"]
 
 
 

@@ -48,9 +48,13 @@ class SimplifyEntityTest extends TestCase
 
         // LOAD
         $simplify_ref01_ent = $client->Simplify(null);
-        $simplify_ref01_match_dt0 = [];
+        $simplify_ref01_match_dt0 = [
+            "id" => $simplify_ref01_data["id"],
+        ];
         $simplify_ref01_data_dt0_loaded = $simplify_ref01_ent->load($simplify_ref01_match_dt0, null);
-        $this->assertNotNull($simplify_ref01_data_dt0_loaded);
+        $simplify_ref01_data_dt0_load_result = Helpers::to_map(is_object($simplify_ref01_data_dt0_loaded) && method_exists($simplify_ref01_data_dt0_loaded, 'data_get') ? $simplify_ref01_data_dt0_loaded->data_get() : $simplify_ref01_data_dt0_loaded);
+        $this->assertNotNull($simplify_ref01_data_dt0_load_result);
+        $this->assertEquals($simplify_ref01_data_dt0_load_result["id"], $simplify_ref01_data["id"]);
 
     }
 }

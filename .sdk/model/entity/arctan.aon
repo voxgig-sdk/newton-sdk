@@ -55,15 +55,19 @@ main: kit: entity: arctan: {
           }
           method: "GET"
           orig: "/arctan/{expression}"
-          parts: [
-            "arctan"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "arctan"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

@@ -55,15 +55,19 @@ main: kit: entity: simplify: {
           }
           method: "GET"
           orig: "/simplify/{expression}"
-          parts: [
-            "simplify"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "simplify"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

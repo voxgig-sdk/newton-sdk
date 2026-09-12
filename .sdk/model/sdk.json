@@ -88,15 +88,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/abs/{expression}",
-                  "parts": [
-                    "abs",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "abs"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -176,15 +180,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/arccos/{expression}",
-                  "parts": [
-                    "arccos",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "arccos"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -264,15 +272,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/arcsin/{expression}",
-                  "parts": [
-                    "arcsin",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "arcsin"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -352,15 +364,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/arctan/{expression}",
-                  "parts": [
-                    "arctan",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "arctan"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -440,15 +456,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/area/{expression}",
-                  "parts": [
-                    "area",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "area"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -528,15 +548,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cos/{expression}",
-                  "parts": [
-                    "cos",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "cos"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -616,15 +640,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/derive/{expression}",
-                  "parts": [
-                    "derive",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "derive"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -704,15 +732,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/factor/{expression}",
-                  "parts": [
-                    "factor",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "factor"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -792,15 +824,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/integrate/{expression}",
-                  "parts": [
-                    "integrate",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "integrate"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -880,15 +916,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/log/{expression}",
-                  "parts": [
-                    "log",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "log"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -968,15 +1008,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/simplify/{expression}",
-                  "parts": [
-                    "simplify",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "simplify"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -1056,15 +1100,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/sin/{expression}",
-                  "parts": [
-                    "sin",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "sin"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -1144,15 +1192,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/tan/{expression}",
-                  "parts": [
-                    "tan",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "tan"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -1232,15 +1284,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/tangent/{expression}",
-                  "parts": [
-                    "tangent",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "tangent"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -1320,15 +1376,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/zeroes/{expression}",
-                  "parts": [
-                    "zeroes",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "expression": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "zeroes"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -1411,8 +1471,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "go": {
               "deps": {}
@@ -1989,6 +2052,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2014,6 +2080,10 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -2065,6 +2135,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -2089,6 +2160,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -2140,6 +2212,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -2164,6 +2237,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
         },
         "lua": {
@@ -2204,6 +2278,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2229,6 +2306,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "php": {
@@ -2263,6 +2343,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2288,6 +2371,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -2328,6 +2414,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2353,6 +2442,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -2398,6 +2490,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2423,6 +2518,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "ts": {
@@ -2440,11 +2538,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -2473,6 +2566,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2497,6 +2593,14 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         }
       },

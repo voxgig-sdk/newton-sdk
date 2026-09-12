@@ -55,15 +55,19 @@ main: kit: entity: arcco: {
           }
           method: "GET"
           orig: "/arccos/{expression}"
-          parts: [
-            "arccos"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "arccos"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

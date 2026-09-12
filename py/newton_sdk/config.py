@@ -1,6 +1,14 @@
 # Newton SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -89,6 +97,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "abs",
         "op": {
           "load": {
@@ -111,15 +123,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/abs/{expression}",
-                "parts": [
-                  "abs",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "abs",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -129,6 +145,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "abs",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -162,6 +182,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "arcco",
         "op": {
           "load": {
@@ -184,15 +208,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/arccos/{expression}",
-                "parts": [
-                  "arccos",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "arccos",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -202,6 +230,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "arccos",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -235,6 +267,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "arcsin",
         "op": {
           "load": {
@@ -257,15 +293,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/arcsin/{expression}",
-                "parts": [
-                  "arcsin",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "arcsin",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -275,6 +315,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "arcsin",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -308,6 +352,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "arctan",
         "op": {
           "load": {
@@ -330,15 +378,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/arctan/{expression}",
-                "parts": [
-                  "arctan",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "arctan",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -348,6 +400,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "arctan",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -381,6 +437,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "area",
         "op": {
           "load": {
@@ -403,15 +463,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/area/{expression}",
-                "parts": [
-                  "area",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "area",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -421,6 +485,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "area",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -454,6 +522,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "cos",
         "op": {
           "load": {
@@ -476,15 +548,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/cos/{expression}",
-                "parts": [
-                  "cos",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "cos",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -494,6 +570,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "cos",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -527,6 +607,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "derive",
         "op": {
           "load": {
@@ -549,15 +633,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/derive/{expression}",
-                "parts": [
-                  "derive",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "derive",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -567,6 +655,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "derive",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -600,6 +692,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "factor",
         "op": {
           "load": {
@@ -622,15 +718,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/factor/{expression}",
-                "parts": [
-                  "factor",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "factor",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -640,6 +740,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "factor",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -673,6 +777,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "integrate",
         "op": {
           "load": {
@@ -695,15 +803,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/integrate/{expression}",
-                "parts": [
-                  "integrate",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "integrate",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -713,6 +825,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "integrate",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -746,6 +862,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "log",
         "op": {
           "load": {
@@ -768,15 +888,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/log/{expression}",
-                "parts": [
-                  "log",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "log",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -786,6 +910,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "log",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -819,6 +947,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "simplify",
         "op": {
           "load": {
@@ -841,15 +973,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/simplify/{expression}",
-                "parts": [
-                  "simplify",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "simplify",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -859,6 +995,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "simplify",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -892,6 +1032,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "sin",
         "op": {
           "load": {
@@ -914,15 +1058,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/sin/{expression}",
-                "parts": [
-                  "sin",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "sin",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -932,6 +1080,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "sin",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -965,6 +1117,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "tan",
         "op": {
           "load": {
@@ -987,15 +1143,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/tan/{expression}",
-                "parts": [
-                  "tan",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "tan",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -1005,6 +1165,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "tan",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -1038,6 +1202,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "tangent",
         "op": {
           "load": {
@@ -1060,15 +1228,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/tangent/{expression}",
-                "parts": [
-                  "tangent",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "tangent",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -1078,6 +1250,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "tangent",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -1111,6 +1287,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "zero",
         "op": {
           "load": {
@@ -1133,15 +1313,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/zeroes/{expression}",
-                "parts": [
-                  "zeroes",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "expression": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "zeroes",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -1151,6 +1335,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "zeroes",
+                  "{id}",
+                ],
               },
             ],
           },

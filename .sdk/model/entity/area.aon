@@ -55,15 +55,19 @@ main: kit: entity: area: {
           }
           method: "GET"
           orig: "/area/{expression}"
-          parts: [
-            "area"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "area"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

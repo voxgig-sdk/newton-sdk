@@ -55,15 +55,19 @@ main: kit: entity: tangent: {
           }
           method: "GET"
           orig: "/tangent/{expression}"
-          parts: [
-            "tangent"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "tangent"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

@@ -55,15 +55,19 @@ main: kit: entity: abs: {
           }
           method: "GET"
           orig: "/abs/{expression}"
-          parts: [
-            "abs"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "abs"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

@@ -55,15 +55,19 @@ main: kit: entity: arcsin: {
           }
           method: "GET"
           orig: "/arcsin/{expression}"
-          parts: [
-            "arcsin"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "arcsin"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

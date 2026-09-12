@@ -55,15 +55,19 @@ main: kit: entity: tan: {
           }
           method: "GET"
           orig: "/tan/{expression}"
-          parts: [
-            "tan"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "tan"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

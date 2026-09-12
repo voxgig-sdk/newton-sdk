@@ -50,7 +50,7 @@ func TestFactorEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		factorRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.factor", setup.data)))
+		factorRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.factor")))
 		var factorRef01Data map[string]any
 		if len(factorRef01DataRaw) > 0 {
 			factorRef01Data = core.ToMapAny(factorRef01DataRaw[0][1])
@@ -103,7 +103,7 @@ func factorBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"factor01", "factor02", "factor03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -131,10 +131,22 @@ func factorBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["NEWTON_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewNewtonSDK(core.ToMapAny(mergedOpts))
 	}

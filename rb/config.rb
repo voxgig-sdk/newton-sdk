@@ -80,6 +80,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "abs",
           "op" => {
             "load" => {
@@ -102,15 +106,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/abs/{expression}",
-                  "parts" => [
-                    "abs",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "abs",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -120,6 +128,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "abs",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -153,6 +165,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "arcco",
           "op" => {
             "load" => {
@@ -175,15 +191,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/arccos/{expression}",
-                  "parts" => [
-                    "arccos",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "arccos",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -193,6 +213,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "arccos",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -226,6 +250,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "arcsin",
           "op" => {
             "load" => {
@@ -248,15 +276,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/arcsin/{expression}",
-                  "parts" => [
-                    "arcsin",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "arcsin",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -266,6 +298,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "arcsin",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -299,6 +335,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "arctan",
           "op" => {
             "load" => {
@@ -321,15 +361,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/arctan/{expression}",
-                  "parts" => [
-                    "arctan",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "arctan",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -339,6 +383,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "arctan",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -372,6 +420,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "area",
           "op" => {
             "load" => {
@@ -394,15 +446,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/area/{expression}",
-                  "parts" => [
-                    "area",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "area",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -412,6 +468,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "area",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -445,6 +505,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "cos",
           "op" => {
             "load" => {
@@ -467,15 +531,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/cos/{expression}",
-                  "parts" => [
-                    "cos",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "cos",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -485,6 +553,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "cos",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -518,6 +590,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "derive",
           "op" => {
             "load" => {
@@ -540,15 +616,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/derive/{expression}",
-                  "parts" => [
-                    "derive",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "derive",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -558,6 +638,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "derive",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -591,6 +675,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "factor",
           "op" => {
             "load" => {
@@ -613,15 +701,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/factor/{expression}",
-                  "parts" => [
-                    "factor",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "factor",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -631,6 +723,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "factor",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -664,6 +760,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "integrate",
           "op" => {
             "load" => {
@@ -686,15 +786,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/integrate/{expression}",
-                  "parts" => [
-                    "integrate",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "integrate",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -704,6 +808,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "integrate",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -737,6 +845,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "log",
           "op" => {
             "load" => {
@@ -759,15 +871,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/log/{expression}",
-                  "parts" => [
-                    "log",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "log",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -777,6 +893,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "log",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -810,6 +930,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "simplify",
           "op" => {
             "load" => {
@@ -832,15 +956,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/simplify/{expression}",
-                  "parts" => [
-                    "simplify",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "simplify",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -850,6 +978,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "simplify",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -883,6 +1015,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "sin",
           "op" => {
             "load" => {
@@ -905,15 +1041,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/sin/{expression}",
-                  "parts" => [
-                    "sin",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "sin",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -923,6 +1063,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "sin",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -956,6 +1100,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "tan",
           "op" => {
             "load" => {
@@ -978,15 +1126,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/tan/{expression}",
-                  "parts" => [
-                    "tan",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "tan",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -996,6 +1148,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "tan",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -1029,6 +1185,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "tangent",
           "op" => {
             "load" => {
@@ -1051,15 +1211,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/tangent/{expression}",
-                  "parts" => [
-                    "tangent",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "tangent",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -1069,6 +1233,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "tangent",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -1102,6 +1270,10 @@ module NewtonConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "zero",
           "op" => {
             "load" => {
@@ -1124,15 +1296,19 @@ module NewtonConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/zeroes/{expression}",
-                  "parts" => [
-                    "zeroes",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "expression" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "zeroes",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -1142,6 +1318,10 @@ module NewtonConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "zeroes",
+                    "{id}",
+                  ],
                 },
               ],
             },

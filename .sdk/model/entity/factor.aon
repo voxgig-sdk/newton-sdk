@@ -55,15 +55,19 @@ main: kit: entity: factor: {
           }
           method: "GET"
           orig: "/factor/{expression}"
-          parts: [
-            "factor"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "factor"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

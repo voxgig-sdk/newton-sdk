@@ -55,15 +55,19 @@ main: kit: entity: sin: {
           }
           method: "GET"
           orig: "/sin/{expression}"
-          parts: [
-            "sin"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "sin"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

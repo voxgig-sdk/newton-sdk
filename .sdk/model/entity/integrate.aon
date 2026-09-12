@@ -55,15 +55,19 @@ main: kit: entity: integrate: {
           }
           method: "GET"
           orig: "/integrate/{expression}"
-          parts: [
-            "integrate"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "integrate"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

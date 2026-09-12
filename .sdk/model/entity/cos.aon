@@ -55,15 +55,19 @@ main: kit: entity: cos: {
           }
           method: "GET"
           orig: "/cos/{expression}"
-          parts: [
-            "cos"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "cos"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

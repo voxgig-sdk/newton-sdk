@@ -55,15 +55,19 @@ main: kit: entity: derive: {
           }
           method: "GET"
           orig: "/derive/{expression}"
-          parts: [
-            "derive"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "derive"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

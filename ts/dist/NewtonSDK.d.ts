@@ -1,0 +1,85 @@
+import { AbsEntity } from './entity/AbsEntity';
+import { ArccoEntity } from './entity/ArccoEntity';
+import { ArcsinEntity } from './entity/ArcsinEntity';
+import { ArctanEntity } from './entity/ArctanEntity';
+import { AreaEntity } from './entity/AreaEntity';
+import { CosEntity } from './entity/CosEntity';
+import { DeriveEntity } from './entity/DeriveEntity';
+import { FactorEntity } from './entity/FactorEntity';
+import { IntegrateEntity } from './entity/IntegrateEntity';
+import { LogEntity } from './entity/LogEntity';
+import { SimplifyEntity } from './entity/SimplifyEntity';
+import { SinEntity } from './entity/SinEntity';
+import { TanEntity } from './entity/TanEntity';
+import { TangentEntity } from './entity/TangentEntity';
+import { ZeroEntity } from './entity/ZeroEntity';
+export type * from './NewtonTypes';
+import { inspect } from 'node:util';
+import type { Context, Feature } from './types';
+import { config } from './Config';
+import { NewtonEntityBase } from './NewtonEntityBase';
+import { Utility } from './utility/Utility';
+import { BaseFeature } from './feature/base/BaseFeature';
+declare const stdutil: Utility;
+declare class NewtonSDK {
+    _mode: string;
+    _options: any;
+    _utility: Utility;
+    _features: Feature[];
+    _rootctx: Context;
+    constructor(options?: any);
+    options(): any;
+    utility(): any;
+    prepare(fetchargs?: any): Promise<any>;
+    direct(fetchargs?: any): Promise<Error | {
+        ok: boolean;
+        status: number;
+        headers: any;
+        data: any;
+        err?: undefined;
+    } | {
+        ok: boolean;
+        err: any;
+        status?: undefined;
+        headers?: undefined;
+        data?: undefined;
+    }>;
+    _rawRequest(fetchargs?: any): Promise<Error | {
+        ok: boolean;
+        status: number;
+        headers: any;
+        data: any;
+        err?: undefined;
+    } | {
+        ok: boolean;
+        err: any;
+        status?: undefined;
+        headers?: undefined;
+        data?: undefined;
+    }>;
+    graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
+    Abs(entopts?: Record<string, any>): AbsEntity;
+    Arcco(entopts?: Record<string, any>): ArccoEntity;
+    Arcsin(entopts?: Record<string, any>): ArcsinEntity;
+    Arctan(entopts?: Record<string, any>): ArctanEntity;
+    Area(entopts?: Record<string, any>): AreaEntity;
+    Cos(entopts?: Record<string, any>): CosEntity;
+    Derive(entopts?: Record<string, any>): DeriveEntity;
+    Factor(entopts?: Record<string, any>): FactorEntity;
+    Integrate(entopts?: Record<string, any>): IntegrateEntity;
+    Log(entopts?: Record<string, any>): LogEntity;
+    Simplify(entopts?: Record<string, any>): SimplifyEntity;
+    Sin(entopts?: Record<string, any>): SinEntity;
+    Tan(entopts?: Record<string, any>): TanEntity;
+    Tangent(entopts?: Record<string, any>): TangentEntity;
+    Zero(entopts?: Record<string, any>): ZeroEntity;
+    static test(testoptsarg?: any, sdkoptsarg?: any): NewtonSDK;
+    tester(testopts?: any, sdkopts?: any): NewtonSDK;
+    toJSON(): {
+        name: string;
+    };
+    toString(): string;
+    [inspect.custom](): string;
+}
+declare const SDK: typeof NewtonSDK;
+export { stdutil, config, BaseFeature, NewtonEntityBase, NewtonSDK, SDK, };

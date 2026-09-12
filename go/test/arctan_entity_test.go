@@ -50,7 +50,7 @@ func TestArctanEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		arctanRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.arctan", setup.data)))
+		arctanRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.arctan")))
 		var arctanRef01Data map[string]any
 		if len(arctanRef01DataRaw) > 0 {
 			arctanRef01Data = core.ToMapAny(arctanRef01DataRaw[0][1])
@@ -103,7 +103,7 @@ func arctanBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"arctan01", "arctan02", "arctan03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -131,10 +131,22 @@ func arctanBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["NEWTON_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewNewtonSDK(core.ToMapAny(mergedOpts))
 	}

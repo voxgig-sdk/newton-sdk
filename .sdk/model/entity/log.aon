@@ -55,15 +55,19 @@ main: kit: entity: log: {
           }
           method: "GET"
           orig: "/log/{expression}"
-          parts: [
-            "log"
-            "{id}"
-          ]
           rename: {
             param: {
               expression: "id"
             }
           }
+          segments: [
+            {
+              lit: "log"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

@@ -105,7 +105,7 @@ local result, err = client:Arcco():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
+| TypeScript | `@voxgig-sdk/newton-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
 | Python | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
 | PHP | `voxgig-sdk/newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/newton-sdk/go` | `go get github.com/voxgig-sdk/newton-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Arcco():load({ id = "test01" })
 ### TypeScript
 
 ```ts
-import { NewtonSDK } from '@voxgig-sdk/newton'
+import { NewtonSDK } from '@voxgig-sdk/newton-sdk'
 
 const client = new NewtonSDK()
 

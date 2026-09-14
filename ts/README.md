@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { NewtonSDK } from '@voxgig-sdk/newton'
+import { NewtonSDK } from '@voxgig-sdk/newton-sdk'
 
 const client = new NewtonSDK()
 ```
@@ -967,7 +967,7 @@ newton/
 Import the SDK from the package root:
 
 ```ts
-import { NewtonSDK } from '@voxgig-sdk/newton'
+import { NewtonSDK } from '@voxgig-sdk/newton-sdk'
 ```
 
 ### Entity state

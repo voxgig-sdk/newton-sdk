@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "abs": {
           "active": true,
@@ -84,6 +148,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /abs/{expression}",
+                    "json": "{\"operationId\":\"absoluteValue\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for absolute value calculation (e.g., -1)\",\"example\":\"-1\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"-1\",\"operation\":\"abs\",\"result\":\"1\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -177,6 +247,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /arccos/{expression}",
+                    "json": "{\"operationId\":\"arccos\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for arccos calculation (e.g., 1)\",\"example\":\"1\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"1\",\"operation\":\"arccos\",\"result\":\"0\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/arccos/{expression}",
@@ -268,6 +344,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /arcsin/{expression}",
+                    "json": "{\"operationId\":\"arcsin\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for arcsin calculation (e.g., 0)\",\"example\":\"0\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"0\",\"operation\":\"arcsin\",\"result\":\"0\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -361,6 +443,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /arctan/{expression}",
+                    "json": "{\"operationId\":\"arctan\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for arctan calculation (e.g., 0)\",\"example\":\"0\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"0\",\"operation\":\"arctan\",\"result\":\"0\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/arctan/{expression}",
@@ -452,6 +540,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /area/{expression}",
+                    "json": "{\"operationId\":\"area\",\"parameters\":[{\"description\":\"URL-encoded expression in format c:d|f(x) where c and d are x bounds and f(x) is the function (e.g., 2:4|x^3)\",\"example\":\"2:4|x^3\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"2:4|x^3\",\"operation\":\"area\",\"result\":\"60\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -545,6 +639,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /cos/{expression}",
+                    "json": "{\"operationId\":\"cosine\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for cosine calculation (e.g., pi)\",\"example\":\"pi\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"pi\",\"operation\":\"cos\",\"result\":\"-1\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cos/{expression}",
@@ -636,6 +736,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /derive/{expression}",
+                    "json": "{\"operationId\":\"derive\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression to derive (e.g., x^2+2x)\",\"example\":\"x^2+2x\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"x^2+2x\",\"operation\":\"derive\",\"result\":\"2 x + 2\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -729,6 +835,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /factor/{expression}",
+                    "json": "{\"operationId\":\"factor\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression to factor (e.g., x^2+2x)\",\"example\":\"x^2+2x\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"x^2+2x\",\"operation\":\"factor\",\"result\":\"x (x + 2)\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/factor/{expression}",
@@ -820,6 +932,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /integrate/{expression}",
+                    "json": "{\"operationId\":\"integrate\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression to integrate (e.g., x^2+2x)\",\"example\":\"x^2+2x\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"x^2+2x\",\"operation\":\"integrate\",\"result\":\"1/3 x^3 + x^2 + C\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -913,6 +1031,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /log/{expression}",
+                    "json": "{\"operationId\":\"logarithm\",\"parameters\":[{\"description\":\"URL-encoded expression in format base|value (e.g., 2|8 for log base 2 of 8)\",\"example\":\"2|8\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"2|8\",\"operation\":\"log\",\"result\":\"3\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/log/{expression}",
@@ -1004,6 +1128,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /simplify/{expression}",
+                    "json": "{\"operationId\":\"simplify\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression to simplify (e.g., 2^2+2(2))\",\"example\":\"2^2+2(2)\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"2^2+2(2)\",\"operation\":\"simplify\",\"result\":\"8\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -1097,6 +1227,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /sin/{expression}",
+                    "json": "{\"operationId\":\"sine\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for sine calculation (e.g., 0)\",\"example\":\"0\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"0\",\"operation\":\"sin\",\"result\":\"0\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/sin/{expression}",
@@ -1188,6 +1324,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /tan/{expression}",
+                    "json": "{\"operationId\":\"tangentTrig\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression for tangent calculation (e.g., 0)\",\"example\":\"0\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"0\",\"operation\":\"tan\",\"result\":\"0\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -1281,6 +1423,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /tangent/{expression}",
+                    "json": "{\"operationId\":\"tangent\",\"parameters\":[{\"description\":\"URL-encoded expression in format c|f(x) where c is the x value and f(x) is the function (e.g., 2|x^3)\",\"example\":\"2|x^3\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"2|x^3\",\"operation\":\"tangent\",\"result\":\"12 x + -16\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/tangent/{expression}",
@@ -1373,6 +1521,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /zeroes/{expression}",
+                    "json": "{\"operationId\":\"zeroes\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression to find zeros (e.g., x^2+2x)\",\"example\":\"x^2+2x\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"x^2+2x\",\"operation\":\"zeroes\",\"result\":\"[-2, 0]\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/zeroes/{expression}",
@@ -1408,13 +1562,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -1504,6 +1868,102 @@
           },
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
+          "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
           "version": "0.0.1"
         }
       },
@@ -2013,6 +2473,48 @@
         "website": "https://newton.now.sh"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -2567,6 +3069,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -2608,7 +3111,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

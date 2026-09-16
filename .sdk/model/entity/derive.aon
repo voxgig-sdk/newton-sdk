@@ -53,6 +53,12 @@ main: kit: entity: derive: {
               }
             ]
           }
+          contract: {
+            id: "GET /derive/{expression}"
+            json: "{\"operationId\":\"derive\",\"parameters\":[{\"description\":\"URL-encoded mathematical expression to derive (e.g., x^2+2x)\",\"example\":\"x^2+2x\",\"in\":\"path\",\"name\":\"expression\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"expression\":\"x^2+2x\",\"operation\":\"derive\",\"result\":\"2 x + 2\"},\"schema\":{\"properties\":{\"expression\":{\"description\":\"The mathematical expression that was processed\",\"example\":\"x^2\",\"type\":\"string\"},\"operation\":{\"description\":\"The mathematical operation that was performed\",\"example\":\"derive\",\"type\":\"string\"},\"result\":{\"description\":\"The result of the mathematical operation\",\"example\":\"2 x\",\"type\":\"string\"}},\"required\":[\"operation\",\"expression\",\"result\"],\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/derive/{expression}"
           rename: {

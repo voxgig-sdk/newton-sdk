@@ -1,12 +1,18 @@
 # Newton SDK feature factory
 
 from newton_sdk.feature.base_feature import NewtonBaseFeature
+from newton_sdk.feature.ratelimit_feature import NewtonRatelimitFeature
+from newton_sdk.feature.retry_feature import NewtonRetryFeature
 from newton_sdk.feature.test_feature import NewtonTestFeature
+from newton_sdk.feature.timeout_feature import NewtonTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: NewtonBaseFeature(),
+    "ratelimit": lambda: NewtonRatelimitFeature(),
+    "retry": lambda: NewtonRetryFeature(),
     "test": lambda: NewtonTestFeature(),
+    "timeout": lambda: NewtonTimeoutFeature(),
 }
 
 

@@ -105,12 +105,12 @@ local result, err = client:Arcco():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/newton-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
-| Python | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
-| PHP | `voxgig-sdk/newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
+| TypeScript | `@voxgig-sdk/newton-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/tags) |
+| Python | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/tags) |
+| PHP | `voxgig-sdk/newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/newton-sdk/go` | `go get github.com/voxgig-sdk/newton-sdk/go@latest` |
-| Ruby | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
-| Lua | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/releases) |
+| Ruby | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/tags) |
+| Lua | `voxgig-sdk-newton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/newton-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/newton-sdk/go-cli` | `go install github.com/voxgig-sdk/newton-sdk/go-cli/cmd/newton@latest` |
 | Go MCP server | `github.com/voxgig-sdk/newton-sdk/go-mcp` | `go get github.com/voxgig-sdk/newton-sdk/go-mcp@latest` |
 

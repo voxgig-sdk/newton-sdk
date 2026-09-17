@@ -127,51 +127,51 @@ class Config {
 
     entity: {
       
-      abs: {
-      },
-
-      arcco: {
-      },
-
-      arcsin: {
-      },
-
-      arctan: {
-      },
-
-      area: {
-      },
-
-      cos: {
-      },
-
-      derive: {
-      },
-
-      factor: {
-      },
-
-      integrate: {
-      },
-
-      log: {
-      },
-
-      simplify: {
-      },
-
-      sin: {
-      },
-
-      tan: {
-      },
-
-      tangent: {
-      },
-
-      zero: {
-      },
-
+        abs: {
+        },
+  
+        arcco: {
+        },
+  
+        arcsin: {
+        },
+  
+        arctan: {
+        },
+  
+        area: {
+        },
+  
+        cos: {
+        },
+  
+        derive: {
+        },
+  
+        factor: {
+        },
+  
+        integrate: {
+        },
+  
+        log: {
+        },
+  
+        simplify: {
+        },
+  
+        sin: {
+        },
+  
+        tan: {
+        },
+  
+        tangent: {
+        },
+  
+        zero: {
+        },
+  
     }
   }
 
